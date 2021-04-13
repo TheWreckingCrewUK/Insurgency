@@ -1,0 +1,457 @@
+/*%FSM<COMPILE "F:\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, tacticalAI">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"START",0,250,-287.229309,-676.187195,-197.229309,-626.187439,0.000000,"START"};
+item1[] = {"Can_Attack",4,218,-287.622681,59.206268,-197.622681,109.206268,3.000000,"Can Attack"};
+item2[] = {"Direct__Attack",2,250,-286.850342,170.861420,-196.850342,220.861420,0.000000,"Direct " \n "Attack"};
+item3[] = {"Can_Skirmish",4,218,-420.951172,59.489594,-330.951172,109.489594,2.000000,"Can Skirmish"};
+item4[] = {"Skirmish",2,250,-422.087585,171.997833,-332.087585,221.997833,0.000000,"Skirmish"};
+item5[] = {"Can_Defend",4,218,-563.007080,59.489594,-473.007111,109.489594,1.000000,"Can Defend"};
+item6[] = {"Defend_Structure",2,250,-561.870789,169.725006,-471.870758,219.725006,0.000000,"Defend" \n "Structures"};
+item7[] = {"Can_Flank",4,218,-157.295227,59.489532,-67.295227,109.489532,4.000000,"Can Flank"};
+item8[] = {"Flank",2,250,-158.431763,171.997894,-68.431747,221.997894,0.000000,"Flank"};
+item9[] = {"Can_Mortar",4,218,-26.603760,60.625977,63.396240,110.625977,5.000000,"Can Mortar"};
+item10[] = {"Mortar_Strike",2,250,-26.603882,170.861420,63.396118,220.861420,0.000000,"Mortar" \n "Strike"};
+item11[] = {"TRUE",8,218,-287.988464,-181.437897,-197.988464,-131.437897,0.000000,"TRUE"};
+item12[] = {"Select_Group",2,250,-287.309875,-56.430450,-197.309875,-6.430450,0.000000,"Select" \n "Group"};
+item13[] = {"",7,210,13.258110,-35.428589,21.258125,-27.428581,0.000000,""};
+item14[] = {"",7,210,-115.159859,-36.563843,-107.159843,-28.563835,0.000000,""};
+item15[] = {"",7,210,-522.096130,-35.971405,-514.096130,-27.971405,0.000000,""};
+item16[] = {"",7,210,-379.952209,-35.427429,-371.952209,-27.427429,0.000000,""};
+item17[] = {"",7,210,-248.124268,-97.932098,-240.124268,-89.932098,0.000000,""};
+item18[] = {"None_Free",8,218,-27.522766,-119.605591,62.477234,-69.605591,0.000000,"None" \n "Free"};
+item19[] = {"",7,210,-522.008118,270.277039,-514.008118,278.277069,0.000000,""};
+item20[] = {"",7,210,-639.062256,270.277039,-631.062256,278.277039,0.000000,""};
+item21[] = {"",7,210,-640.198730,-159.300262,-632.198730,-151.300262,0.000000,""};
+item22[] = {"",7,210,-381.335388,270.277039,-373.335388,278.277069,0.000000,""};
+item23[] = {"",7,210,-246.386353,270.451660,-238.386353,278.451691,0.000000,""};
+item24[] = {"",7,210,-117.793091,270.703796,-109.793091,278.703827,0.000000,""};
+item25[] = {"",7,210,14.004333,270.132935,22.004333,278.132904,0.000000,""};
+item26[] = {"No_BLUFOR",4,218,105.806458,-116.995621,195.806458,-66.995621,11.000000,"No BLUFOR"};
+item27[] = {"",7,210,147.548706,-37.025665,155.548706,-29.025665,0.000000,""};
+item28[] = {"END",1,250,259.133301,-269.946014,349.133331,-219.946060,0.000000,"END"};
+item29[] = {"",7,210,300.137634,-37.826141,308.137634,-29.826141,0.000000,""};
+item30[] = {"Inactive",4,218,259.352966,-115.397003,349.352966,-65.397003,12.000000,"Inactive"};
+item31[] = {"TRUE",8,218,-287.610443,-580.289612,-197.610443,-530.289612,0.000000,"TRUE"};
+item32[] = {"Initial_Defence",2,250,-287.988678,-479.656769,-197.988663,-429.656769,0.000000,"Initial" \n "Defence"};
+item33[] = {"",7,210,146.269775,-458.031708,154.269775,-450.031708,0.000000,""};
+item34[] = {"BLUFOR_Found",4,218,-288.657104,-386.374939,-198.657104,-336.374939,0.000000,"BLUFOR" \n "Found"};
+item35[] = {"Select_Tactic",2,250,-287.965668,-290.028748,-197.965668,-240.028748,0.000000,"Select" \n "Tactic"};
+item36[] = {"Inactive",4,218,-61.003487,-270.245300,28.996521,-220.245239,1.000000,"Inactive"};
+item37[] = {"Is_Static",4,218,107.599983,59.907959,197.599976,109.907959,6.000000,"Is Static"};
+item38[] = {"Turn_Static",2,250,107.481812,166.658356,197.481827,216.658356,0.000000,"Turn Static"};
+item39[] = {"",7,210,149.092224,270.251343,157.092224,278.251373,0.000000,""};
+link0[] = {0,31};
+link1[] = {1,2};
+link2[] = {2,23};
+link3[] = {3,4};
+link4[] = {4,22};
+link5[] = {5,6};
+link6[] = {6,19};
+link7[] = {7,8};
+link8[] = {8,24};
+link9[] = {9,10};
+link10[] = {10,25};
+link11[] = {11,17};
+link12[] = {12,1};
+link13[] = {12,14};
+link14[] = {12,16};
+link15[] = {13,9};
+link16[] = {13,18};
+link17[] = {13,27};
+link18[] = {14,7};
+link19[] = {14,13};
+link20[] = {15,5};
+link21[] = {16,3};
+link22[] = {16,15};
+link23[] = {17,12};
+link24[] = {18,17};
+link25[] = {19,20};
+link26[] = {20,21};
+link27[] = {21,11};
+link28[] = {22,19};
+link29[] = {23,22};
+link30[] = {24,23};
+link31[] = {25,24};
+link32[] = {26,33};
+link33[] = {27,26};
+link34[] = {27,29};
+link35[] = {27,37};
+link36[] = {29,30};
+link37[] = {30,28};
+link38[] = {31,32};
+link39[] = {32,34};
+link40[] = {32,36};
+link41[] = {33,32};
+link42[] = {34,35};
+link43[] = {35,11};
+link44[] = {36,28};
+link45[] = {37,38};
+link46[] = {38,39};
+link47[] = {39,25};
+globals[] = {0.000000,0,0,0,0,640,480,1,72,6316128,1,-888.614929,738.256531,196.985901,-827.340637,1404,884,1};
+window[] = {2,-1,-1,-1,-1,915,156,1596,156,3,1422};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "tacticalAI";
+        class States
+        {
+                /*%FSM<STATE "START">*/
+                class START
+                {
+                        name = "START";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"params [""_groups"", [""_location"", locationNull]];" \n
+                         "_index = 0;" \n
+                         "_doComplete = false;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 31;
+                                        priority = 0.000000;
+                                        to="Initial_Defence";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Direct__Attack">*/
+                class Direct__Attack
+                {
+                        name = "Direct__Attack";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"[_group, _BLUFOR, _location] call TWC_Insurgency_OPFOR_fnc_doAttack;" \n
+                         "_tactic = [_tactic, 2, -1] call TWC_Insurgency_OPFOR_fnc_modifyTactic;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="Select_Group";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Skirmish">*/
+                class Skirmish
+                {
+                        name = "Skirmish";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"[_group, _BLUFOR, _location] call TWC_Insurgency_OPFOR_fnc_doSkirmish;" \n
+                         "_tactic = [_tactic, 1, -1] call TWC_Insurgency_OPFOR_fnc_modifyTactic;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="Select_Group";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Defend_Structure">*/
+                class Defend_Structure
+                {
+                        name = "Defend_Structure";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"[_group, _BLUFOR, _location] call TWC_Insurgency_OPFOR_fnc_doDefend;" \n
+                         "_tactic = [_tactic, 0, -1] call TWC_Insurgency_OPFOR_fnc_modifyTactic;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="Select_Group";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Flank">*/
+                class Flank
+                {
+                        name = "Flank";
+                        itemno = 8;
+                        init = /*%FSM<STATEINIT""">*/"[_group, _BLUFOR, _location] call TWC_Insurgency_OPFOR_fnc_doFlank;" \n
+                         "_tactic = [_tactic, 3, -1] call TWC_Insurgency_OPFOR_fnc_modifyTactic;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="Select_Group";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Mortar_Strike">*/
+                class Mortar_Strike
+                {
+                        name = "Mortar_Strike";
+                        itemno = 10;
+                        init = /*%FSM<STATEINIT""">*/"[_group, _BLUFOR] call TWC_Insurgency_OPFOR_fnc_doMortar;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="Select_Group";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Select_Group">*/
+                class Select_Group
+                {
+                        name = "Select_Group";
+                        itemno = 12;
+                        init = /*%FSM<STATEINIT""">*/"_group = _groups select _index;" \n
+                         "_index = (_index + 1) mod (count _groups);"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Inactive">*/
+                                class Inactive
+                                {
+                                        itemno = 30;
+                                        priority = 12.000000;
+                                        to="END";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_doComplete"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "No_BLUFOR">*/
+                                class No_BLUFOR
+                                {
+                                        itemno = 26;
+                                        priority = 11.000000;
+                                        to="Initial_Defence";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_BLUFOR = [_groups] call TWC_Insurgency_OPFOR_fnc_knownBLUFOR;" \n
+                                         "count _BLUFOR == 0"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Is_Static">*/
+                                class Is_Static
+                                {
+                                        itemno = 37;
+                                        priority = 6.000000;
+                                        to="Turn_Static";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_group] call TWC_Insurgency_OPFOR_fnc_isStatic;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Can_Mortar">*/
+                                class Can_Mortar
+                                {
+                                        itemno = 9;
+                                        priority = 5.000000;
+                                        to="Mortar_Strike";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_group] call TWC_Insurgency_OPFOR_fnc_canMortar;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Can_Flank">*/
+                                class Can_Flank
+                                {
+                                        itemno = 7;
+                                        priority = 4.000000;
+                                        to="Flank";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_group, _tactic] call TWC_Insurgency_OPFOR_fnc_canFlank;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Can_Attack">*/
+                                class Can_Attack
+                                {
+                                        itemno = 1;
+                                        priority = 3.000000;
+                                        to="Direct__Attack";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_group, _tactic] call TWC_Insurgency_OPFOR_fnc_canAttack;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Can_Skirmish">*/
+                                class Can_Skirmish
+                                {
+                                        itemno = 3;
+                                        priority = 2.000000;
+                                        to="Skirmish";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_group, _tactic] call TWC_Insurgency_OPFOR_fnc_canSkirmish;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Can_Defend">*/
+                                class Can_Defend
+                                {
+                                        itemno = 5;
+                                        priority = 1.000000;
+                                        to="Defend_Structure";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_group, _tactic] call TWC_Insurgency_OPFOR_fnc_canDefend;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "None_Free">*/
+                                class None_Free
+                                {
+                                        itemno = 18;
+                                        priority = 0.000000;
+                                        to="Select_Group";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "END">*/
+                class END
+                {
+                        name = "END";
+                        itemno = 28;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Initial_Defence">*/
+                class Initial_Defence
+                {
+                        name = "Initial_Defence";
+                        itemno = 32;
+                        init = /*%FSM<STATEINIT""">*/"[_groups, _location] call TWC_Insurgency_OPFOR_fnc_initialDefence;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Inactive">*/
+                                class Inactive
+                                {
+                                        itemno = 36;
+                                        priority = 1.000000;
+                                        to="END";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_doComplete"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "BLUFOR_Found">*/
+                                class BLUFOR_Found
+                                {
+                                        itemno = 34;
+                                        priority = 0.000000;
+                                        to="Select_Tactic";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_BLUFOR = [_groups] call TWC_Insurgency_OPFOR_fnc_knownBLUFOR;" \n
+                                         "count _BLUFOR > 0"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Select_Tactic">*/
+                class Select_Tactic
+                {
+                        name = "Select_Tactic";
+                        itemno = 35;
+                        init = /*%FSM<STATEINIT""">*/"_tactic = [_groups, _BLUFOR, _location] call TWC_Insurgency_OPFOR_fnc_selectTactic;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="Select_Group";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Turn_Static">*/
+                class Turn_Static
+                {
+                        name = "Turn_Static";
+                        itemno = 38;
+                        init = /*%FSM<STATEINIT""">*/"[_group, _BLUFOR] call TWC_Insurgency_OPFOR_fnc_turnStatic;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="Select_Group";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="START";
+        finalStates[] =
+        {
+                "END",
+        };
+};
+/*%FSM</COMPILE>*/

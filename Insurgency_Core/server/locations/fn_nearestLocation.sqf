@@ -1,0 +1,18 @@
+#include "..\..\includes\script_component.hpp"
+
+params ["_pos"];
+
+private _allLocations = TWC_Insurgency_Locations;
+private _distance = INFINITE_DISTANCE;
+private _location = locationNull;
+
+{
+	private _locationPos = locationPosition (_x select 0);
+	private _checkDistance = _locationPos distance2d _pos;
+	if (_checkDistance < _distance) then {
+		_location = _x select 0;
+		_distance = _checkDistance;
+	};
+} forEach TWC_Insurgency_Locations;
+
+_location

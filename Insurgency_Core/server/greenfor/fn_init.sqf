@@ -1,0 +1,1 @@
+TWC_Insurgency_GREENFOR_Checkpoints = [];

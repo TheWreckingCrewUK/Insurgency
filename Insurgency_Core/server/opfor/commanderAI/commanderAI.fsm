@@ -1,0 +1,456 @@
+/*%FSM<COMPILE "F:\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, commanderAI">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Loop_Start",3,250,-365.797363,-535.183960,-275.797394,-485.183502,0.000000,"Loop Start"};
+item1[] = {"TRUE",8,218,-365.779266,-425.878662,-275.779266,-375.878693,0.000000,"TRUE"};
+item2[] = {"Towns",2,250,-365.236176,-314.783478,-275.236176,-264.783478,0.000000,"Towns"};
+item3[] = {"Checkpoints",2,250,-147.409119,-309.933746,-57.408905,-259.933746,0.000000,"Checkpoints"};
+item4[] = {"Patrol_Bases_",2,250,198.462616,-317.398315,288.462646,-267.398315,0.000000,"" \n "Patrol Bases" \n ""};
+item5[] = {"Attack_CP__",4,218,-147.054352,-200.971985,-57.054718,-150.971954,1.000000,"" \n "Attack" \n "CP?" \n ""};
+item6[] = {"Reinforce_Town_s",4,218,-366.763611,-206.443512,-276.763794,-156.443451,1.000000,"" \n "Reinforce" \n "Town(s)?" \n ""};
+item7[] = {"",7,210,-215.959167,-291.869537,-207.959152,-283.869537,0.000000,""};
+item8[] = {"Attack_PB_",4,218,198.102844,-205.450348,288.102844,-155.450348,1.000000,"Attack" \n "PB?"};
+item9[] = {"TRUE",8,218,-366.435516,-2.056732,-276.435913,47.943268,0.000000,"TRUE"};
+item10[] = {"Camps",2,250,375.336212,-314.092865,465.336182,-264.092865,0.000000,"Camps"};
+item11[] = {"Create_Camp_",4,218,375.926605,-189.076111,465.926575,-139.076111,1.000000,"Create" \n "Camp?"};
+item12[] = {"IEDs",2,250,19.984131,-311.978394,109.984131,-261.978394,0.000000,"IEDs"};
+item13[] = {"Plant_IED_",4,218,20.079773,-200.665955,110.079773,-150.665985,1.000000,"Plant" \n "IED?"};
+item14[] = {"Do_Reinforce",2,250,-367.453278,-101.093872,-277.452789,-51.093872,0.000000,"Do" \n "Reinforce"};
+item15[] = {"Plant_IED",2,250,21.317627,-59.344696,111.317627,-9.344696,0.000000,"Plant IED"};
+item16[] = {"Attack_CP_",2,250,-147.326202,-58.509216,-57.326172,-8.509216,0.000000,"" \n "Attack" \n "CP" \n ""};
+item17[] = {"Attack_PB",2,250,197.834229,-64.640320,287.834229,-14.640320,0.000000,"Attack" \n "PB"};
+item18[] = {"Create_Camp",2,250,377.107971,-66.244415,467.107971,-16.244415,0.000000,"Create" \n "Camp"};
+item19[] = {"START",0,250,-543.402588,-535.277832,-453.402313,-485.277679,0.000000,"START"};
+item20[] = {"",7,210,-26.066284,-35.500824,-18.066284,-27.500824,0.000000,""};
+item21[] = {"",7,210,-27.025696,-290.682648,-19.025696,-282.682648,0.000000,""};
+item22[] = {"",7,210,155.247803,-295.479675,163.247803,-287.479675,0.000000,""};
+item23[] = {"",7,210,154.288635,-38.379211,162.288635,-30.379211,0.000000,""};
+item24[] = {"",7,210,324.089905,-44.135193,332.089905,-36.135193,0.000000,""};
+item25[] = {"",7,210,325.049377,-293.560944,333.049377,-285.560944,0.000000,""};
+item26[] = {"",7,210,534.183044,-513.247559,542.183044,-505.247528,0.000000,""};
+item27[] = {"",7,210,534.183411,-44.135132,542.183411,-36.135132,0.000000,""};
+item28[] = {"_",8,218,-44.129883,-189.790649,-1.137085,-163.773926,0.000000,""};
+item29[] = {"_",8,218,137.183411,-191.709320,180.176208,-165.692596,0.000000,""};
+item30[] = {"_",8,218,306.984924,-194.587250,349.977722,-168.570526,0.000000,""};
+item31[] = {"_",8,218,517.078430,-211.855164,560.071228,-185.838440,0.000000,""};
+item32[] = {"_",8,218,-431.699158,-523.637573,-388.706360,-497.620789,0.000000,""};
+item33[] = {"",7,210,-324.641357,97.890625,-316.641357,105.890633,0.000000,""};
+item34[] = {"",7,210,-213.132324,95.928406,-205.132324,103.928398,0.000000,""};
+item35[] = {"TRUE",8,218,-477.717834,0.821259,-387.718109,50.821259,0.000000,"TRUE"};
+item36[] = {"",7,210,-436.883087,-293.428925,-428.883026,-285.428925,0.000000,""};
+item37[] = {"",7,210,-435.923737,96.931335,-427.923676,104.931343,0.000000,""};
+item38[] = {"No_CPs",4,218,-128.597046,-372.193970,-75.703125,-340.245575,2.000000,"No CPs"};
+item39[] = {"_",8,218,43.561920,-371.624878,86.554718,-345.608154,0.000000,""};
+item40[] = {"_",8,218,222.563843,-376.859985,265.556641,-350.843262,0.000000,""};
+item41[] = {"_",8,218,400.999207,-368.225983,443.992004,-342.209259,0.000000,""};
+item42[] = {"",7,210,324.960571,-367.994476,332.960571,-359.994476,0.000000,""};
+item43[] = {"",7,210,155.771240,-362.585724,163.771240,-354.585724,0.000000,""};
+item44[] = {"",7,210,-26.931038,-360.667084,-18.931023,-352.667084,0.000000,""};
+item45[] = {"",7,210,534.255066,-359.398499,542.255066,-351.398499,0.000000,""};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,6};
+link3[] = {2,36};
+link4[] = {3,5};
+link5[] = {3,38};
+link6[] = {4,8};
+link7[] = {4,40};
+link8[] = {5,16};
+link9[] = {6,14};
+link10[] = {7,3};
+link11[] = {8,17};
+link12[] = {9,33};
+link13[] = {10,11};
+link14[] = {10,41};
+link15[] = {11,18};
+link16[] = {12,13};
+link17[] = {12,39};
+link18[] = {13,15};
+link19[] = {14,9};
+link20[] = {15,23};
+link21[] = {16,20};
+link22[] = {17,24};
+link23[] = {18,27};
+link24[] = {19,32};
+link25[] = {20,28};
+link26[] = {21,12};
+link27[] = {22,4};
+link28[] = {23,29};
+link29[] = {24,30};
+link30[] = {25,10};
+link31[] = {26,0};
+link32[] = {27,31};
+link33[] = {28,21};
+link34[] = {29,22};
+link35[] = {30,25};
+link36[] = {31,45};
+link37[] = {32,0};
+link38[] = {33,34};
+link39[] = {34,7};
+link40[] = {35,37};
+link41[] = {36,35};
+link42[] = {37,33};
+link43[] = {38,44};
+link44[] = {39,43};
+link45[] = {40,42};
+link46[] = {41,45};
+link47[] = {42,25};
+link48[] = {43,22};
+link49[] = {44,21};
+link50[] = {45,26};
+globals[] = {0.000000,0,0,0,0,640,480,1,115,6316128,1,-750.498718,651.509399,212.561157,-673.973328,1398,884,1};
+window[] = {2,-1,-1,-32000,-32000,785,26,1466,26,3,1416};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "commanderAI";
+        class States
+        {
+                /*%FSM<STATE "Loop_Start">*/
+                class Loop_Start
+                {
+                        name = "Loop_Start";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Towns";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Towns">*/
+                class Towns
+                {
+                        name = "Towns";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"_townIndex = _townIndex mod (count TWC_Insurgency_Locations);" \n
+                         "_locationInfo = TWC_Insurgency_Locations select _townIndex;" \n
+                         "_location = _locationInfo select 0;" \n
+                         "_townIndex = _townIndex + 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Reinforce_Town_s">*/
+                                class Reinforce_Town_s
+                                {
+                                        itemno = 6;
+                                        priority = 1.000000;
+                                        to="Do_Reinforce";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_location] call TWC_Insurgency_OPFOR_fnc_getReinforce;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 35;
+                                        priority = 0.000000;
+                                        to="Checkpoints";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Checkpoints">*/
+                class Checkpoints
+                {
+                        name = "Checkpoints";
+                        itemno = 3;
+                        init = /*%FSM<STATEINIT""">*/"_checkpointIndex = if (count TWC_Insurgency_GREENFOR_Checkpoints > 0) then {" \n
+                         "	_checkpointIndex mod (count TWC_Insurgency_GREENFOR_Checkpoints);" \n
+                         "} else {" \n
+                         "	0" \n
+                         "};" \n
+                         "_checkpoint = TWC_Insurgency_GREENFOR_Checkpoints select _checkpointIndex;" \n
+                         "_checkpointIndex = _checkpointIndex + 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "No_CPs">*/
+                                class No_CPs
+                                {
+                                        itemno = 38;
+                                        priority = 2.000000;
+                                        to="IEDs";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"count TWC_Insurgency_GREENFOR_Checkpoints == 0;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Attack_CP__">*/
+                                class Attack_CP__
+                                {
+                                        itemno = 5;
+                                        priority = 1.000000;
+                                        to="Attack_CP_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_checkpoint] call TWC_Insurgency_OPFOR_fnc_getCheckpoint;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Patrol_Bases_">*/
+                class Patrol_Bases_
+                {
+                        name = "Patrol_Bases_";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Attack_PB_">*/
+                                class Attack_PB_
+                                {
+                                        itemno = 8;
+                                        priority = 1.000000;
+                                        to="Attack_PB";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"//[_patrolBase] call TWC_Insurgency_OPFOR_fnc_getPatrolBase;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 40;
+                                        priority = 0.000000;
+                                        to="Camps";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Camps">*/
+                class Camps
+                {
+                        name = "Camps";
+                        itemno = 10;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Create_Camp_">*/
+                                class Create_Camp_
+                                {
+                                        itemno = 11;
+                                        priority = 1.000000;
+                                        to="Create_Camp";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_location] call TWC_Insurgency_OPFOR_fnc_getCamp;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 41;
+                                        priority = 0.000000;
+                                        to="Loop_Start";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "IEDs">*/
+                class IEDs
+                {
+                        name = "IEDs";
+                        itemno = 12;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Plant_IED_">*/
+                                class Plant_IED_
+                                {
+                                        itemno = 13;
+                                        priority = 1.000000;
+                                        to="Plant_IED";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"[_location] call TWC_Insurgency_OPFOR_fnc_getIED;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 39;
+                                        priority = 0.000000;
+                                        to="Patrol_Bases_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Do_Reinforce">*/
+                class Do_Reinforce
+                {
+                        name = "Do_Reinforce";
+                        itemno = 14;
+                        init = /*%FSM<STATEINIT""">*/"[_location] call TWC_Insurgency_OPFOR_fnc_doReinforce;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 9;
+                                        priority = 0.000000;
+                                        to="Checkpoints";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Plant_IED">*/
+                class Plant_IED
+                {
+                        name = "Plant_IED";
+                        itemno = 15;
+                        init = /*%FSM<STATEINIT""">*/"[_location] call TWC_Insurgency_OPFOR_fnc_doIED;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 29;
+                                        priority = 0.000000;
+                                        to="Patrol_Bases_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Attack_CP_">*/
+                class Attack_CP_
+                {
+                        name = "Attack_CP_";
+                        itemno = 16;
+                        init = /*%FSM<STATEINIT""">*/"[_checkpoint] call TWC_Insurgency_OPFOR_fnc_doCheckpoint;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 28;
+                                        priority = 0.000000;
+                                        to="IEDs";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Attack_PB">*/
+                class Attack_PB
+                {
+                        name = "Attack_PB";
+                        itemno = 17;
+                        init = /*%FSM<STATEINIT""">*/"//[_patrolBase] call TWC_Insurgency_OPFOR_fnc_doPatrolBase;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 30;
+                                        priority = 0.000000;
+                                        to="Camps";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Create_Camp">*/
+                class Create_Camp
+                {
+                        name = "Create_Camp";
+                        itemno = 18;
+                        init = /*%FSM<STATEINIT""">*/"[_location] call TWC_Insurgency_OPFOR_fnc_doCamp;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 31;
+                                        priority = 0.000000;
+                                        to="Loop_Start";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "START">*/
+                class START
+                {
+                        name = "START";
+                        itemno = 19;
+                        init = /*%FSM<STATEINIT""">*/"_townIndex = 0;" \n
+                         "_checkpointIndex = 0;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "_">*/
+                                class _
+                                {
+                                        itemno = 32;
+                                        priority = 0.000000;
+                                        to="Loop_Start";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="START";
+        finalStates[] =
+        {
+        };
+};
+/*%FSM</COMPILE>*/

@@ -1,0 +1,5 @@
+call TWC_Insurgency_Locations_fnc_init;
+call TWC_Insurgency_BLUFOR_fnc_init;
+call TWC_Insurgency_OPFOR_fnc_init;
+call TWC_Insurgency_GREENFOR_fnc_init;
+call TWC_Insurgency_Save_fnc_init;

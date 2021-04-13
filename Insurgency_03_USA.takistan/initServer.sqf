@@ -1,0 +1,1 @@
+#include "Insurgency_Core\server\init.sqf"

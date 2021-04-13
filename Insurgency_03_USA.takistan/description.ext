@@ -1,0 +1,302 @@
+#define NAME "Insurgency"
+onLoadName = NAME;
+briefingName = NAME;
+
+#include "Insurgency_Core\includes\description.hpp"
+#include "Insurgency_Core\includes\loadouts\usa_2003\USA_2003.hpp"
+
+class TWC_Insurgency {
+	//Locations
+	invalidTowns[] = {
+		"military base",
+		"Nagara-1 oilfield",
+		"Naygul valley",
+		"Lalezar",
+		"Bala pass",
+		"Loy Manara oilfield",
+		"airfield",
+		"Naran Darre pass",
+		"Darbang pass",
+		"Sar-e Sang pass",
+		"Sagram",
+		"Par-e Siah oilfield",
+		"mine",
+		"Nar"
+	};
+	strongholdCount = 3;
+	cacheCount = 5;
+	caches[] = {
+		"CUP_TKSpecialWeapons_EP1",
+		"CUP_TKLaunchers_EP1",
+		"CUP_TKOrdnanceBox_EP1",
+		"CUP_TKBasicWeapons_EP1",
+		"CUP_TKBasicAmmunitionBox_EP1"
+	};
+	civilians[] = {
+		"CUP_C_TK_Man_04",
+		"CUP_C_TK_Man_04_Jack",
+		"CUP_C_TK_Man_04_Waist",
+		"CUP_C_TK_Man_07",
+		"CUP_C_TK_Man_07_Coat",
+		"CUP_C_TK_Man_07_Waist",
+		"CUP_C_TK_Man_08",
+		"CUP_C_TK_Man_08_Jack",
+		"CUP_C_TK_Man_05_Coat",
+		"CUP_C_TK_Man_05_Jack",
+		"CUP_C_TK_Man_06_Coat",
+		"CUP_C_TK_Man_06_Jack",
+		"CUP_C_TK_Man_06_Waist",
+		"CUP_C_TK_Man_02",
+		"CUP_C_TK_Man_01_Coat",
+		"CUP_C_TK_Man_03_Coat",
+		"CUP_C_TK_Man_03_Jack",
+		"CUP_C_TK_Man_03_Waist"
+	};
+	civVehicles[] = {
+		"CUP_C_S1203_CIV",
+		"CUP_C_Volha_Gray_TKCIV",
+		"CUP_C_Volha_Blue_TKCIV",
+		"CUP_C_Volha_Limo_TKCIV",
+		"CUP_O_Hilux_unarmed_TK_CIV",
+		"CUP_O_Hilux_unarmed_TK_CIV_Red",
+		"CUP_O_Hilux_unarmed_TK_CIV_Tan",
+		"CUP_O_Hilux_unarmed_TK_CIV_White",
+		"CUP_C_LR_Transport_CTK",
+		"CUP_C_UAZ_Unarmed_TK_CIV",
+		"CUP_C_UAZ_Open_TK_CIV",
+		"CUP_C_Lada_TK_CIV",
+		"CUP_C_Lada_GreenTK_CIV",
+		"CUP_C_Lada_TK2_CIV"
+	};
+	
+	//BLUFOR
+	supplyBLUFOR = 100;
+	playerSide = 1;
+	pilot = "CUP_B_US_Pilot";
+	patrolBaseNames[] = {
+		"Sherman",
+		"Sheridan",
+		"Grant",
+		"Frémont",
+		"McClellan",
+		"Du Pont",
+		"Hunt",
+		"Bragg",
+		"Polk",
+		"Stuart",
+		"Jackson",
+		"Lee"
+	};
+	blufor_lightVehicles[] = {
+		"CUP_B_HMMWV_Ambulance_USA",
+		"CUP_B_HMMWV_SOV_USA",
+		"CUP_B_HMMWV_SOV_M2_USA",
+		"CUP_B_HMMWV_M2_USA",
+		"CUP_B_HMMWV_Unarmed_USA",
+		"CUP_B_HMMWV_MK19_USA"
+	};
+	blufor_lightVehicles_cost[] = {
+		10,
+		20,
+		20,
+		15,
+		5,
+		15
+	};
+	blufor_helicopters[] = {
+		"CUP_B_UH60M_US",
+		"CUP_B_UH60M_FFV_US",
+		"CUP_B_UH60M_Unarmed_US",
+		"CUP_B_UH60M_Unarmed_FFV_US",
+		"CUP_B_UH60M_Unarmed_FFV_MEV_US",
+		"CUP_B_MH60L_DAP_4x_US",
+		"CUP_B_MH60L_DAP_2x_US",
+		"CUP_B_CH47F_USA",
+		"CUP_B_CH47F_VIV_USA",
+		"CUP_B_AH64_DL_USA"
+	};
+	blufor_helicopters_cost[] = {
+		40,
+		40,
+		20,
+		20,
+		20,
+		60,
+		60,
+		30,
+		30,
+		80
+	};
+	blufor_armour[] = {
+		"CUP_B_M1126_ICV_M2_Desert",
+		"CUP_B_M1126_ICV_MK19_Desert",
+		"CUP_B_M1128_MGS_Desert",
+		"CUP_B_M113_desert_USA",
+		"CUP_B_M2Bradley_USA_D",
+		"CUP_B_M1A1_DES_US_Army"
+	};
+	blufor_armour_cost[] = {
+		30,
+		30,
+		50,
+		20,
+		60,
+		80
+	};
+	blufor_planes[] = {
+		"CUP_B_A10_DYN_USA",
+		"CUP_B_C130J_USMC",
+		"CUP_B_C130J_Cargo_USMC"
+	};
+	blufor_planes_cost[] = {
+		80,
+		50,
+		50
+	};
+	
+	//OPFOR
+	supplyOPFOR = 1200;
+	manpowerOPFOR = 300;
+	enemySide = 0;
+	warlord = "CUP_O_TK_INS_Commander";
+	initIEDs = 60;
+	typeIEDs[] = {
+		"ACE_IEDLandBig_Range",
+		"ACE_IEDUrbanBig_Range",
+		"ACE_IEDLandSmall_Range",
+		"ACE_IEDUrbanSmall_Range"
+	};
+	itemsIEDs[] = {
+		"IEDUrbanBig_Remote_Mag",
+		"IEDLandBig_Remote_Mag",
+		"IEDUrbanSmall_Remote_Mag",
+		"IEDLandSmall_Remote_Mag"
+	};
+	opfor_section[] = {
+		"CUP_O_TK_INS_Soldier_TL",
+		"CUP_O_TK_INS_Soldier_MG",
+		"CUP_O_TK_INS_Soldier_GL",
+		"CUP_O_TK_INS_Soldier_AT",
+		"CUP_O_TK_INS_Soldier",
+		"CUP_O_TK_INS_Soldier_MG",
+		"CUP_O_TK_INS_Soldier_AR",
+		"CUP_O_TK_INS_Sniper",
+		"CUP_O_TK_INS_Soldier_Enfield",
+		"CUP_O_TK_INS_Soldier_FNFAL"
+	};
+	opfor_sectionAT[] = {
+		"CUP_O_TK_INS_Soldier_TL",
+		"CUP_O_TK_INS_Soldier_AT",
+		"CUP_O_TK_INS_Soldier_AT",
+		"CUP_O_TK_INS_Soldier"
+	};
+	opfor_sectionAA[] = {
+		"CUP_O_TK_INS_Soldier_AA",
+		"CUP_O_TK_INS_Soldier_AA",
+		"CUP_O_TK_INS_Soldier_AA"
+	};
+	opfor_sectionMG[] = {
+		"CUP_O_TK_INS_Soldier_GL",
+		"CUP_O_TK_INS_Soldier_MG",
+		"CUP_O_TK_INS_Soldier_MG",
+		"CUP_O_TK_INS_Soldier_Enfield",
+		"CUP_O_TK_INS_Soldier_FNFAL"
+	};
+	opfor_sniper[] = {
+		"CUP_O_TK_INS_Sniper",
+		"CUP_O_TK_INS_Sniper"
+	};
+	opfor_staticMG[] = {
+		"CUP_O_DSHKM_TK_INS",
+		"CUP_O_DSHkM_MiniTriPod_TK_INS"
+	};
+	opfor_staticAA[] = {
+		"CUP_O_ZU23_TK_INS"
+	};
+	opfor_staticAT[] = {
+		"CUP_O_SPG9_TK_INS"
+	};
+	opfor_staticMortar[] = {
+		"CUP_O_2b14_82mm_TK_INS",
+		"CUP_O_2b14_82mm_TK_INS"
+	};
+	opfor_technicals[] = {
+		"CUP_O_Hilux_DSHKM_TK_INS",
+		"CUP_O_Hilux_M2_TK_INS",
+		"CUP_O_Hilux_SPG9_TK_INS",
+		"CUP_O_Hilux_zu23_TK_INS",
+		"CUP_O_LR_SPG9_TKM",
+		"CUP_O_LR_MG_TKM"
+	};
+	opfor_trucks[] = {
+		"CUP_O_V3S_Open_TKM",
+		"CUP_O_V3S_Covered_TKM"
+	};
+	
+	//GREENFOR
+	friendlySide = 2;
+	checkpointNames[] = {
+		"Alpha",
+		"Bravo",
+		"Charlie",
+		"Delta",
+		"Echo",
+		"Foxtrot",
+		"Golf",
+		"Hotel",
+		"India",
+		"Juliet",
+		"Kilo",
+		"Lima",
+		"Mike",
+		"November",
+		"Oscar",
+		"Papa",
+		"Quebec",
+		"Romeo",
+		"Sierra",
+		"Tango",
+		"Uniform",
+		"Victor",
+		"Whiskey",
+		"X-ray",
+		"Yankee",
+		"Zulu"
+	};
+	greenfor_section[] = {
+		"CUP_O_TK_Soldier_SL",
+		"CUP_O_TK_Soldier_MG",
+		"CUP_O_TK_Soldier_AMG",
+		"CUP_O_TK_Soldier_AT",
+		"CUP_O_TK_Soldier_AAT",
+		"CUP_O_TK_Soldier",
+		"CUP_O_TK_Soldier_MG",
+		"CUP_O_TK_Soldier_AMG",
+		"CUP_O_TK_Soldier_LAT"
+	};
+	greenfor_sectionMG[] = {
+		"CUP_O_TK_Soldier_SL",
+		"CUP_O_TK_Soldier_MG",
+		"CUP_O_TK_Soldier_AMG",
+		"CUP_O_TK_Soldier_LAT"
+	};
+	greenfor_sectionAT[] = {
+		"CUP_O_TK_Soldier_SL",
+		"CUP_O_TK_Soldier_AT",
+		"CUP_O_TK_Soldier_AAT",
+		"CUP_O_TK_Soldier_LAT"
+	};
+	greenfor_technicals[] = {
+		"CUP_O_LR_MG_TKA",
+		"CUP_O_LR_SPG9_TKA"
+	};
+	greenfor_trucks[] = {
+		"CUP_O_V3S_Open_TKA",
+		"CUP_O_V3S_Covered_TKA"
+	};
+	greenfor_apcs[] = {
+		"CUP_O_M113_TKA",
+		"CUP_O_MTLB_pk_TKA",
+		"CUP_O_BTR60_TK"
+	};
+};

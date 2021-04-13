@@ -1,0 +1,33 @@
+#include "..\..\includes\script_component.hpp"
+
+params ["_stronghold"];
+
+private _enemySide = call TWC_Insurgency_OPFOR_fnc_enemySide;
+
+private _strongholdPos = locationPosition _stronghold;
+private _strongholdSize = size _stronghold;
+private _radius = (_strongholdSize call BIS_fnc_arithmeticMean) * 2;
+
+private _nearbyEnemies = [2000, _strongholdPos] call TWC_Insurgency_OPFOR_fnc_nearbyEnemies;
+
+private _spawnedGroups = [];
+{
+	_x params ["_pos", "_units"];
+	private _group = [_pos, _enemySide, _units] call BIS_fnc_spawnGroup;
+	
+	if ((_units select 0) isKindOf "StaticWeapon") then {
+		private _static = vehicle leader _group;
+		_static setPosASL _pos;
+	};
+	
+	_spawnedGroups pushBack _group;
+	
+	[_pos] call TWC_Insurgency_OPFOR_fnc_removeFromCache;
+} forEach _nearbyEnemies;
+
+private _fsm = [_spawnedGroups, _stronghold] execFSM "Insurgency_Core\server\OPFOR\tacticalAI\tacticalAI.fsm";
+
+//Storing when the stronghold was activated and what enemies were activated with it
+missionNameSpace setVariable [text _stronghold, [[_spawnedGroups, _fsm], CBA_missionTime]];
+
+DEBUG_LOG("Activated Stronghold " + text _stronghold);
