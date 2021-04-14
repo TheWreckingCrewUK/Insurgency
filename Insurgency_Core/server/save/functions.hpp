@@ -5,5 +5,6 @@ class TWC_Insurgency_Save {
 		
 		class init				{};
 		class save				{};
+		class checkVictory		{};
 	};
 };

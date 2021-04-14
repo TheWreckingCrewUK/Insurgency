@@ -8,6 +8,11 @@ addMissionEventHandler ["HandleDisconnect", {
 	saveGame;
 	private _playerCount = count (call BIS_fnc_listPlayers);
 	if (_playerCount isEqualTo 0) then {
-		["END3", false, 5, false, false] spawn BIS_fnc_endMission;
+		"Paused" call BIS_fnc_endMissionServer;
 	};
 }];
+
+//Decide if we have won on event.
+["TWC_Insurgency_Save_checkVictory", {
+	call TWC_Insurgency_Save_fnc_checkVictory;
+}] call CBA_fnc_addEventHandler;

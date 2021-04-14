@@ -5,3 +5,5 @@ _locationArray params ["_locationInfo", "_locationIndex"];
 _locationInfo params ["_location", "_isStronghold", "_hasCache", "_allegiance"];
 
 TWC_Insurgency_Locations set [_locationIndex, [_location, _isStronghold, !_hasCache, _allegiance]];
+
+["TWC_Insurgency_Save_checkVictory", []] call CBA_fnc_serverEvent;

@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=818;
+		nextID=822;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5998.7739,104.19616,11577.602};
-		dir[]={-0.11301044,-0.58034021,-0.80649483};
-		up[]={-0.080533631,0.81437421,-0.57472527};
-		aside[]={-0.99032474,-7.4505806e-009,0.13876969};
+		pos[]={5762.6836,91.584595,11292.618};
+		dir[]={0.078971155,-0.055993099,0.99533546};
+		up[]={0.0044295252,0.99843156,0.055830158};
+		aside[]={0.99689966,-5.6880526e-007,-0.079096891};
 	};
 };
 binarizationWanted=0;
@@ -62,13 +62,15 @@ addons[]=
 	"CUP_Weapons_ACE_compat",
 	"A3_Weapons_F_Items",
 	"ace_medical",
-	"CUP_Weapons_Grenades"
+	"CUP_Weapons_Grenades",
+	"CUP_AirVehicles_UH60",
+	"CUP_AirVehicles_CH47"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=26;
+		items=28;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -224,6 +226,16 @@ class AddonsMetaData
 			className="CUP_Weapons_Grenades";
 			name="CUP_Weapons_Grenades";
 		};
+		class Item26
+		{
+			className="CUP_AirVehicles_UH60";
+			name="CUP_AirVehicles_UH60";
+		};
+		class Item27
+		{
+			className="CUP_AirVehicles_CH47";
+			name="CUP_AirVehicles_CH47";
+		};
 	};
 };
 randomSeed=2387821;
@@ -254,7 +266,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=70;
+		items=73;
 		class Item0
 		{
 			dataType="Marker";
@@ -3597,6 +3609,54 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item70
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5944.3867,84.910912,11478.967};
+				angles[]={-0,5.5100913,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=819;
+			type="CUP_B_UH60M_US";
+		};
+		class Item71
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5929.0342,84.910912,11463.638};
+				angles[]={-0,5.5100913,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=820;
+			type="CUP_B_UH60M_US";
+		};
+		class Item72
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5909.999,86.590446,11446.828};
+				angles[]={-0,5.4996567,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=821;
+			type="CUP_B_CH47F_USA";
 		};
 	};
 };
