@@ -25,4 +25,18 @@ class CfgRoles {
 		displayName = "Medic";
 		icon = "";
 	};
+	
+	class Helicopter_Pilot {
+		displayName = "Helicopter Pilot";
+		icon = "";
+	};
+	
+	class Armour_Commander {
+		displayName = "Armour Commander";
+		icon = "";
+	};
+	class Armour_Crew {
+		displayName = "Armour Crew";
+		icon = "";
+	};
 };

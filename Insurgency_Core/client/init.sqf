@@ -1,41 +1,42 @@
 #include "..\includes\script_component.hpp"
 
-call TWC_Insurgency_playerLoop_fnc_init;
-call TWC_Insurgency_Actions_fnc_init;
-
 //Adds the loadouts for the players to select.
 private _type = roleDescription player;
-if (_type isEqualTo "") exitWith {DEBUG_LOG("Cannot initialise loadout/variables in SP")};
-_type = (_type splitString "@") select 0;
-{
-	private _config = configName _x;
-	private _role = getText (missionConfigFile >> "CfgRespawnInventory" >> _config >> "role");
-	private _name = getText (missionConfigFile >> "CfgRoles" >> _role >> "displayName");
-	if (_name isEqualTo _type) then {
-		[player, _config] call BIS_fnc_addRespawnInventory;
-		
-		//Also set special roles if they are
-		private _isMedic = getNumber (missionConfigFile >> "CfgRespawnInventory" >> _config >> "medic");
-		if (_isMedic isEqualTo 1) then {
-			player setUnitTrait ["medic", true];
+if (_type isNotEqualTo "") then {
+	_type = (_type splitString "@") select 0;
+	
+	{
+		private _config = configName _x;
+		private _role = getText (missionConfigFile >> "CfgRespawnInventory" >> _config >> "role");
+		private _name = getText (missionConfigFile >> "CfgRoles" >> _role >> "displayName");
+		if (_name isEqualTo _type) then {
+			[player, _config] call BIS_fnc_addRespawnInventory;
+			
+			//Also set special roles if they are
+			private _isMedic = getNumber (missionConfigFile >> "CfgRespawnInventory" >> _config >> "medic");
+			if (_isMedic isEqualTo 1) then {
+				player setUnitTrait ["medic", true];
+			};
+			
+			private _isArmour = getNumber (missionConfigFile >> "CfgRespawnInventory" >> _config >> "armour");
+			if (_isArmour isEqualTo 1) then {
+				player setVariable ["TWC_Insurgency_isArmour", true];
+			};
+			
+			private _isHeli = getNumber (missionConfigFile >> "CfgRespawnInventory" >> _config >> "heli");
+			if (_isHeli isEqualTo 1) then {
+				player setVariable ["TWC_Insurgency_isHeli", true];
+			};
+			
+			private _isPlane = getNumber (missionConfigFile >> "CfgRespawnInventory" >> _config >> "plane");
+			if (_isPlane isEqualTo 1) then {
+				player setVariable ["TWC_Insurgency_isPlane", true];
+			};
 		};
-		
-		private _isArmour = getNumber (missionConfigFile >> "CfgRespawnInventory" >> _config >> "armour");
-		if (_isArmour isEqualTo 1) then {
-			player setVariable ["TWC_Insurgency_isArmour", true];
-		};
-		
-		private _isHeli = getNumber (missionConfigFile >> "CfgRespawnInventory" >> _config >> "heli");
-		if (_isHeli isEqualTo 1) then {
-			player setVariable ["TWC_Insurgency_isHeli", true];
-		};
-		
-		private _isPlane = getNumber (missionConfigFile >> "CfgRespawnInventory" >> _config >> "plane");
-		if (_isPlane isEqualTo 1) then {
-			player setVariable ["TWC_Insurgency_isPlane", true];
-		};
-	};
-} forEach ("true" configClasses (missionConfigFile >> "CfgRespawnInventory"));
+	} forEach ("true" configClasses (missionConfigFile >> "CfgRespawnInventory"));
+} else {
+	DEBUG_LOG("Cannot initialise loadout/variables in SP")
+};
 
 //Adds the possible spawn locations.
 [player, "base", markerText "base"] call BIS_fnc_addRespawnPosition;
@@ -50,3 +51,6 @@ player createDiaryRecord ["Insurgency", ["Supply", "Ammunition and vehicles are 
 player createDiaryRecord ["Insurgency", ["Local Forces", "Local forces need to be established, trained, and supplied in order to provide security to the region in the long term. While they are not capable of direct action against the insurgents, they are good enough to set up checkpoints and defenses at towns or bases."]];
 player createDiaryRecord ["Insurgency", ["Patrol Bases", "Patrol Bases can be established wherever you want. These function as forward reinforcement points, but are juicy targets for the insurgent forces."]];
 player createDiaryRecord ["Insurgency", ["Victory", "Victory is achieved by pacifying the local populace, building a good security force, and destroying the insurgent ability to fight."]];
+
+call TWC_Insurgency_playerLoop_fnc_init;
+call TWC_Insurgency_Actions_fnc_init;

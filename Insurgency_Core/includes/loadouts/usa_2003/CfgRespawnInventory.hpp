@@ -89,6 +89,18 @@ class CfgRespawnInventory {
 	class Squad_Leader: Rifleman_AT_M136 {
 		displayName = "Squad Leader";
 		role = "Squad_Leader";
+		linkedItems[] = {
+			"CUP_V_B_Interceptor_Rifleman_M81",
+			"CUP_H_PASGTv2_DCU",
+			"CUP_optic_CompM2_low",
+			"CUP_acc_ANPEQ_2_Black_Top",
+			"CUP_NVG_PVS14",
+			"ItemMap",
+			"ItemcTab",
+			"ItemCompass",
+			"ItemWatch",
+			"ItemRadio"
+		};
 		weapons[] = {
 			"CUP_arifle_M4A1_GL_carryhandle",
 			"ACE_VectorDay"
@@ -123,6 +135,70 @@ class CfgRespawnInventory {
 			"ACE_personalAidKit",
 			"TWC_Item_Medical_SutureKit_25",
 			"ACRE_PRC148"
+		};
+	};
+	
+	//Rotary-Wing Pilot
+	class Helicopter_Pilot: Rifleman_AT_M136 {
+		displayName = "Helicopter Pilot";
+		role = "Helicopter_Pilot";
+		heli = 1;
+		uniformClass = "CUP_U_B_USMC_PilotOverall";
+		backpack = "";
+		linkedItems[] = {
+			"CUP_V_B_PilotVest",
+			"CUP_H_SPH4",
+			"CUP_NVG_PVS7",
+			"ItemMap",
+			"ItemcTab",
+			"ItemCompass",
+			"ItemWatch",
+			"ItemRadio"
+		};
+		weapons[] = {
+			"CUP_arifle_M4A1"
+		};
+		magazines[] = {
+			MAG_3("CUP_30Rnd_556x45_Stanag"),
+			MAG_2("SmokeShell"),
+			MAG_2("SmokeShellGreen")
+		};
+	};
+	
+	//Armour Crew
+	class Armour_Commander: Rifleman_AT_M136 {
+		displayName = "Armour Commander";
+		role = "Armour_Commander";
+		armour = 1;
+		backpack = "";
+		linkedItems[] = {
+			"CUP_V_B_Interceptor_Base_Olive",
+			"CUP_H_CVC",
+			"ItemMap",
+			"ItemcTab",
+			"ItemCompass",
+			"ItemWatch",
+			"ItemRadio"
+		};
+		weapons[] = {
+			"CUP_arifle_M4A1"
+		};
+		magazines[] = {
+			MAG_5("CUP_30Rnd_556x45_Stanag"),
+			MAG_2("SmokeShell"),
+			MAG_2("SmokeShellGreen")
+		};
+	};
+	class Armour_Crew: Armour_Commander {
+		displayName = "Armour Crew";
+		role = "Armour_Crew";
+		linkedItems[] = {
+			"CUP_V_B_Interceptor_Base_Olive",
+			"CUP_H_CVC",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"ItemRadio"
 		};
 	};
 };
