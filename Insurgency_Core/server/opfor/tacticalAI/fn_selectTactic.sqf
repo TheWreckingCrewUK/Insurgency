@@ -43,7 +43,7 @@ private _tactic = _tactics select (_aggression min 4);
 
 //Adjust the tactical posture for the amount of groups we're actually controlling.
 private _groupCount = count _groups;
-private _ratio = _groups / 5;
+private _ratio = _groupCount / 5;
 {
 	_tactic set [_forEachIndex, round(_x * _ratio)];
 } forEach _tactic;
