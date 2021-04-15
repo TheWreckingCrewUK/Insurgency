@@ -50,4 +50,7 @@ _press addEventHandler ["Deleted", {
 //Add the recovery action on clients
 ["TWC_Insurgency_Actions_recover", _press] call CBA_fnc_globalEventJIP;
 
+//Fire an event to let the OPFOR Commander know we've spawned a task.
+["TWC_Insurgency_OPFOR_spawnTask", [_spawnPos]] call CBA_fnc_serverEvent;
+
 DEBUG_LOG("Rescue Journalist Task Created");

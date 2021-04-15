@@ -49,3 +49,5 @@ private _actionEventID = ["TWC_Insurgency_Actions_elderSpawn", {
 //Create the task.
 private _playerside = call TWC_Insurgency_BLUFOR_fnc_playerSide;
 [_playerside, _taskID, "cash", _locationPos, "CREATED", -1, false, "box", false] call BIS_fnc_taskCreate;
+
+DEBUG_LOG("Task Camp Created");

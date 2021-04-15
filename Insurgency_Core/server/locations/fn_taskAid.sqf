@@ -33,3 +33,5 @@ missionNameSpace setVariable [text _location + "_task", _taskID];
 //Create the task.
 private _playerside = call TWC_Insurgency_BLUFOR_fnc_playerSide;
 [_playerside, _taskID, "aid", _locationPos, "CREATED", -1, false, "container", false] call BIS_fnc_taskCreate;
+
+DEBUG_LOG("Task Aid Created");

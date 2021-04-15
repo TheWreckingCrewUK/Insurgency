@@ -37,4 +37,7 @@ _warlord addEventHandler ["Deleted", {
 //Allow him to be recovered if players drag him bag to base in cuffs
 ["TWC_Insurgency_Actions_recover", _warlord] call CBA_fnc_globalEventJIP;
 
+//Fire an event to let the OPFOR Commander know we've spawned a task.
+["TWC_Insurgency_OPFOR_spawnTask", [_spawnPos]] call CBA_fnc_serverEvent;
+
 DEBUG_LOG("Eliminate HVT Task Created");

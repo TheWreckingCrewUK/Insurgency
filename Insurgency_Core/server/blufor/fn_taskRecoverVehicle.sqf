@@ -48,4 +48,7 @@ private _playerside = call TWC_Insurgency_BLUFOR_fnc_playerSide;
 
 [_playerside, [_taskNumber, _parentTask], "recoverVehicle", _spawnPos, "CREATED", -1, false, "car", false] call BIS_fnc_taskCreate;
 
+//Fire an event to let the OPFOR Commander know we've spawned a task.
+["TWC_Insurgency_OPFOR_spawnTask", [_spawnPos]] call CBA_fnc_serverEvent;
+
 DEBUG_LOG("Recover Vehicle Task Created");

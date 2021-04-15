@@ -75,3 +75,5 @@ private _actionEventID = ["TWC_Insurgency_Actions_elderSpawn", {
 //Create the task.
 private _playerside = call TWC_Insurgency_BLUFOR_fnc_playerSide;
 [_playerside, _taskID, "dispute", _taskPos, "CREATED", -1, false, "talk", false] call BIS_fnc_taskCreate;
+
+DEBUG_LOG("Task Dispute Created");

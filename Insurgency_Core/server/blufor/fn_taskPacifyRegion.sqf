@@ -47,4 +47,7 @@ private _playerside = call TWC_Insurgency_BLUFOR_fnc_playerSide;
 	};
 }, [_locations, _taskNumber]] call CBA_fnc_addEventHandlerArgs;
 
+//Fire an event to let the OPFOR Commander know we've spawned a task.
+["TWC_Insurgency_OPFOR_spawnTask", [_centerPos]] call CBA_fnc_serverEvent;
+
 DEBUG_LOG("Pacify Region Task Created");

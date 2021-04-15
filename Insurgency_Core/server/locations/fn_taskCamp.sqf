@@ -30,3 +30,5 @@ missionNameSpace setVariable [_camp + "_task", _taskID];
 //Create the task.
 private _playerside = call TWC_Insurgency_BLUFOR_fnc_playerSide;
 [_playerside, _taskID, "camp", _locationPos, "CREATED", -1, false, "destroy", false] call BIS_fnc_taskCreate;
+
+DEBUG_LOG("Task Camp Created");

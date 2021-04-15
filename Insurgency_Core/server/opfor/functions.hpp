@@ -21,6 +21,9 @@ class TWC_Insurgency_OPFOR {
 		class plantIED					{};
 		class nearestIED				{};
 		class nearestCamp				{};
+		
+		//Tasks
+		class spawnTask					{};
 
 		//Activation
 		class activateStronghold		{};

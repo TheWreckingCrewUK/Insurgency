@@ -35,3 +35,8 @@ call TWC_Insurgency_OPFOR_fnc_initIEDs;
 ["TWC_Insurgency_OPFOR_deactivateLocation", {
 	_this call TWC_Insurgency_OPFOR_fnc_deactivateLocation;
 }] call CBA_fnc_addEventHandler;
+
+//Eventhandler to deploy troops at tasks.
+["TWC_Insurgency_OPFOR_spawnTask", {
+	_this call TWC_Insurgency_OPFOR_fnc_spawnTask;
+}] call CBA_fnc_addEventHandler;
