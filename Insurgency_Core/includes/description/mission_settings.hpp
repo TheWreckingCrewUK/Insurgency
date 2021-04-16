@@ -19,3 +19,15 @@ respawnDelay = 5;
 respawnTemplates[] = {"MenuInventory","MenuPosition"};
 respawnDialog = true;
 respawnOnStart = 1;
+
+corpseManagerMode = 1;
+corpseLimit = 30;
+corpseRemovalMinTime = 120;
+corpseRemovalMaxTime = 1200;
+
+wreckManagerMode = 1;
+wreckLimit = 20;
+wreckRemovalMinTime = 120;
+wreckRemovalMaxTime = 1200;
+
+minPlayerDistance = 200;
