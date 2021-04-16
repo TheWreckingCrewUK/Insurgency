@@ -31,6 +31,8 @@ class TWC_Insurgency_Actions {
 		class recover				{};
 		
 		//Vehicle/Ammo Spawning
+		class getSupply				{};
+		
 		class getAmmoCost			{};
 		class canSpawnAmmo			{};
 		class spawnAmmo				{};

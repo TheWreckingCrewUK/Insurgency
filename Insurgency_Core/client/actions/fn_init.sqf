@@ -1,5 +1,15 @@
 #include "..\..\includes\script_component.hpp"
 
+//Action to check BLUFOR Supply.
+private _action = [
+	"TWC_Insurgency_Actions_getSupply",
+	"Check Supply",
+	"",
+	{_this call TWC_Insurgency_Actions_fnc_getSupply},
+	{true}
+] call ace_interact_menu_fnc_createAction;
+[player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
 //Civilian/town interactions created upon init, added when towns are spawned in.
 TWC_Insurgency_Actions_getElder = [
 	"TWC_Insurgency_Actions_getElder",
