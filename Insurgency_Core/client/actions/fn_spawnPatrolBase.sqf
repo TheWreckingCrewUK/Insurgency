@@ -24,7 +24,8 @@ private _objects = [_box, _table, _generator];
 	[_x, true] call ace_dragging_fnc_setCarryable;
 } forEach _objects;
 
-["TWC_Insurgency_Actions_addPatrolBase", _objects] call CBA_fnc_globalEventJIP;
+private _jipID = ["TWC_Insurgency_Actions_addPatrolBase", _objects] call CBA_fnc_globalEventJIP;
+[_jipID, _box] call CBA_fnc_removeGlobalEventJIP;
 
 ["TWC_Insurgency_BLUFOR_updateSupply", [-100]] call CBA_fnc_serverEvent;
 

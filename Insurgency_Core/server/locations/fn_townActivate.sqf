@@ -88,8 +88,11 @@ _civilianGroup setVariable ["TWC_Insurgency_Location", _location];
 _elderGroup setVariable ["TWC_Insurgency_Location", _location];
 
 //Fire an event on all clients, including JIP, that addes actions to the elders and civilians.
-["TWC_Insurgency_Actions_elderSpawn", _elderGroup] call CBA_fnc_globalEventJIP;
-["TWC_Insurgency_Actions_civSpawn", _civilianGroup] call CBA_fnc_globalEventJIP;
+private _jipID = ["TWC_Insurgency_Actions_elderSpawn", _elderGroup] call CBA_fnc_globalEventJIP;
+[_jipID, _elder] call CBA_fnc_removeGlobalEventJIP;
+
+private _jipID = ["TWC_Insurgency_Actions_civSpawn", _civilianGroup] call CBA_fnc_globalEventJIP;
+[_jipID, leader _civilianGroup] call CBA_fnc_removeGlobalEventJIP;
 
 //Store the civilians and elders for clean up by the deactivation script, also store activation time so the server knows the loop.
 missionNameSpace setVariable [text _location, [[_elderGroup, _civilianGroup], CBA_missionTime]];

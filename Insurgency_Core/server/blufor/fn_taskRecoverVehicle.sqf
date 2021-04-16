@@ -42,7 +42,8 @@ _vehicle addEventHandler ["Deleted", {
 	[_task] call TWC_Insurgency_BLUFOR_fnc_taskCanceled;
 }];
 
-["TWC_Insurgency_Actions_recover", _vehicle] call CBA_fnc_globalEventJIP;
+private _jipID = ["TWC_Insurgency_Actions_recover", _vehicle] call CBA_fnc_globalEventJIP;
+[_jipID, _vehicle] call CBA_fnc_removeGlobalEventJIP;
 
 private _playerside = call TWC_Insurgency_BLUFOR_fnc_playerSide;
 

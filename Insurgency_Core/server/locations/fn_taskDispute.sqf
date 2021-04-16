@@ -24,7 +24,8 @@ private _actionEventID = ["TWC_Insurgency_Actions_elderSpawn", {
 	private _spawnedLocation = _elderGroup getVariable ["TWC_Insurgency_Location", locationNull];
 	
 	if (_taskLocation isEqualTo _spawnedLocation) then {
-		["TWC_Insurgency_Actions_taskDispute", [_elderGroup]] call CBA_fnc_globalEventJIP;
+		private _jipID = ["TWC_Insurgency_Actions_taskDispute", [_elderGroup]] call CBA_fnc_globalEventJIP;
+		[_jipID, leader _elderGroup] call CBA_fnc_removeGlobalEventJIP;
 		DEBUG_LOG("Task Dispute Added Elder Action");
 	};
 }, [_taskID select 0, _taskLocation]] call CBA_fnc_addEventHandlerArgs;
@@ -61,7 +62,8 @@ private _actionEventID = ["TWC_Insurgency_Actions_elderSpawn", {
 	};
 	
 	//Remove action from elder.
-	["TWC_Insurgency_Actions_taskDisputeRemove", [group _elder]] call CBA_fnc_globalEventJIP;
+	private _jipID = ["TWC_Insurgency_Actions_taskDisputeRemove", [group _elder]] call CBA_fnc_globalEventJIP;
+	[_jipID, _elder] call CBA_fnc_removeGlobalEventJIP;
 	
 	//Return the message to the player doing the talking.
 	["TWC_Insurgency_Locations_taskDisputeResult", [_message], _player] call CBA_fnc_targetEvent;
