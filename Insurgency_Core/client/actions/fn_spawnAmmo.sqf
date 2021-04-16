@@ -21,6 +21,12 @@ clearBackpackCargoGlobal _box;
 [_box, true] call ace_dragging_fnc_setDraggable;
 [_box, true] call ace_dragging_fnc_setCarryable;
 
+private _jipID = ["TWC_Insurgency_Actions_addDragging", [_box]] call CBA_fnc_globalEventJIP;
+[_jipID, _box] call CBA_fnc_removeGlobalEventJIP;
+
+private _vehicleSupply = getNumber (missionConfigFile >> "CfgAmmoboxes" >> _type >> "vehicleSupply");
+[_box, _vehicleSupply] call ace_rearm_fnc_setSupplyCount;
+
 private _weapons = "true" configClasses (missionConfigFile >> "CfgAmmoboxes" >> _type >> "Weapons");
 private _magazines = "true" configClasses (missionConfigFile >> "CfgAmmoboxes" >> _type >> "Magazines");
 private _items = "true" configClasses (missionConfigFile >> "CfgAmmoboxes" >> _type >> "Items");

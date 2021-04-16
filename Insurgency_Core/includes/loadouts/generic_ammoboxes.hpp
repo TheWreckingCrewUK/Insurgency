@@ -23,6 +23,22 @@ class Medical_Supply {
 		ADD(TWC_Item_Medical_SutureKit_25, 1);
 	};
 };
+
+class EOD {
+	displayName = "EOD Equipment";
+	type = "Box_NATO_Equip_F";
+	size = 1;
+	cost = 2;
+	class Weapons {
+		ADD(ACE_VMM3, 5);
+	};
+	class Magazines {};
+	class Items {
+		ADD(ACE_DefusalKit, 5);
+	};
+};
+
+//Tasks
 class Humanitarian_Aid {
 	displayName = "Humanitarian Aid";
 	type = "CargoNet_01_box_F";
@@ -46,5 +62,28 @@ class Money {
 	class Magazines {};
 	class Items {
 		ADD(CUP_item_Money, 10);
+	};
+};
+
+//Vehicles
+class Wheel {
+	displayName = "Spare Wheel";
+	type = "ACE_Wheel";
+	size = 1;
+	cost = 1;
+	class Weapons {};
+	class Magazines {};
+	class Items {};
+};
+class Vehicle_Ammo {
+	displayName = "Vehicle Ammo";
+	type = "CUP_BOX_US_ARMY_WpsSpecial_F";
+	size = 3;
+	cost = 5;
+	vehicleSupply = 100;
+	class Weapons {};
+	class Magazines {};
+	class Items {
+		ADD(ToolKit, 1);
 	};
 };

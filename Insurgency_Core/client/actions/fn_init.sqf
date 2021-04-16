@@ -256,4 +256,11 @@ TWC_Insurgency_Actions_giveCrate = [
 	_this call TWC_Insurgency_Actions_fnc_addPatrolBase;
 }] call CBA_fnc_addEventHandler;
 
+//Eventhandler for ammobox spawning to make them carryable/draggable by everyone.
+["TWC_Insurgency_Actions_addDragging", {
+	params ["_box"];
+	[_box, true] call ace_dragging_fnc_setDraggable;
+	[_box, true] call ace_dragging_fnc_setCarryable;
+}] call CBA_fnc_addEventHandler;
+
 DEBUG_LOG("Actions Init Complete");
