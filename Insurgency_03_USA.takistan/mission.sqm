@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=822;
+		nextID=824;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5762.6836,91.584595,11292.618};
-		dir[]={0.078971155,-0.055993099,0.99533546};
-		up[]={0.0044295252,0.99843156,0.055830158};
-		aside[]={0.99689966,-5.6880526e-007,-0.079096891};
+		pos[]={6013.9956,105.62784,11494.37};
+		dir[]={-0.73345929,-0.67952585,-0.020291751};
+		up[]={-0.67926693,0.73365396,-0.018793397};
+		aside[]={-0.027653513,1.2509281e-006,0.99968106};
 	};
 };
 binarizationWanted=0;
@@ -266,7 +266,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=73;
+		items=74;
 		class Item0
 		{
 			dataType="Marker";
@@ -3616,7 +3616,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5944.3867,84.910912,11478.967};
-				angles[]={-0,5.5100913,0};
+				angles[]={0,5.5100913,0};
 			};
 			side="Empty";
 			flags=4;
@@ -3632,7 +3632,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5929.0342,84.910912,11463.638};
-				angles[]={-0,5.5100913,0};
+				angles[]={0,5.5100913,0};
 			};
 			side="Empty";
 			flags=4;
@@ -3648,7 +3648,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5909.999,86.590446,11446.828};
-				angles[]={-0,5.4996567,0};
+				angles[]={0,5.4996567,0};
 			};
 			side="Empty";
 			flags=4;
@@ -3657,6 +3657,45 @@ class Mission
 			};
 			id=821;
 			type="CUP_B_CH47F_USA";
+		};
+		class Item73
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6001.1982,81.98468,11456.094};
+				angles[]={0,0.77094686,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=822;
+			type="US_WarfareBFieldhHospital_Base_EP1";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };
