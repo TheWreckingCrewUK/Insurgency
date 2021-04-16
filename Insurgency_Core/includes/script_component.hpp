@@ -1,4 +1,4 @@
-#define DEBUG_MODE
+//#define DEBUG_MODE
 //#define PERFORMANCE_MODE
 
 #ifdef DEBUG_MODE
