@@ -15,7 +15,6 @@ class CfgRespawnInventory {
 			"ItemMap",
 			"ItemCompass",
 			"ItemWatch",
-			"ItemRadio"
 		};
 		items[] = {
 			MEDICAL_LOADOUT,
@@ -48,8 +47,7 @@ class CfgRespawnInventory {
 			"CUP_NVG_PVS14",
 			"ItemMap",
 			"ItemCompass",
-			"ItemWatch",
-			"ItemRadio"
+			"ItemWatch"
 		};
 		weapons[] = {
 			"CUP_lmg_m249_pip2"
@@ -98,8 +96,7 @@ class CfgRespawnInventory {
 			"ItemMap",
 			"ItemcTab",
 			"ItemCompass",
-			"ItemWatch",
-			"ItemRadio"
+			"ItemWatch"
 		};
 		weapons[] = {
 			"CUP_arifle_M4A1_GL_carryhandle",
@@ -152,8 +149,7 @@ class CfgRespawnInventory {
 			"ItemMap",
 			"ItemcTab",
 			"ItemCompass",
-			"ItemWatch",
-			"ItemRadio"
+			"ItemWatch"
 		};
 		weapons[] = {
 			"CUP_arifle_M4A1"
@@ -177,8 +173,7 @@ class CfgRespawnInventory {
 			"ItemMap",
 			"ItemcTab",
 			"ItemCompass",
-			"ItemWatch",
-			"ItemRadio"
+			"ItemWatch"
 		};
 		weapons[] = {
 			"CUP_arifle_M4A1"
@@ -197,8 +192,7 @@ class CfgRespawnInventory {
 			"CUP_H_CVC",
 			"ItemMap",
 			"ItemCompass",
-			"ItemWatch",
-			"ItemRadio"
+			"ItemWatch"
 		};
 	};
 };

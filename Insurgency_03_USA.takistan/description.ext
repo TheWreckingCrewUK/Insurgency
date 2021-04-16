@@ -1,4 +1,4 @@
-#define NAME "Insurgency"
+#define NAME "Insurgency (USA, 2003)"
 onLoadName = NAME;
 briefingName = NAME;
 
