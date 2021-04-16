@@ -83,11 +83,11 @@ TWC_Insurgency_Locations = [];
 
 //Handlers for elder interactions.
 ["TWC_Insurgency_Locations_questionElder", {
-	_this spawn TWC_Insurgency_Locations_fnc_questionElder;
+	_this call TWC_Insurgency_Locations_fnc_questionElder;
 }] call CBA_fnc_addEventHandler;
 
 ["TWC_Insurgency_Locations_getElderTask", {
-	_this spawn TWC_Insurgency_Locations_fnc_getElderTask;
+	_this call TWC_Insurgency_Locations_fnc_getElderTask;
 }] call CBA_fnc_addEventHandler;
 
 //Handler for building destruction

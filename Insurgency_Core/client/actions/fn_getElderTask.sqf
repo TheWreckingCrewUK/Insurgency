@@ -25,6 +25,6 @@ private _id = ["TWC_Insurgency_Actions_getElderTask", {
 	
 	//Eventhandler and variable clean-up.
 	_player setVariable ["TWC_Insurgency_Actions_Questioning", nil];
-	_player getVariable ["TWC_Insurgency_Actions_elderTask", nil];
+	_player setVariable ["TWC_Insurgency_Actions_elderTask", nil];
 	["TWC_Insurgency_Actions_getElderTask", _id] call CBA_fnc_removeEventHandler;
 }, {}, "Offering Help"] call ace_common_fnc_progressBar;

@@ -30,7 +30,6 @@ if ((_campPos distance _locationPos < 2000) && (_campPos isNotEqualTo [0,0,0])) 
 if (isClass (configFile >> "CfgPatches" >> "CUP_Weapons_WeaponsCore")) then {_tasks pushBack "cash"};
 
 private _task = selectRandom _tasks;
-_task = "hvt";
 
 private _message = "";
 switch _task do {
