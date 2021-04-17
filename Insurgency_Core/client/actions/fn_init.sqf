@@ -59,6 +59,14 @@ TWC_Insurgency_Actions_recover = [
 	{alive _target && (_target distance getMarkerPos "BASE") < 100}
 ] call ace_interact_menu_fnc_createAction;
 
+TWC_Insurgency_Actions_delete = [
+	"TWC_Insurgency_Actions_delete",
+	"Return to Base",
+	"",
+	{deleteVehicle _target},
+	{alive _target && (_target distance TWC_Insurgency_SpawnSign2) < 50}
+] call ace_interact_menu_fnc_createAction;
+
 //Create category actions to group vehicle actions under.
 private _action = [
 	"TWC_Insurgency_Actions_spawnVehicle",
@@ -261,6 +269,11 @@ TWC_Insurgency_Actions_giveCrate = [
 	params ["_box"];
 	[_box, true] call ace_dragging_fnc_setDraggable;
 	[_box, true] call ace_dragging_fnc_setCarryable;
+}] call CBA_fnc_addEventHandler;
+
+//Eventhandler for vehicle/ammobox spawning that to delete them.
+["TWC_Insurgency_Actions_addDelete", {
+	_this call TWC_Insurgency_Actions_fnc_addDelete;
 }] call CBA_fnc_addEventHandler;
 
 DEBUG_LOG("Actions Init Complete");

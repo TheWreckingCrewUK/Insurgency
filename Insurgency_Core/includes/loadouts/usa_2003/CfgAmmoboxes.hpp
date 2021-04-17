@@ -4,7 +4,9 @@ class CfgAmmoboxes {
 	#include "..\generic_ammoboxes.hpp"
 	
 	class Squad_Supply {
-		displayName = "Squad Resupply";
+		
+		displayName = "Squad Resupply (5)";
+		DISPLAYNAME(Squad Resupply, COST);
 		type = "CUP_BOX_US_ARMY_Ammo_F";
 		size = 1;
 		cost = 5;
@@ -29,12 +31,23 @@ class CfgAmmoboxes {
 		};
 	};
 	class M136_Resupply {
-		displayName = "M136 Resupply";
+		displayName = "M136 Resupply (10)";
 		type = "CUP_BOX_US_ARMY_WpsLaunch_F";
 		size = 1;
 		cost = 10;
 		class Weapons {
 			ADD(CUP_launch_M136,4);
+		};
+		class Magazines {};
+		class Items {};
+	};
+	class M72_Resupply {
+		displayName = "M72 Resupply (5)";
+		type = "CUP_BOX_US_ARMY_WpsLaunch_F";
+		size = 1;
+		cost = 5;
+		class Weapons {
+			ADD(CUP_launch_M72A6,4);
 		};
 		class Magazines {};
 		class Items {};

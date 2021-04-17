@@ -1,5 +1,5 @@
 class Medical_Supply {
-	displayName = "Medical Resupply";
+	displayName = "Medical Resupply (5)";
 	type = "ACE_medicalSupplyCrate";
 	size = 1;
 	cost = 5;
@@ -25,7 +25,7 @@ class Medical_Supply {
 };
 
 class EOD {
-	displayName = "EOD Equipment";
+	displayName = "EOD Equipment (2)";
 	type = "Box_NATO_Equip_F";
 	size = 1;
 	cost = 2;
@@ -40,7 +40,7 @@ class EOD {
 
 //Tasks
 class Humanitarian_Aid {
-	displayName = "Humanitarian Aid";
+	displayName = "Humanitarian Aid (5)";
 	type = "CargoNet_01_box_F";
 	size = 5;
 	cost = 5;
@@ -54,7 +54,7 @@ class Humanitarian_Aid {
 	};
 };
 class Money {
-	displayName = "Cash";
+	displayName = "Cash (5)";
 	type = "Box_NATO_Equip_F";
 	size = 1;
 	cost = 5;
@@ -67,7 +67,7 @@ class Money {
 
 //Vehicles
 class Wheel {
-	displayName = "Spare Wheel";
+	displayName = "Spare Wheel (1)";
 	type = "ACE_Wheel";
 	size = 1;
 	cost = 1;
@@ -76,7 +76,7 @@ class Wheel {
 	class Items {};
 };
 class Vehicle_Ammo {
-	displayName = "Vehicle Ammo";
+	displayName = "Vehicle Ammo (5)";
 	type = "CUP_BOX_US_ARMY_WpsSpecial_F";
 	size = 3;
 	cost = 5;

@@ -15,4 +15,7 @@ private _cost = [_type] call TWC_Insurgency_Actions_fnc_getVehicleCost;
 
 ["TWC_Insurgency_BLUFOR_updateSupply", [-1 * _cost]] call CBA_fnc_serverEvent;
 
+private _jipID = ["TWC_Insurgency_Actions_addDelete", [_vehicle]] call CBA_fnc_globalEventJIP;
+[_jipID, _vehicle] call CBA_fnc_removeGlobalEventJIP;
+
 DEBUG_LOG("Spawned " + _type);

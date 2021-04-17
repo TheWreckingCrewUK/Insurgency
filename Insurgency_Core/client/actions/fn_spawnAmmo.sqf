@@ -24,6 +24,9 @@ clearBackpackCargoGlobal _box;
 private _jipID = ["TWC_Insurgency_Actions_addDragging", [_box]] call CBA_fnc_globalEventJIP;
 [_jipID, _box] call CBA_fnc_removeGlobalEventJIP;
 
+private _jipID = ["TWC_Insurgency_Actions_addDelete", [_box]] call CBA_fnc_globalEventJIP;
+[_jipID, _box] call CBA_fnc_removeGlobalEventJIP;
+
 private _vehicleSupply = getNumber (missionConfigFile >> "CfgAmmoboxes" >> _type >> "vehicleSupply");
 [_box, _vehicleSupply] call ace_rearm_fnc_setSupplyCount;
 

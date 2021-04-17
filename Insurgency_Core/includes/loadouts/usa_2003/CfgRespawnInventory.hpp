@@ -18,6 +18,7 @@ class CfgRespawnInventory {
 		};
 		items[] = {
 			MEDICAL_LOADOUT,
+			"ACE_EntrenchingTool",
 			"ACRE_PRC148"
 		};
 		weapons[] = {
@@ -74,7 +75,7 @@ class CfgRespawnInventory {
 		displayName = "Team Leader";
 		role = "Team_Leader";
 		weapons[] = {
-			"CUP_arifle_M4A1_GL_carryhandle",
+			"CUP_arifle_M4A1_BUIS_GL",
 			"ACE_VectorDay"
 		};
 		magazines[] = {
@@ -99,7 +100,7 @@ class CfgRespawnInventory {
 			"ItemWatch"
 		};
 		weapons[] = {
-			"CUP_arifle_M4A1_GL_carryhandle",
+			"CUP_arifle_M4A1_BUIS_GL",
 			"ACE_VectorDay"
 		};
 		magazines[] = {
@@ -131,6 +132,7 @@ class CfgRespawnInventory {
 			MAG_4(ACE_tourniquet),
 			"ACE_personalAidKit",
 			"TWC_Item_Medical_SutureKit_25",
+			"ACE_EntrenchingTool",
 			"ACRE_PRC148"
 		};
 	};
