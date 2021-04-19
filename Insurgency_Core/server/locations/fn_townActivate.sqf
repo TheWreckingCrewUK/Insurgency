@@ -2,17 +2,11 @@
 
 params ["_location"];
 
-private _activationInfo = missionNameSpace getVariable [text _location, []];
-if (count _activationInfo != 0) exitWith {
-	_activationInfo set [1, CBA_missionTime];
-	missionNameSpace setVariable [text _location, _activationInfo];
-	DEBUG_LOG(text _location + " already active");
-};
-
 //Get the location information
 private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
 _locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup"];
-private _locationPos = getPos _location;
+
+if (_isActive) exitWith {DEBUG_LOG(text _location + " already active")};
 
 //No elders and civs if it is a stronghold.
 if (_isStronghold) exitWith {
@@ -62,6 +56,8 @@ private _size = switch (type _location) do {
 	case "NameLocal": {6};
 };
 
+private _locationPos = getPos _location;
+
 private _civilianGroup = createGroup civilian;
 for "_i" from 1 to _size do {
 	private _spawnPos = [[[_locationPos, 300]]] call BIS_fnc_randomPos;
@@ -95,6 +91,8 @@ private _jipID = ["TWC_Insurgency_Actions_civSpawn", _civilianGroup] call CBA_fn
 [_jipID, leader _civilianGroup] call CBA_fnc_removeGlobalEventJIP;
 
 //Store the civilians and elders for clean up by the deactivation script, also store activation time so the server knows the loop.
-missionNameSpace setVariable [text _location, [[_elderGroup, _civilianGroup], CBA_missionTime]];
+_location setVariable ["TWC_Insurgency_Locations_isActive", true];
+_location setVariable ["TWC_Insurgency_Locations_elderGroup", _elderGroup];
+_location setVariable ["TWC_Insurgency_Locations_civGroup", _civilianGroup];
 
 DEBUG_LOG(text _location + " activated");
