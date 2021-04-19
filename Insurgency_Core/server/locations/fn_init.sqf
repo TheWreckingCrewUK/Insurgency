@@ -1,22 +1,27 @@
 #include "..\..\includes\script_component.hpp"
 
-//Find where to put things
-private _allLocations = nearestLocations [[worldSize / 2, worldSize / 2, 0], ["NameCity","NameCityCapital","NameVillage","NameLocal"], worldSize / sqrt(2)];
-private _badLocations = getArray (missionConfigFile >> "TWC_Insurgency" >> "invalidTowns");
-_allLocations = _allLocations select {
-	!(text _x in _badLocations)
-};
-
-//Create Zone Markers for all Locations.
+//Create locations from config.
+_allLocations = [];
+private _locationConfigs = "true" configClasses (missionConfigFile >> "CfgLocations");
 {
-	private _name = "TWC_Marker_" + text _x;
-	private _marker = createMarker [_name, locationPosition _x];
+	private _config = _x;
+	private _name = getText (_config >> "name");
+	private _type = getText (_config >> "type");
+	private _pos = getArray (_config >> "position");
+	private _size = getNumber (_config >> "size");
+	
+	private _location = createLocation [_type, _pos, _size, _size];
+	_location setText _name;
+	_allLocations pushBack _location;
+
+	//Create Zone Markers for all Locations.
+	//private _marker = "TWC_Marker_" + configName _x;
+	private _markerName = "TWC_Marker_" + _name;
+	private _marker = createMarker [_markerName, _pos];
 	_marker setMarkerShape "ELLIPSE";
 	_marker setMarkerColor "colorOPFOR";
-	private _size = (size _x);
-	_size = [2 * (_size select 0), 2 * (_size select 1)];
-	_marker setMarkerSize _size;
-} foreach _allLocations;
+	_marker setMarkerSize [_size, _size];
+} forEach _locationConfigs;
 
 //Find Base Position from map marker
 private _basePos = getMarkerPos "BASE";
@@ -59,18 +64,25 @@ for "_i" from 1 to getNumber (missionConfigFile >> "TWC_Insurgency" >> "cacheCou
 	[_newCache] call TWC_Insurgency_Locations_fnc_spawnCache;
 };
 
-//Declare what locations there are, whether they are a stronghold, contain a cache, their allegiance, and what forces are near.
-TWC_Insurgency_Locations = [];
+//Declare what locations there are, whether they are a stronghold, contain a cache, and their allegiance.
 {
 	private _distance = (getPos _x) distance2D _basePos;
 	private _allegiance = if (_distance < 3000) then {
-		"TWC_Marker_" + text _x setMarkerColor "colorUnknown";
+		("TWC_Marker_" + text _x) setMarkerColor "colorUnknown";
 		30
 	} else {
 		0
 	};
-	TWC_Insurgency_Locations pushback [_x, _x in _strongholds, _x in _caches, _allegiance];
+	
+	_x setVariable ["TWC_Insurgency_Locations_isStronghold", _x in _strongholds];
+	_x setVariable ["TWC_Insurgency_Locations_hasCache", _x in _caches];
+	_x setVariable ["TWC_Insurgency_Locations_allegiance", _allegiance];
+	_x setVariable ["TWC_Insurgency_Locations_isActive", false];
+	_x setVariable ["TWC_Insurgency_Locations_elderGroup", grpNull];
+	_x setVariable ["TWC_Insurgency_Locations_civGroup", grpNull];
 } forEach _allLocations;
+
+TWC_Insurgency_Locations = _allLocations;
 
 //Add an eventHandler for location activation/deactivation.
 ["TWC_Insurgency_Locations_Activate", {

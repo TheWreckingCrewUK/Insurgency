@@ -7,9 +7,8 @@ private _locationActivation = missionNameSpace getVariable [text _location, []];
 if (count _locationActivation > 0) exitWith {false};
 
 //Don't spawn camps near locations OPFOR already has control over.
-private _locationArray = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
-_locationArray params ["_locationInfo", "_locationIndex"];
-_locationInfo params ["_location", "_isStronghold", "_hasCache", "_allegiance"];
+private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
+_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup"];
 
 if (_allegiance < 30) exitWith {false};
 

@@ -8,9 +8,8 @@ if (_activeTask isNotEqualTo "") exitWith {
 	DEBUG_LOG(text _location + " already has active civ task")
 };
 
-private _locationArray = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
-_locationArray params ["_locationInfo", "_locationIndex"];
-_locationInfo params ["_location", "_isStronghold", "_hasCache", "_allegiance"];
+private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
+_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup"];
 _locationPos = locationPosition _location;
 
 if (_allegiance isEqualTo 100) exitWith {

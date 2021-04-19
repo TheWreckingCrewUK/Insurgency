@@ -10,8 +10,8 @@ if (count _activationInfo != 0) exitWith {
 };
 
 //Get the location information
-private _locationInfo = _location call TWC_Insurgency_Locations_fnc_getInfo;
-(_locationInfo select 0) params ["_location", "_isStronghold", "_hasCache", "_allegiance"];
+private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
+_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup"];
 private _locationPos = getPos _location;
 
 //No elders and civs if it is a stronghold.

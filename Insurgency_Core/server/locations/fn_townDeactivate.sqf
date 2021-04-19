@@ -2,8 +2,8 @@
 
 params ["_location"];
 
-private _locationInfo = _location call TWC_Insurgency_Locations_fnc_getInfo;
-(_locationInfo select 0) params ["_location", "_isStronghold", "_hasCache", "_allegiance"];
+private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
+_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup"];
 
 if (_isStronghold) exitWith {
 	["TWC_Insurgency_OPFOR_deactivateStronghold", [_location]] call CBA_fnc_serverEvent;

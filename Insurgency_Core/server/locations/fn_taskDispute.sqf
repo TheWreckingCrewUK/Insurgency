@@ -2,15 +2,22 @@
 
 params ["_location"];
 
+_allLocations = TWC_Insurgency_Locations;
+
 private _locationPosition = locationPosition _location;
 
-private _possibleLocations = TWC_Insurgency_Locations select {
-	private _testLocation = _x select 0;
-	private _testPos = locationPosition _testLocation;
-	(_locationPosition distance2d _testPos < 5000) && (_location isNotEqualTo _testLocation) && !(_x select 1)
-};
+private _possibleLocations = [];
+{
+	private _locationInfo = [_x] call TWC_Insurgency_Locations_fnc_getInfo;
+	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup"];
+	
+	private _testPos = locationPosition _x;
+	private _closeToLocation = _locationPosition distance2d _testPos < 5000;
+	private _notTaskLocation = _location isNotEqualTo _x;
+	if (_closeToLocation && _notTaskLocation && !_hasCache) then {_possibleLocations pushBack _x};
+} forEach _allLocations;
 
-private _taskLocation = (selectRandom _possibleLocations) select 0;
+private _taskLocation = selectRandom _possibleLocations;
 private _taskPos = locationPosition _taskLocation;
 
 private _taskID = call TWC_Insurgency_Locations_fnc_taskID;

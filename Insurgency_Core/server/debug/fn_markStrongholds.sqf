@@ -1,5 +1,4 @@
-private _locations = call TWC_Insurgency_Locations;
-_locations = _locations select {_x select 1};
+private _strongholds = call TWC_Insurgency_Locations_fnc_getStrongholds;
 
 {
 	private _pos = locationPosition _x;
@@ -8,4 +7,4 @@ _locations = _locations select {_x select 1};
 	_marker setMarkerColorLocal "colorOPFOR";
 	_marker setMarkerTypeLocal "hd_objective";
 	_marker setMarkerText "Stronghold";
-} forEach _locations;
+} forEach _strongholds;

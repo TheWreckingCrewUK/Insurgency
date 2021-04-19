@@ -19,7 +19,7 @@ _aggression = _unitsRatio;
 //Check if the AI needs to care extra much about a possible location it is defending
 if !(isNull _location) then {
 	private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
-	(_locationInfo select 0) params ["_location", "_isStronghold", "_hasCache", "_allegiance"];
+	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup"];
 	if (_hasCache) then {
 		_aggression = _aggression + 1;
 	};

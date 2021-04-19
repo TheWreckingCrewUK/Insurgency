@@ -1,21 +1,25 @@
 #include "..\..\includes\script_component.hpp"
 
+_allLocations = TWC_Insurgency_Locations;
+
 private _manpower = 0;
 {
-	_x params ["_location", "_isStronghold", "_hasCache", "_allegiance"];
+	private _locationInfo = _x call TWC_Insurgency_Locations_fnc_getInfo;
+	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup"];
+	
 	if (_hasCache) then {
-		[30] call TWC_Insurgency_OPFOR_updateSupply;
+		[50] call TWC_Insurgency_OPFOR_updateSupply;
 	};
 	private _menToAdd = switch (type _location) do {
-		case "NameCityCapital": {40};
-		case "NameCity": {30};
-		case "NameVillage": {20};
-		case "NameLocal": {10};
+		case "NameCityCapital": {20};
+		case "NameCity": {15};
+		case "NameVillage": {10};
+		case "NameLocal": {5};
 		default {0};
 	};
 	_menToAdd = _menToAdd * (1 - _allegiance / 100);
 	_manpower = _manpower + _menToAdd;
-} forEach TWC_Insurgency_Locations;
+} forEach _allLocations;
 
 [_manpower] call TWC_Insurgency_OPFOR_fnc_updateManpower;
 

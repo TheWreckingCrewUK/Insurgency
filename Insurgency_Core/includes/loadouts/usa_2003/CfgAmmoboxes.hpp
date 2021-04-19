@@ -6,7 +6,6 @@ class CfgAmmoboxes {
 	class Squad_Supply {
 		
 		displayName = "Squad Resupply (5)";
-		DISPLAYNAME(Squad Resupply, COST);
 		type = "CUP_BOX_US_ARMY_Ammo_F";
 		size = 1;
 		cost = 5;

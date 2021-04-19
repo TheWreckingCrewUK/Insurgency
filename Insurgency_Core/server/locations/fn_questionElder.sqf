@@ -15,7 +15,7 @@ if (_lastQuestioned + 600 > CBA_missionTime) exitWith {
 _elder setVariable ["TWC_Insurgency_Locations_questionDelay", CBA_missionTime];
 
 private _locationInfo = _location call TWC_Insurgency_Locations_fnc_getInfo;
-(_locationInfo select 0) params ["_location", "_isStronghold", "_hasCache", "_allegiance", "_forces"];
+_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup"];
 
 private _chance = switch (true) do {
 	case (_allegiance < 20): {0};
@@ -28,18 +28,11 @@ private _chance = switch (true) do {
 if (random 1 < _chance) then {
 	DEBUG_LOG("Succesful roll for info");
 	
-	//Build arrays of what possible intel there is.
-	//Caches
-	private _caches = [];
-	{
-		_caches pushBack (_x select 0);
-	} forEach (TWC_Insurgency_Locations select {_x select 2});
+	_allLocations = TWC_Insurgency_Locations;
 	
-	//Strongholds
-	private _strongholds = [];
-	{
-		_strongholds pushBack (_x select 0);
-	} forEach (TWC_Insurgency_Locations select {_x select 1});
+	//Build arrays of what possible intel there is.
+	private _caches = call TWC_Insurgency_Locations_fnc_getCaches;
+	private _strongholds = call TWC_Insurgency_Locations_fnc_getStrongholds;
 	
 	//Manpower
 	private _manpower = TWC_Insurgency_manpowerOPFOR;

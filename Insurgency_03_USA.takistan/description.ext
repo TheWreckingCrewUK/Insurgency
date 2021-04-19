@@ -4,25 +4,10 @@ briefingName = NAME;
 
 #include "Insurgency_Core\includes\description.hpp"
 #include "Insurgency_Core\includes\loadouts\usa_2003\USA_2003.hpp"
+#include "Insurgency_Core\includes\locations\Takistan\CfgLocations.hpp"
 
 class TWC_Insurgency {
 	//Locations
-	invalidTowns[] = {
-		"military base",
-		"Nagara-1 oilfield",
-		"Naygul valley",
-		"Lalezar",
-		"Bala pass",
-		"Loy Manara oilfield",
-		"airfield",
-		"Naran Darre pass",
-		"Darbang pass",
-		"Sar-e Sang pass",
-		"Sagram",
-		"Par-e Siah oilfield",
-		"mine",
-		"Nar"
-	};
 	strongholdCount = 3;
 	cacheCount = 5;
 	caches[] = {

@@ -11,7 +11,9 @@ class TWC_Insurgency_Locations {
 		class cacheDestroyed		{};
 		class townActivate			{};
 		class townDeactivate		{};
+		class getCaches				{};
 		class getInfo				{};
+		class getStrongholds		{};
 		class questionElder			{};
 		class handleDeath			{};
 		class handleDestruction		{};
