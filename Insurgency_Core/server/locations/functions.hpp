@@ -6,11 +6,14 @@ class TWC_Insurgency_Locations {
 		//Init
 		class init					{};
 		
+		//Location Activation
+		class activationLoop		{};
+		class townActivate			{};
+		class townDeactivate		{};
+		
 		//Utility
 		class spawnCache			{};
 		class cacheDestroyed		{};
-		class townActivate			{};
-		class townDeactivate		{};
 		class getCaches				{};
 		class getInfo				{};
 		class getStrongholds		{};

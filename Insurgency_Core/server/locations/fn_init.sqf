@@ -111,4 +111,8 @@ addMissionEventHandler ["BuildingChanged", {
 private _playerside = call TWC_Insurgency_BLUFOR_fnc_playerSide;
 [_playerside, "civTasks", "civTasks", objNull, "CREATED", -1, false, "meet", false] call BIS_fnc_taskCreate;
 
+//Create and begin the statemachine that checks if locations need to be activated.
+private _stateMachine = [TWC_Insurgency_Locations, true] call CBA_statemachine_fnc_create;
+[_stateMachine, {_this call TWC_Insurgency_Locations_fnc_activationLoop}, {}, {}, "Check"] call CBA_statemachine_fnc_addState;
+
 DEBUG_LOG("Locations Init Complete");

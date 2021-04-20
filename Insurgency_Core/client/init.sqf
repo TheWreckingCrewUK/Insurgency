@@ -52,5 +52,4 @@ player createDiaryRecord ["Insurgency", ["Local Forces", "Local forces need to b
 player createDiaryRecord ["Insurgency", ["Patrol Bases", "Patrol Bases can be established wherever you want. These function as forward reinforcement points, but are juicy targets for the insurgent forces."]];
 player createDiaryRecord ["Insurgency", ["Victory", "Victory is achieved by pacifying the local populace, building a good security force, and destroying the insurgent ability to fight."]];
 
-//call TWC_Insurgency_playerLoop_fnc_init;
 call TWC_Insurgency_Actions_fnc_init;
