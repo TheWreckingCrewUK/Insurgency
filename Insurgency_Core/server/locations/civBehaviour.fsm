@@ -1,0 +1,349 @@
+/*%FSM<COMPILE "F:\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, civBehaviour">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Start",0,250,-123.145691,-315.732269,-33.145691,-265.732269,0.000000,"Start"};
+item1[] = {"TRUE",8,218,-123.477020,-217.468170,-33.477020,-167.468170,0.000000,"TRUE"};
+item2[] = {"Select_Civ",2,250,-123.477081,-109.472290,-33.477081,-59.472290,0.000000,"Select Civ"};
+item3[] = {"Not_Moving",4,218,-118.055603,-8.870483,-28.055603,41.129517,2.000000,"Not Moving"};
+item4[] = {"Moving",8,218,-4.091217,-9.892883,85.908783,40.107117,1.000000,"Moving"};
+item5[] = {"Move",2,250,-118.775574,189.238068,-28.775574,239.238068,0.000000,"Move"};
+item6[] = {"Stay",2,250,-253.410461,187.798187,-163.410461,237.798187,0.000000,"Stay"};
+item7[] = {"_",2,250,-498.856232,42.658386,-408.856201,92.658386,0.000000,""};
+item8[] = {"Not_Fled",8,218,-498.027802,144.560333,-408.027771,194.560333,0.000000,"Not Fled"};
+item9[] = {"Combat",4,218,-389.926880,-10.098175,-299.926880,39.901825,3.000000,"Combat"};
+item10[] = {"",7,210,150.196472,13.423340,158.196472,21.423340,0.000000,""};
+item11[] = {"",7,210,149.325378,-87.631989,157.325378,-79.631989,0.000000,""};
+item12[] = {"",7,210,-78.049568,-39.718567,-70.049553,-31.718559,0.000000,""};
+item13[] = {"",7,210,36.073307,-38.847382,44.073299,-30.847385,0.000000,""};
+item14[] = {"",7,210,-347.239990,-39.718567,-339.240051,-31.718582,0.000000,""};
+item15[] = {"Flee",2,250,-503.653595,222.821411,-413.653564,272.821411,0.000000,"Flee"};
+item16[] = {"TRUE",8,218,-119.049561,263.817108,-29.049561,313.817108,0.000000,"TRUE"};
+item17[] = {"TRUE",8,218,-253.209198,264.688263,-163.209198,314.688263,0.000000,"TRUE"};
+item18[] = {"TRUE",8,218,-502.782410,298.612915,-412.782410,348.612915,0.000000,"TRUE"};
+item19[] = {"",7,210,150.196106,284.817108,158.196106,292.817108,0.000000,""};
+item20[] = {"",7,210,-208.907532,366.785095,-200.907532,374.785095,0.000000,""};
+item21[] = {"",7,210,149.490417,374.163879,157.490417,382.163879,0.000000,""};
+item22[] = {"",7,210,-354.374878,365.731018,-346.374939,373.731018,0.000000,""};
+item23[] = {"",7,210,-75.035347,368.893372,-67.035332,376.893372,0.000000,""};
+item24[] = {"No_Civs",4,218,-296.709412,-112.265579,-206.709412,-62.265579,4.000000,"No Civs"};
+item25[] = {"End",1,250,-295.880951,-288.729797,-205.880920,-238.729813,0.000000,"End"};
+item26[] = {"Moving_Chance",2,250,-247.001190,-11.192169,-157.001160,38.807831,0.000000,"Moving Chance"};
+item27[] = {"Stay_",8,218,-249.486603,71.654846,-159.486603,121.654846,0.000000,"Stay?"};
+item28[] = {"Move_",4,218,-117.759781,73.311890,-27.759766,123.311890,1.000000,"Move?"};
+item29[] = {"Has_Fled",4,218,-379.556946,89.881317,-289.556580,139.881317,1.000000,"Has Fled"};
+item30[] = {"Stop",2,250,-378.728210,172.728271,-288.728180,222.728271,0.000000,"Stop"};
+item31[] = {"TRUE",8,218,-380.384949,254.746887,-290.384949,304.746887,0.000000,"TRUE"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,12};
+link3[] = {2,24};
+link4[] = {3,26};
+link5[] = {4,10};
+link6[] = {5,16};
+link7[] = {6,17};
+link8[] = {7,8};
+link9[] = {7,29};
+link10[] = {8,15};
+link11[] = {9,7};
+link12[] = {10,11};
+link13[] = {11,2};
+link14[] = {12,3};
+link15[] = {12,13};
+link16[] = {12,14};
+link17[] = {13,4};
+link18[] = {14,9};
+link19[] = {15,18};
+link20[] = {16,23};
+link21[] = {17,20};
+link22[] = {18,22};
+link23[] = {19,10};
+link24[] = {20,23};
+link25[] = {21,19};
+link26[] = {22,20};
+link27[] = {23,21};
+link28[] = {24,25};
+link29[] = {26,27};
+link30[] = {26,28};
+link31[] = {27,6};
+link32[] = {28,5};
+link33[] = {29,30};
+link34[] = {30,31};
+link35[] = {31,22};
+globals[] = {0.000000,0,0,0,0,640,480,1,54,6316128,1,-680.028687,483.143921,421.415314,-310.952637,1404,884,1};
+window[] = {2,-1,-1,-1,-1,837,78,1518,78,3,1422};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "civBehaviour";
+        class States
+        {
+                /*%FSM<STATE "Start">*/
+                class Start
+                {
+                        name = "Start";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"params [""_group"", ""_location""];" \n
+                         "_units = units _group;" \n
+                         "_size = count _units;" \n
+                         "_index = 0;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Select_Civ";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Select_Civ">*/
+                class Select_Civ
+                {
+                        name = "Select_Civ";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"_unit = _units select (_index mod _size);" \n
+                         "_index = _index + 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "No_Civs">*/
+                                class No_Civs
+                                {
+                                        itemno = 24;
+                                        priority = 4.000000;
+                                        to="End";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isNull _group"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Combat">*/
+                                class Combat
+                                {
+                                        itemno = 9;
+                                        priority = 3.000000;
+                                        to="_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(behaviour _unit) isEqualTo ""COMBAT"""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Not_Moving">*/
+                                class Not_Moving
+                                {
+                                        itemno = 3;
+                                        priority = 2.000000;
+                                        to="Moving_Chance";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"unitReady _unit || stopped _unit"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Moving">*/
+                                class Moving
+                                {
+                                        itemno = 4;
+                                        priority = 1.000000;
+                                        to="Select_Civ";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Move">*/
+                class Move
+                {
+                        name = "Move";
+                        itemno = 5;
+                        init = /*%FSM<STATEINIT""">*/"_movePos = [[_location]] call BIS_fnc_randomPos;" \n
+                         "_unit doMove _movePos;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 16;
+                                        priority = 0.000000;
+                                        to="Select_Civ";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Stay">*/
+                class Stay
+                {
+                        name = "Stay";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"doStop _unit;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 17;
+                                        priority = 0.000000;
+                                        to="Select_Civ";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "_">*/
+                class _
+                {
+                        name = "_";
+                        itemno = 7;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Has_Fled">*/
+                                class Has_Fled
+                                {
+                                        itemno = 29;
+                                        priority = 1.000000;
+                                        to="Stop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"unitReady _unit || stopped _unit"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Not_Fled">*/
+                                class Not_Fled
+                                {
+                                        itemno = 8;
+                                        priority = 0.000000;
+                                        to="Flee";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Flee">*/
+                class Flee
+                {
+                        name = "Flee";
+                        itemno = 15;
+                        init = /*%FSM<STATEINIT""">*/"_movePos = [[_location]] call BIS_fnc_randomPos;" \n
+                         "_nearestBuilding = nearestBuilding _movePos;" \n
+                         "_buildingPositions = _nearestBuilding buildingPos -1;" \n
+                         "if (count _buildingPositions > 0) then {_movePos = selectRandom _buildingPositions};" \n
+                         "_unit doMove _movePos;" \n
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 18;
+                                        priority = 0.000000;
+                                        to="Select_Civ";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "End">*/
+                class End
+                {
+                        name = "End";
+                        itemno = 25;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Moving_Chance">*/
+                class Moving_Chance
+                {
+                        name = "Moving_Chance";
+                        itemno = 26;
+                        init = /*%FSM<STATEINIT""">*/"_moveChance = random 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Move_">*/
+                                class Move_
+                                {
+                                        itemno = 28;
+                                        priority = 1.000000;
+                                        to="Move";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_moveChance < 0.6"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Stay_">*/
+                                class Stay_
+                                {
+                                        itemno = 27;
+                                        priority = 0.000000;
+                                        to="Stay";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Stop">*/
+                class Stop
+                {
+                        name = "Stop";
+                        itemno = 30;
+                        init = /*%FSM<STATEINIT""">*/"doStop _unit;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 31;
+                                        priority = 0.000000;
+                                        to="Select_Civ";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Start";
+        finalStates[] =
+        {
+                "End",
+        };
+};
+/*%FSM</COMPILE>*/

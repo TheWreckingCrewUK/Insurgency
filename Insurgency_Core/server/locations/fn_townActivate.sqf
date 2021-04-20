@@ -68,11 +68,14 @@ for "_i" from 1 to _size do {
 		_nearestRoadPos = getPos _nearestRoadPos;
 	};
 	private _civ = _civilianGroup createUnit [selectRandom _civilianTypes, _nearestRoadPos, [], 3, "NONE"];
-	_civ disableAI "PATH";
+	//_civ disableAI "PATH";
 	_civ addEventHandler ["Killed", {
 		_this call TWC_Insurgency_Locations_fnc_handleDeath;
 	}];
 };
+_civilianGroup setSpeedMode "LIMITED";
+
+[_civilianGroup, _location] execFSM "Insurgency_Core\server\locations\civBehaviour.fsm";
 
 //The dismissed waypoint is meant to simulate casual behaviour. However, it requires you the waypoint to 'complete' before working. The units meanwhile stay very clustered.
 /*_wp = _civilianGroup addWaypoint [_locationPos, 0];

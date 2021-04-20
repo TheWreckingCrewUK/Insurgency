@@ -86,11 +86,11 @@ TWC_Insurgency_Locations = _allLocations;
 
 //Add an eventHandler for location activation/deactivation.
 ["TWC_Insurgency_Locations_Activate", {
-	_this spawn TWC_Insurgency_Locations_fnc_townActivate;
+	_this call TWC_Insurgency_Locations_fnc_townActivate;
 }] call CBA_fnc_addEventHandler;
 
 ["TWC_Insurgency_Locations_Deactivate", {
-	_this spawn TWC_Insurgency_Locations_fnc_townDeactivate;
+	_this call TWC_Insurgency_Locations_fnc_townDeactivate;
 }] call CBA_fnc_addEventHandler;
 
 //Handlers for elder interactions.
@@ -104,7 +104,7 @@ TWC_Insurgency_Locations = _allLocations;
 
 //Handler for building destruction
 addMissionEventHandler ["BuildingChanged", {
-	_this spawn TWC_Insurgency_Locations_fnc_handleDestruction;
+	_this call TWC_Insurgency_Locations_fnc_handleDestruction;
 }];
 
 //Civilian tasks main task, all civilian tasks are subtasks of this one, doesn't complete or fail.
