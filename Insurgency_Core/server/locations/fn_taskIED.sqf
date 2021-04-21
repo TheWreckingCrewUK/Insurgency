@@ -5,7 +5,7 @@ params ["_location", "_nearestIED"];
 private _iedPos = getPos _nearestIED;
 
 private _taskID = call TWC_Insurgency_Locations_fnc_taskID;
-missionNameSpace setVariable [text _location + "_task", _taskID];
+_location setVariable ["TWC_Insurgency_Locations_task", _taskID];
 
 //Eventhandler completing for the defusing.
 ["ace_explosives_defuse", {
@@ -20,7 +20,7 @@ missionNameSpace setVariable [text _location + "_task", _taskID];
 	
 	[_location, _reward] call TWC_Insurgency_Locations_fnc_modifyAllegiance;
 	
-	missionNameSpace setVariable [text _location + "_task", nil];
+	_location setVariable ["TWC_Insurgency_Locations_task", nil];
 	["ace_explosives_defuse", _thisId] call CBA_fnc_removeEventHandler;
 	
 	DEBUG_LOG("Task IED Complete");
@@ -35,7 +35,7 @@ missionNameSpace setVariable [text _location + "_task", _taskID];
 	
 	[_taskID, "FAILED", false] call BIS_fnc_taskSetState;
 	
-	missionNameSpace setVariable [text _location + "_task", nil];
+	_location setVariable ["TWC_Insurgency_Locations_task", nil];
 	["ace_explosives_explodeOnDefuse", _thisId] call CBA_fnc_removeEventHandler;
 	
 	DEBUG_LOG("Task IED Failed");
@@ -50,7 +50,7 @@ missionNameSpace setVariable [text _location + "_task", _taskID];
 	
 	[_taskID, "FAILED", false] call BIS_fnc_taskSetState;
 	
-	missionNameSpace setVariable [text _location + "_task", nil];
+	_location setVariable ["TWC_Insurgency_Locations_task", nil];
 	["ace_explosives_explodeOnDefuse", _thisId] call CBA_fnc_removeEventHandler;
 	
 	DEBUG_LOG("Task IED Failed");

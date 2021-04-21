@@ -22,13 +22,13 @@ private _locationPos = locationPosition _location;
 	
 	deleteVehicle _crate;
 	
-	missionNameSpace setVariable [text _location + "_task", nil];
+	_location setVariable ["TWC_Insurgency_Locations_task", nil];
 	
 	DEBUG_LOG("Task Aid Complete");
 }] call CBA_fnc_addEventHandler;
 
 private _taskID = call TWC_Insurgency_Locations_fnc_taskID;
-missionNameSpace setVariable [text _location + "_task", _taskID];
+_location setVariable ["TWC_Insurgency_Locations_task", _taskID];
 
 //Create the task.
 private _playerside = call TWC_Insurgency_BLUFOR_fnc_playerSide;

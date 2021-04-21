@@ -3,7 +3,7 @@
 params ["_location", "_camp"];
 
 private _taskID = call TWC_Insurgency_Locations_fnc_taskID;
-missionNameSpace setVariable [_camp + "_task", _taskID];
+_location setVariable ["TWC_Insurgency_Locations_task", _taskID];
 
 //Eventhandler on the destruction of the camp.
 ["TWC_Insurgency_Locations_campDeath", {
@@ -21,7 +21,7 @@ missionNameSpace setVariable [_camp + "_task", _taskID];
 	[_location, _reward] call TWC_Insurgency_Locations_fnc_modifyAllegiance;
 	
 	//Clean up eventhandlers/variables.
-	missionNameSpace setVariable [text _location + "_task", nil];
+	_location setVariable ["TWC_Insurgency_Locations_task", nil];
 	["TWC_Insurgency_Locations_campDeath", _thisId] call CBA_fnc_removeEventHandler;
 	
 	DEBUG_LOG("Task Camp Complete");

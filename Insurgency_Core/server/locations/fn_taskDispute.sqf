@@ -21,7 +21,7 @@ private _taskLocation = selectRandom _possibleLocations;
 private _taskPos = locationPosition _taskLocation;
 
 private _taskID = call TWC_Insurgency_Locations_fnc_taskID;
-missionNameSpace setVariable [text _location + "_task", _taskID];
+_location setVariable ["TWC_Insurgency_Locations_task", _taskID];
 
 //Add an eventhandler for elder spawn to add an action to speak to the elder about the dispute.
 private _actionEventID = ["TWC_Insurgency_Actions_elderSpawn", {
@@ -76,7 +76,7 @@ private _actionEventID = ["TWC_Insurgency_Actions_elderSpawn", {
 	["TWC_Insurgency_Locations_taskDisputeResult", [_message], _player] call CBA_fnc_targetEvent;
 	
 	//Event and variable clean-up.
-	missionNameSpace setVariable [text _location + "_task", nil];
+	_location setVariable ["TWC_Insurgency_Locations_task", nil];
 	["TWC_Insurgency_Locations_taskDispute", _thisId] call CBA_fnc_removeEventHandler;
 	["TWC_Insurgency_Actions_elderSpawn", _actionEventID] call CBA_fnc_removeEventHandler;
 }, [_taskID select 0, _location, _actionEventID]] call CBA_fnc_addEventHandlerArgs;

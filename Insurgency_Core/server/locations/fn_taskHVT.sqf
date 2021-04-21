@@ -4,7 +4,7 @@ params ["_location"];
 
 //Get a new task ID.
 private _taskID = call TWC_Insurgency_Locations_fnc_taskID;
-missionNameSpace setVariable [text _location + "_task", _taskID];
+_location setVariable ["TWC_Insurgency_Locations_task", _taskID];
 
 //Pick a random spot in town
 private _spawnPos = [300] call TWC_Insurgency_Locations_fnc_randomLocationASL;
@@ -39,7 +39,7 @@ _warlord addEventHandler ["Killed", {
 	private _reward = [_taskID] call TWC_Insurgency_Locations_fnc_taskReward;
 	[_location, _reward] call TWC_Insurgency_Locations_fnc_modifyAllegiance;
 	
-	missionNameSpace setVariable [text _location + "_task", nil];
+	_location setVariable ["TWC_Insurgency_Locations_task", nil];
 	
 	DEBUG_LOG("Task HVT Complete");
 }];
@@ -52,7 +52,7 @@ _warlord addEventHandler ["Deleted", {
 	
 	[_taskID, "CANCELED", false] call BIS_fnc_taskSetState;
 	
-	missionNameSpace setVariable [text _location + "_task", nil];
+	_location setVariable ["TWC_Insurgency_Locations_task", nil];
 	
 	DEBUG_LOG("Task HVT Canceled");
 }];
