@@ -5,6 +5,7 @@ params ["_location"];
 //Get the location information
 private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
 _locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup"];
+private _locationPos = getPos _location;
 
 if (_isActive) exitWith {DEBUG_LOG(text _location + " already active")};
 
@@ -25,10 +26,16 @@ for "_i" from 1 to 3 do {
 	_elders pushBack (selectRandom _civilianTypes);
 };
 
-//Find a position near some buildings for them to sit.
-private _randPos = [[_location], [nearestLocation [getMarkerPos "BASE", ""]]] call BIS_fnc_randomPos;
-private _posArray = selectBestPlaces [_randPos, 200, "houses", 1, 1];
-private _elderPos = ((_posArray select 0) select 0);
+//Use a cityCenter location if present, if not, find a position near some buildings for them to sit.
+private _nearestCenter = nearestLocation [_locationPos, "CityCenter"];
+private _centerPos = locationPosition _nearestCenter;
+private _elderPos = if (_centerPos in _location) then {
+	_centerPos
+} else {
+	private _randPos = [[_location], [nearestLocation [getMarkerPos "BASE", ""]]] call BIS_fnc_randomPos;
+	private _posArray = selectBestPlaces [_randPos, 200, "houses", 1, 1];
+	(_posArray select 0) select 0
+};
 
 private _elderGroup = [_elderPos, civilian, _elders, [[0,0,0],[1,0.5,0],[-1,0.5,0]]] call BIS_fnc_spawnGroup;
 private _elder = leader _elderGroup;
@@ -56,8 +63,6 @@ private _size = switch (type _location) do {
 	case "NameLocal": {6};
 };
 
-private _locationPos = getPos _location;
-
 private _civilianGroup = createGroup civilian;
 for "_i" from 1 to _size do {
 	private _spawnPos = [[[_locationPos, 300]]] call BIS_fnc_randomPos;
@@ -77,21 +82,19 @@ _civilianGroup setSpeedMode "LIMITED";
 
 [_civilianGroup, _location] execFSM "Insurgency_Core\server\locations\civBehaviour.fsm";
 
-//The dismissed waypoint is meant to simulate casual behaviour. However, it requires you the waypoint to 'complete' before working. The units meanwhile stay very clustered.
-/*_wp = _civilianGroup addWaypoint [_locationPos, 0];
-_wp setWaypointType "DISMISS";
-_wp setWaypointSpeed "LIMITED";*/
-
 //Also store the location on the elders/civs for use.
 _civilianGroup setVariable ["TWC_Insurgency_Location", _location];
 _elderGroup setVariable ["TWC_Insurgency_Location", _location];
 
-//Fire an event on all clients, including JIP, that addes actions to the elders and civilians.
-private _jipID = ["TWC_Insurgency_Actions_elderSpawn", _elderGroup] call CBA_fnc_globalEventJIP;
-[_jipID, _elder] call CBA_fnc_removeGlobalEventJIP;
-
-private _jipID = ["TWC_Insurgency_Actions_civSpawn", _civilianGroup] call CBA_fnc_globalEventJIP;
-[_jipID, leader _civilianGroup] call CBA_fnc_removeGlobalEventJIP;
+//Fire an event on all clients, including JIP, that addes actions to the elders and civilians, on a delay to make sure clients that just spawned have the action initialized.
+[{
+	params ["_elderGroup", "_civilianGroup"];
+	private _jipID = ["TWC_Insurgency_Actions_elderSpawn", _elderGroup] call CBA_fnc_globalEventJIP;
+	[_jipID, leader _elder] call CBA_fnc_removeGlobalEventJIP;
+	
+	private _jipID = ["TWC_Insurgency_Actions_civSpawn", _civilianGroup] call CBA_fnc_globalEventJIP;
+	[_jipID, leader _civilianGroup] call CBA_fnc_removeGlobalEventJIP;
+}, [_elderGroup, _civilianGroup], 0.5] call CBA_fnc_waitAndExecute;
 
 //Store the civilians and elders for clean up by the deactivation script, also store activation time so the server knows the loop.
 _location setVariable ["TWC_Insurgency_Locations_isActive", true];
