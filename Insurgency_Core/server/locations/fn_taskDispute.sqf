@@ -9,7 +9,7 @@ private _locationPosition = locationPosition _location;
 private _possibleLocations = [];
 {
 	private _locationInfo = [_x] call TWC_Insurgency_Locations_fnc_getInfo;
-	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup"];
+	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
 	
 	private _testPos = locationPosition _x;
 	private _closeToLocation = _locationPosition distance2d _testPos < 5000;
@@ -44,7 +44,7 @@ private _actionEventID = ["TWC_Insurgency_Actions_elderSpawn", {
 	
 	private _locationInfo = [_taskLocation] call TWC_Insurgency_Locations_fnc_getInfo;
 	_locationInfo params ["_locationDetails", "_locationIndex"];
-	_locationDetails params ["_taskLocation", "_isStronghold", "_hasCache", "_allegiance"];
+	_locationDetails params ["_taskLocation", "_isStronghold", "_hasCache", "_allegiance", "_task"];
 	
 	//Chance of success in the talks depends on the allegiance of the village we're talking to; 100% chance at full allegiance and 0% chance at no allegiance.
 	private _success = random 1 > (1 - _allegiance / 100);

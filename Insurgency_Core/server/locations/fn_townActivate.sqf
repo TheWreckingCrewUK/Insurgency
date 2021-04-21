@@ -4,7 +4,7 @@ params ["_location"];
 
 //Get the location information
 private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
-_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup"];
+_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
 private _locationPos = getPos _location;
 
 if (_isActive) exitWith {DEBUG_LOG(text _location + " already active")};
@@ -90,11 +90,11 @@ _elderGroup setVariable ["TWC_Insurgency_Location", _location];
 [{
 	params ["_elderGroup", "_civilianGroup"];
 	private _jipID = ["TWC_Insurgency_Actions_elderSpawn", _elderGroup] call CBA_fnc_globalEventJIP;
-	[_jipID, leader _elder] call CBA_fnc_removeGlobalEventJIP;
+	[_jipID, leader _elderGroup] call CBA_fnc_removeGlobalEventJIP;
 	
 	private _jipID = ["TWC_Insurgency_Actions_civSpawn", _civilianGroup] call CBA_fnc_globalEventJIP;
 	[_jipID, leader _civilianGroup] call CBA_fnc_removeGlobalEventJIP;
-}, [_elderGroup, _civilianGroup], 0.5] call CBA_fnc_waitAndExecute;
+}, [_elderGroup, _civilianGroup], 5] call CBA_fnc_waitAndExecute;
 
 //Store the civilians and elders for clean up by the deactivation script, also store activation time so the server knows the loop.
 _location setVariable ["TWC_Insurgency_Locations_isActive", true];

@@ -8,7 +8,7 @@ if (count _locationActivation > 0) exitWith {false};
 
 //Don't spawn camps near locations OPFOR already has control over.
 private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
-_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup"];
+_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
 
 if (_allegiance < 30) exitWith {false};
 
