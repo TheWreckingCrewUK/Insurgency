@@ -4,8 +4,9 @@ params ["_location"];
 
 private _nearPlayer = [_location, 1200] call CBA_fnc_nearPlayer;
 
+private _isActive = _location getVariable ["TWC_Insurgency_Locations_isActive", false];
+
 if (_nearPlayer) then {
-	private _isActive = _location getVariable ["TWC_Insurgency_Locations_isActive", false];
 	if (!_isActive) then {
 		["TWC_Insurgency_Locations_Activate", [_location]] call CBA_fnc_serverEvent;
 	};

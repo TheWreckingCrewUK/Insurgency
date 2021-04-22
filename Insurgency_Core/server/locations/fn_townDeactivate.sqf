@@ -5,7 +5,7 @@ params ["_location"];
 private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
 _locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
 
-if (_isActive) exitWith {DEBUG_LOG(text _location + " is already inactive")};
+if (!_isActive) exitWith {DEBUG_LOG(text _location + " is already inactive")};
 
 if (_isStronghold) exitWith {
 	["TWC_Insurgency_OPFOR_deactivateStronghold", [_location]] call CBA_fnc_serverEvent;
@@ -19,8 +19,8 @@ deleteGroup _elderGroup;
 
 {
 	deleteVehicle _x;
-} forEach units _civilianGroup;
-deleteGroup _civilianGroup;
+} forEach units _civGroup;
+deleteGroup _civGroup;
 
 //Change location variables.
 _location setVariable ["TWC_Insurgency_Locations_isActive", false];
