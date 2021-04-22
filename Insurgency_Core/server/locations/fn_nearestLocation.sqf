@@ -10,7 +10,7 @@ private _location = locationNull;
 	private _locationPos = locationPosition _x;
 	private _checkDistance = _locationPos distance2d _pos;
 	if (_checkDistance < _distance) then {
-		_location = _x select 0;
+		_location = _x;
 		_distance = _checkDistance;
 	};
 } forEach TWC_Insurgency_Locations;
