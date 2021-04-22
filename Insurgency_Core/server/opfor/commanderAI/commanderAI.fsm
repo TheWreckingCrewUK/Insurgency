@@ -99,7 +99,7 @@ link48[] = {43,22};
 link49[] = {44,21};
 link50[] = {45,26};
 globals[] = {0.000000,0,0,0,0,640,480,1,115,6316128,1,-750.498718,651.509399,212.561157,-673.973328,1398,884,1};
-window[] = {2,-1,-1,-32000,-32000,785,26,1466,26,3,1416};
+window[] = {2,-1,-1,-1,-1,863,104,1544,104,3,1416};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -135,8 +135,7 @@ class FSM
                         name = "Towns";
                         itemno = 2;
                         init = /*%FSM<STATEINIT""">*/"_townIndex = _townIndex mod (count TWC_Insurgency_Locations);" \n
-                         "_locationInfo = TWC_Insurgency_Locations select _townIndex;" \n
-                         "_location = _locationInfo select 0;" \n
+                         "_location = TWC_Insurgency_Locations select _townIndex;" \n
                          "_townIndex = _townIndex + 1;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links

@@ -4,14 +4,21 @@ class TWC_Insurgency_Locations {
 		tag = "Locations";
 		
 		//Init
-		class init					{};
+		class init {
+			postInit = 1;
+		};
+		
+		//Location Activation
+		class activationLoop		{};
+		class townActivate			{};
+		class townDeactivate		{};
 		
 		//Utility
 		class spawnCache			{};
 		class cacheDestroyed		{};
-		class townActivate			{};
-		class townDeactivate		{};
+		class getCaches				{};
 		class getInfo				{};
+		class getStrongholds		{};
 		class questionElder			{};
 		class handleDeath			{};
 		class handleDestruction		{};

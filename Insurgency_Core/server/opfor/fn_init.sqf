@@ -1,5 +1,7 @@
 #include "..\..\includes\script_component.hpp"
 
+if (!isServer) exitWith {DEBUG_LOG("OPFOR Init not executed on client.")};
+
 TWC_Insurgency_supplyOPFOR = getNumber (missionConfigFile >> "TWC_Insurgency" >> "supplyOPFOR");
 TWC_Insurgency_manpowerOPFOR = getNumber (missionConfigFile >> "TWC_Insurgency" >> "manpowerOPFOR");
 

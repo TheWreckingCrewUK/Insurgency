@@ -3,7 +3,9 @@ class TWC_Insurgency_OPFOR {
 		file = "Insurgency_Core\server\opfor";
 		tag = "OPFOR";
 		//Init
-		class init						{};
+		class init {
+			postInit = 1;
+		};
 		class initIEDs					{};
 		class initStrongholds			{};
 		class resourceLoop				{};

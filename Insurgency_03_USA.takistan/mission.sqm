@@ -20,10 +20,9 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6013.9956,105.62784,11494.37};
-		dir[]={-0.73345929,-0.67952585,-0.020291751};
-		up[]={-0.67926693,0.73365396,-0.018793397};
-		aside[]={-0.027653513,1.2509281e-006,0.99968106};
+		pos[]={5990.5142,108.59001,11517.073};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710671,0.70710683};
 	};
 };
 binarizationWanted=0;
@@ -422,7 +421,7 @@ class Mission
 			dataType="Marker";
 			position[]={5989.5762,83.040001,11492.955};
 			name="spawnPad";
-			text="Vehicle Spawner";
+			text="Vehicle Depot";
 			type="b_maint";
 			id=601;
 		};

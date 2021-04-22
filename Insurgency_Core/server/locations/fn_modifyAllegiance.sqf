@@ -1,12 +1,10 @@
+#include "..\..\includes\script_component.hpp"
+
 params ["_location", "_change"];
 
-private _locationArray = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
-_locationArray params ["_locationInfo", "_locationIndex"];
-_locationInfo params ["_location", "_isStronghold", "_hasCache", "_allegiance"];
-
-//Calculate new allegiance and store it back in the master array
-private _allegiance = ((_allegiance + _change) min 100) max 0;
-TWC_Insurgency_Locations set [_locationIndex, [_location, _isStronghold, _hasCache, _allegiance]];
+private _allegiance = _location getVariable ["TWC_Insurgency_Locations_allegiance", 0];
+_allegiance = ((_allegiance + _change) min 100) max 0;
+_location setVariable ["TWC_Insurgency_Locations_allegiance", _allegiance];
 
 //Set the area marker colour
 private _marker = "TWC_Marker_" + text _location;
@@ -23,4 +21,4 @@ if (_allegiance < 30) then {
 	};
 };
 
-
+DEBUG_LOG("Modified Allegiance in location" + text _location + " by " + str _change);

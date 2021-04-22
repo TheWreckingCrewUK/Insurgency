@@ -3,14 +3,15 @@
 params ["_parentTask", "_taskNumber"];
 
 //Finding a town where we could put him, don't want him in a friendly town
+private _allLocations = TWC_Insurgency_Locations;
+private _possibleLocations = [];
+{
+	_locationInfo = [_x] call TWC_Insurgency_Locations_fnc_getInfo;
+	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
+	if (_allegiance < 70) then {_possibleLocations pushBack _x};
+} forEach _allLocations;
+private _location = selectRandom _possibleLocations;
 private _location = locationNull;
-while {isNull _location} do {
-	private _locationInfo = selectRandom TWC_Insurgency_Locations;
-	_locationInfo params ["_testLocation", "_isStronghold", "_hasCache", "_allegiance", "_forces"];
-	if (_allegiance < 70) then {
-		_location = _testLocation;
-	};
-};
 
 //Want to spawn him in a building, hidden and away from prying eyes
 private _spawnPos = [];

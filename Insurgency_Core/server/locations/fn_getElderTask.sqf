@@ -1,25 +1,32 @@
 #include "..\..\includes\script_component.hpp"
 
-params ["_player", "_location"];
+params ["_player", "_elderGroup"];
 
-private _activeTask = missionNameSpace getVariable [text _location + "_task", ""];
+//Determine what location we're talking about from the elder, stored in townActivate.
+private _location = _elderGroup getVariable ["TWC_Insurgency_Location", locationNull];
+
+//Check for any active tasks, only one per town at a time.
+private _activeTask = _location getVariable ["TWC_Insurgency_Locations_task", ""];
 if (_activeTask isNotEqualTo "") exitWith {
 	["TWC_Insurgency_Actions_getElderTask", ["Please take care of what we asked before."], _player] call CBA_fnc_targetEvent;
 	DEBUG_LOG(text _location + " already has active civ task")
 };
 
-private _locationArray = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
-_locationArray params ["_locationInfo", "_locationIndex"];
-_locationInfo params ["_location", "_isStronghold", "_hasCache", "_allegiance"];
+//Get location information.
+private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
+_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
 _locationPos = locationPosition _location;
 
+//No point in doing tasks for a town that is already 100% friendly.
 if (_allegiance isEqualTo 100) exitWith {
 	["TWC_Insurgency_Actions_getElderTask", ["We do not need your help for now, friends."], _player] call CBA_fnc_targetEvent;
 	DEBUG_LOG(text _location + " already fully friendly.")
 };
 
+//These tasks are always available.
 private _tasks = ["aid", "hvt", "dispute"];
 
+//These tasks are conditional.
 private _nearestIED = [_locationPos] call TWC_Insurgency_OPFOR_fnc_nearestIED;
 if (_nearestIED distance _locationPos < 1000) then {_tasks pushBack "ied"};
 
@@ -29,8 +36,10 @@ if ((_campPos distance _locationPos < 2000) && (_campPos isNotEqualTo [0,0,0])) 
 
 if (isClass (configFile >> "CfgPatches" >> "CUP_Weapons_WeaponsCore")) then {_tasks pushBack "cash"};
 
-private _task = selectRandom _tasks;
+//Select a random task type from our determined available tasks.
+_task = selectRandom _tasks;
 
+//Select the return message based on the task and spawn the task.
 private _message = "";
 switch _task do {
 	case "ied": {
@@ -59,4 +68,5 @@ switch _task do {
 	};
 };
 
+//Return the message to the player.
 ["TWC_Insurgency_Actions_getElderTask", [_message], _player] call CBA_fnc_targetEvent;
