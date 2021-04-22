@@ -1,5 +1,7 @@
 #include "..\..\includes\script_component.hpp"
 
+if (!isServer) exitWith {DEBUG_LOG("Locations Init not executed on client.")};
+
 //Create locations from config.
 _allLocations = [];
 private _locationConfigs = "true" configClasses (missionConfigFile >> "CfgLocations");

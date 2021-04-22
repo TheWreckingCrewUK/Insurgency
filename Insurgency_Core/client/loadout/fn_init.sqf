@@ -1,4 +1,6 @@
-#include "..\includes\script_component.hpp"
+#include "..\..\includes\script_component.hpp"
+
+if (isDedicated) exitWith {DEBUG_LOG("Loadouts do not need to be called on server.")};
 
 //Adds the loadouts for the players to select.
 private _type = roleDescription player;
@@ -51,5 +53,3 @@ player createDiaryRecord ["Insurgency", ["Supply", "Ammunition and vehicles are 
 player createDiaryRecord ["Insurgency", ["Local Forces", "Local forces need to be established, trained, and supplied in order to provide security to the region in the long term. While they are not capable of direct action against the insurgents, they are good enough to set up checkpoints and defenses at towns or bases."]];
 player createDiaryRecord ["Insurgency", ["Patrol Bases", "Patrol Bases can be established wherever you want. These function as forward reinforcement points, but are juicy targets for the insurgent forces."]];
 player createDiaryRecord ["Insurgency", ["Victory", "Victory is achieved by pacifying the local populace, building a good security force, and destroying the insurgent ability to fight."]];
-
-call TWC_Insurgency_Actions_fnc_init;

@@ -4,7 +4,9 @@ class TWC_Insurgency_Locations {
 		tag = "Locations";
 		
 		//Init
-		class init					{};
+		class init {
+			postInit = 1;
+		};
 		
 		//Location Activation
 		class activationLoop		{};

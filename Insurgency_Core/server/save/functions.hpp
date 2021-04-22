@@ -3,7 +3,9 @@ class TWC_Insurgency_Save {
 		file = "Insurgency_Core\server\save";
 		tag = "Save";
 		
-		class init				{};
+		class init {
+			postInit = 1;
+		};
 		class save				{};
 		class checkVictory		{};
 	};

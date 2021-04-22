@@ -2,7 +2,12 @@ class TWC_Insurgency_Actions {
 	class actions {
 		file = "Insurgency_Core\client\actions";
 		tag = "Actions";
-		class init					{};
+		class init {
+			postInit = 1;
+		};
+		class initHandlers {
+			preInit = 1;
+		};
 		
 		//Town/Civs
 		class addCiv				{};
