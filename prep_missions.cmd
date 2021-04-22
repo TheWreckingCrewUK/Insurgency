@@ -13,8 +13,6 @@ for /d %%i in (*) do (
 			IF /I "%%i" == ".github" (
 				echo Skipping .github...
 			) else (
-				::echo Updating onLoadMission for %%i
-				::echo onLoadName = "Insurgency Redux - %DATE:/=-%"; > %%i\onLoadMission.hpp
 				makePbo -NPM %%i
 				echo makePboing %%i
 			)
