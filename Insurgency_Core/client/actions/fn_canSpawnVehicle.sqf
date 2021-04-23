@@ -1,7 +1,9 @@
 #include "..\..\includes\script_component.hpp"
 
-params ["_target", "_player", "_type"];
+params ["_target", "_player", "_typeInfo"];
 
-private _cost = [_type] call TWC_Insurgency_Actions_fnc_getVehicleCost;
+_typeInfo params ["_type", "_category"];
+
+private _cost = getNumber (missionConfigFile >> "CfgTransport" >> _category >> _type >> "cost");
 
 TWC_Insurgency_supplyBLUFOR >= _cost
