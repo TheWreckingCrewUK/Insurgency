@@ -43,7 +43,6 @@ class TWC_Insurgency_Actions {
 		class canSpawnAmmo			{};
 		class spawnAmmo				{};
 		
-		class getVehicleCost		{};
 		class canSpawnVehicle		{};
 		class spawnVehicle			{};
 		

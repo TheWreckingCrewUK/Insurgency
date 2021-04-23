@@ -6,7 +6,8 @@ params ["_parentTask", "_taskNumber"];
 private _spawnPos = [2000] call TWC_Insurgency_Locations_fnc_randomLocationASL;
 
 //Select a vehicle from the settings
-private _vehicleType = selectRandom (getArray (missionConfigFile >> "CfgTransport" >> "lightVehicles"));
+private _vehicleType = selectRandom ("true" configClasses (missionConfigFile >> "CfgTransport" >> "Cars"));
+_vehicleType = configName _vehicleType;
 
 //Spawn in the vehicle, make it a little more challenging to get out
 private _vehicle = createVehicle [_vehicleType, [0,0,0]];

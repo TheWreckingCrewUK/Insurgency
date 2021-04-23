@@ -6,7 +6,8 @@ params ["_parentTask", "_taskNumber"];
 private _spawnPos = [2000] call TWC_Insurgency_Locations_fnc_randomLocationASL;
 
 //Select a random helicopter from the settings
-private _heliType = selectRandom (getArray (missionConfigFile >> "CfgTransport" >> "helicopters"));
+private _heliType = selectRandom ("true" configClasses (missionConfigFile >> "CfgTransport" >> "Helicopters"));
+_heliType = configName _heliType;
 
 //Spawn in a helicopter and destroy it without cook-off
 private _heli = createVehicle [_heliType, [0,0,0]];
