@@ -37,6 +37,7 @@ class TWC_Insurgency_Actions {
 		
 		//Vehicle/Ammo Spawning
 		class getSupply				{};
+		class addDelete				{};
 		
 		class getAmmoCost			{};
 		class canSpawnAmmo			{};

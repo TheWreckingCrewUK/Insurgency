@@ -5,7 +5,7 @@ params ["_location", "_nearestIED"];
 private _iedPos = getPos _nearestIED;
 
 private _taskID = call TWC_Insurgency_Locations_fnc_taskID;
-_location setVariable ["TWC_Insurgency_Locations_task", _taskID];
+_location setVariable ["TWC_Insurgency_Locations_task", _taskID select 0];
 
 //Eventhandler completing for the defusing.
 ["ace_explosives_defuse", {

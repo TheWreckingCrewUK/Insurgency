@@ -21,7 +21,7 @@ private _taskLocation = selectRandom _possibleLocations;
 private _taskPos = locationPosition _taskLocation;
 
 private _taskID = call TWC_Insurgency_Locations_fnc_taskID;
-_location setVariable ["TWC_Insurgency_Locations_task", _taskID];
+_location setVariable ["TWC_Insurgency_Locations_task", _taskID select 0];
 
 //Add an eventhandler for elder spawn to add an action to speak to the elder about the dispute.
 private _actionEventID = ["TWC_Insurgency_Actions_elderSpawn", {
@@ -43,13 +43,12 @@ private _actionEventID = ["TWC_Insurgency_Actions_elderSpawn", {
 	_thisArgs params ["_taskID", "_location", "_actionEventID"];
 	
 	private _locationInfo = [_taskLocation] call TWC_Insurgency_Locations_fnc_getInfo;
-	_locationInfo params ["_locationDetails", "_locationIndex"];
-	_locationDetails params ["_taskLocation", "_isStronghold", "_hasCache", "_allegiance", "_task"];
+	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
 	
 	//Chance of success in the talks depends on the allegiance of the village we're talking to; 100% chance at full allegiance and 0% chance at no allegiance.
 	private _success = random 1 > (1 - _allegiance / 100);
 	
-	private _message = "This message shouldn't be returned, and if it did you should Rik he is a moron.";
+	private _message = "This message shouldn't be returned, and if it did you should tell Rik he is a moron.";
 	
 	if (_success) then {
 		[_taskID, "SUCCEEDED", false] call BIS_fnc_taskSetState;

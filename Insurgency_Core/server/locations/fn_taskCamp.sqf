@@ -3,17 +3,16 @@
 params ["_location", "_camp"];
 
 private _taskID = call TWC_Insurgency_Locations_fnc_taskID;
-_location setVariable ["TWC_Insurgency_Locations_task", _taskID];
+_location setVariable ["TWC_Insurgency_Locations_task", _taskID select 0];
 
 //Eventhandler on the destruction of the camp.
 ["TWC_Insurgency_Locations_campDeath", {
 	_this params ["_camp"];
 	_thisArgs params ["_location"];
 	
-	private _taskDetails = missionNameSpace getVariable [_camp + "_task", ""];
+	private _taskID = _location getVariable ["TWC_Insurgency_Locations_task", ""];
 	
-	if (count _taskDetails < 1) exitWith {DEBUG_LOG(text _location + " has no task for this")};
-	_taskDetails params ["_taskID", "_parentTask"];
+	if (_taskID isEqualTo "") exitWith {DEBUG_LOG(text _location + " has no task for this")};
 	
 	[_taskID, "SUCCEEDED", false] call BIS_fnc_taskSetState;
 	

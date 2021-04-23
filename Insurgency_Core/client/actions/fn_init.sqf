@@ -47,7 +47,7 @@ TWC_Insurgency_Actions_taskDispute = [
 
 TWC_Insurgency_Actions_taskCash = [
 	"TWC_Insurgency_Actions_taskCash",
-	"Resolve Dispute",
+	"Give Cash",
 	"",
 	{_this call TWC_Insurgency_Actions_fnc_taskCash},
 	{alive _target && "CUP_item_Money" in (items _player)}
