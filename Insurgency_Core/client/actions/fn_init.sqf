@@ -81,6 +81,16 @@ private _action = [
 [TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 private _action = [
+	"TWC_Insurgency_Actions_spawnTrucks",
+	"Spawn Truck",
+	"",
+	{true},
+	{},
+	{}
+] call ace_interact_menu_fnc_createAction;
+[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+private _action = [
 	"TWC_Insurgency_Actions_spawnHeli",
 	"Spawn Helicopter",
 	"",
@@ -110,8 +120,8 @@ private _action = [
 ] call ace_interact_menu_fnc_createAction;
 [TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-//Create subactions for vehicle spawning, everyone can spawn light vehicles.
-private _vehicles = getArray (missionConfigFile >> "TWC_Insurgency" >> "blufor_lightVehicles");
+//Create subactions for vehicle spawning, everyone can spawn light vehicles and trucks.
+private _vehicles = getArray (missionConfigFile >> "CfgTransport" >> "lightVehicles");
 {
 	private _vehicle = _x;
 	private _action = [
@@ -126,9 +136,24 @@ private _vehicles = getArray (missionConfigFile >> "TWC_Insurgency" >> "blufor_l
 	[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnVehicle"], _action] call ace_interact_menu_fnc_addActionToObject;
 } forEach _vehicles;
 
+private _trucks = getArray (missionConfigFile >> "CfgTransport" >> "trucks");
+{
+	private _vehicle = _x;
+	private _action = [
+		"TWC_Insurgency_Actions_spawnTruck_" + _vehicle,
+		getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName"),
+		"",
+		{_this call TWC_Insurgency_Actions_fnc_spawnVehicle},
+		{_this call TWC_Insurgency_Actions_fnc_canSpawnVehicle},
+		{},
+		_vehicle
+	] call ace_interact_menu_fnc_createAction;
+	[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnTrucks"], _action] call ace_interact_menu_fnc_addActionToObject;
+} forEach _trucks;
+
 //Only add helicopters spawns for heli pilots.
 if (player getVariable ["TWC_Insurgency_isHeli", false]) then {
-	private _helicopters = getArray (missionConfigFile >> "TWC_Insurgency" >> "blufor_helicopters");
+	private _helicopters = getArray (missionConfigFile >> "CfgTransport" >> "helicopters");
 	{
 		private _helicopter = _x;
 		private _action = [
@@ -146,7 +171,7 @@ if (player getVariable ["TWC_Insurgency_isHeli", false]) then {
 
 //Only add armour spawns for armour crew.
 if (player getVariable ["TWC_Insurgency_isArmour", false]) then {
-	private _armours = getArray (missionConfigFile >> "TWC_Insurgency" >> "blufor_armour");
+	private _armours = getArray (missionConfigFile >> "CfgTransport" >> "armour");
 	{
 		private _armour = _x;
 		private _action = [
@@ -164,7 +189,7 @@ if (player getVariable ["TWC_Insurgency_isArmour", false]) then {
 
 //Only add jet spawns for jet pilots.
 if (player getVariable ["TWC_Insurgency_isPlane", false]) then {
-	private _armours = getArray (missionConfigFile >> "TWC_Insurgency" >> "blufor_planes");
+	private _armours = getArray (missionConfigFile >> "CfgTransport" >> "planes");
 	{
 		private _plane = _x;
 		private _action = [
