@@ -1,7 +1,7 @@
 #include "..\..\includes\script_component.hpp"
 
 //Get strongholds from the locations array
-private _strongholds = TWC_Insurgency_Locations select {_x select 1};
+private _strongholds = call TWC_Insurgency_Locations_fnc_getStrongholds;
 private _strongholdCount = count _strongholds;
 
 //We'll use half of our supply and manpower in building strongholds
@@ -56,7 +56,7 @@ DEBUG_LOG("Reserved " + str _usedManpower + " manpower and " + str _usedSupply +
 
 //Loop through the strongholds to build them, not actually spawning them but adding them with positions to the global enemies array
 {
-	private _location = _x select 0;
+	private _location = _x;
 	private _locationPos = locationPosition _location;
 	private _marker = "TWC_Marker_" + text _location;
 	

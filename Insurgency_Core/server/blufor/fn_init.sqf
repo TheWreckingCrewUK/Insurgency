@@ -1,5 +1,7 @@
 #include "..\..\includes\script_component.hpp"
 
+if (!isServer) exitWith {DEBUG_LOG("BLUFOR Init not executed on client.")};
+
 TWC_Insurgency_supplyBLUFOR = getNumber (missionConfigFile >> "TWC_Insurgency" >> "supplyBLUFOR");
 
 TWC_Insurgency_PatrolBases = [];

@@ -8,6 +8,8 @@ _spawnDir = _spawnDir + 90;
 
 private _vehicle = createVehicle [_type, _spawnPos];
 
+clearMagazineCargoGlobal _vehicle;
+clearWeaponCargoGlobal _vehicle;
 clearItemCargoGlobal _vehicle;
 _vehicle setDir _spawnDir;
 

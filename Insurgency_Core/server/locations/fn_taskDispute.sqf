@@ -2,19 +2,26 @@
 
 params ["_location"];
 
+_allLocations = TWC_Insurgency_Locations;
+
 private _locationPosition = locationPosition _location;
 
-private _possibleLocations = TWC_Insurgency_Locations select {
-	private _testLocation = _x select 0;
-	private _testPos = locationPosition _testLocation;
-	(_locationPosition distance2d _testPos < 5000) && (_location isNotEqualTo _testLocation) && !(_x select 1)
-};
+private _possibleLocations = [];
+{
+	private _locationInfo = [_x] call TWC_Insurgency_Locations_fnc_getInfo;
+	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
+	
+	private _testPos = locationPosition _x;
+	private _closeToLocation = _locationPosition distance2d _testPos < 5000;
+	private _notTaskLocation = _location isNotEqualTo _x;
+	if (_closeToLocation && _notTaskLocation && !_hasCache) then {_possibleLocations pushBack _x};
+} forEach _allLocations;
 
-private _taskLocation = (selectRandom _possibleLocations) select 0;
+private _taskLocation = selectRandom _possibleLocations;
 private _taskPos = locationPosition _taskLocation;
 
 private _taskID = call TWC_Insurgency_Locations_fnc_taskID;
-missionNameSpace setVariable [text _location + "_task", _taskID];
+_location setVariable ["TWC_Insurgency_Locations_task", _taskID select 0];
 
 //Add an eventhandler for elder spawn to add an action to speak to the elder about the dispute.
 private _actionEventID = ["TWC_Insurgency_Actions_elderSpawn", {
@@ -36,13 +43,12 @@ private _actionEventID = ["TWC_Insurgency_Actions_elderSpawn", {
 	_thisArgs params ["_taskID", "_location", "_actionEventID"];
 	
 	private _locationInfo = [_taskLocation] call TWC_Insurgency_Locations_fnc_getInfo;
-	_locationInfo params ["_locationDetails", "_locationIndex"];
-	_locationDetails params ["_taskLocation", "_isStronghold", "_hasCache", "_allegiance"];
+	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
 	
 	//Chance of success in the talks depends on the allegiance of the village we're talking to; 100% chance at full allegiance and 0% chance at no allegiance.
 	private _success = random 1 > (1 - _allegiance / 100);
 	
-	private _message = "This message shouldn't be returned, and if it did you should Rik he is a moron.";
+	private _message = "This message shouldn't be returned, and if it did you should tell Rik he is a moron.";
 	
 	if (_success) then {
 		[_taskID, "SUCCEEDED", false] call BIS_fnc_taskSetState;
@@ -69,7 +75,7 @@ private _actionEventID = ["TWC_Insurgency_Actions_elderSpawn", {
 	["TWC_Insurgency_Locations_taskDisputeResult", [_message], _player] call CBA_fnc_targetEvent;
 	
 	//Event and variable clean-up.
-	missionNameSpace setVariable [text _location + "_task", nil];
+	_location setVariable ["TWC_Insurgency_Locations_task", nil];
 	["TWC_Insurgency_Locations_taskDispute", _thisId] call CBA_fnc_removeEventHandler;
 	["TWC_Insurgency_Actions_elderSpawn", _actionEventID] call CBA_fnc_removeEventHandler;
 }, [_taskID select 0, _location, _actionEventID]] call CBA_fnc_addEventHandlerArgs;

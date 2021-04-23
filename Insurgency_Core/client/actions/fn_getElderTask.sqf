@@ -2,8 +2,6 @@
 
 params ["_elder", "_player"];
 
-private _nearestLocation = (group _elder) getVariable ["TWC_Insurgency_Location", nearestLocation [_elder, ""]];
-
 private _id = ["TWC_Insurgency_Actions_getElderTask", {
 	_this params ["_message"];
 	_thisArgs params ["_player"];
@@ -12,7 +10,7 @@ private _id = ["TWC_Insurgency_Actions_getElderTask", {
 	DEBUG_LOG("Retrieved civilian task");
 }, [_player]] call CBA_fnc_addEventHandlerArgs;
 
-["TWC_Insurgency_Locations_getElderTask", [_player, _nearestLocation]] call CBA_fnc_serverEvent;
+["TWC_Insurgency_Locations_getElderTask", [_player, group _elder]] call CBA_fnc_serverEvent;
 
 [5, [_elder, _player, _id], {
 	DEBUG_LOG("Got civilian task");

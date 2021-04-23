@@ -10,10 +10,9 @@ private _locationPos = locationPosition _location;
 	
 	private _location = [getPos _crate] call TWC_Insurgency_Locations_fnc_nearestLocation;
 	
-	private _taskDetails = missionNameSpace getVariable [text _location + "_task", []];
+	private _taskID = _location getVariable ["TWC_Insurgency_Locations_task", ""];
 	
-	if (count _taskDetails < 1) exitWith {DEBUG_LOG(text _location + " has no task for this")};
-	_taskDetails params ["_taskID", "_parentTask"];
+	if (_taskID isEqualTo "") exitWith {DEBUG_LOG(text _location + " has no task for this")};
 	
 	[_taskID, "SUCCEEDED", false] call BIS_fnc_taskSetState;
 	
@@ -22,13 +21,13 @@ private _locationPos = locationPosition _location;
 	
 	deleteVehicle _crate;
 	
-	missionNameSpace setVariable [text _location + "_task", nil];
+	_location setVariable ["TWC_Insurgency_Locations_task", nil];
 	
 	DEBUG_LOG("Task Aid Complete");
 }] call CBA_fnc_addEventHandler;
 
 private _taskID = call TWC_Insurgency_Locations_fnc_taskID;
-missionNameSpace setVariable [text _location + "_task", _taskID];
+_location setVariable ["TWC_Insurgency_Locations_task", _taskID select 0];
 
 //Create the task.
 private _playerside = call TWC_Insurgency_BLUFOR_fnc_playerSide;

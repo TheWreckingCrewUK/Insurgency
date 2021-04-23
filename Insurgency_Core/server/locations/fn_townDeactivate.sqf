@@ -2,22 +2,16 @@
 
 params ["_location"];
 
-private _locationInfo = _location call TWC_Insurgency_Locations_fnc_getInfo;
-(_locationInfo select 0) params ["_location", "_isStronghold", "_hasCache", "_allegiance"];
+private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
+_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
+
+if (!_isActive) exitWith {DEBUG_LOG(text _location + " is already inactive")};
 
 if (_isStronghold) exitWith {
 	["TWC_Insurgency_OPFOR_deactivateStronghold", [_location]] call CBA_fnc_serverEvent;
 };
 
-private _locationDetails = missionNameSpace getVariable [text _location, []];
-
-if (count _locationDetails == 0) exitWith {DEBUG_LOG(text _location + " is already inactive")};
-
-(_locationDetails select 0) params ["_elderGroup", "_civilianGroup"];
-private _activationTime = _locationDetails select 1;
-
-if (CBA_missionTime < _activationTime + 30) exitWith {DEBUG_LOG(text _location + " told to be active < 30 seconds ago")};
-
+//Clean-up units.
 {
 	deleteVehicle _x;
 } forEach units _elderGroup;
@@ -25,9 +19,12 @@ deleteGroup _elderGroup;
 
 {
 	deleteVehicle _x;
-} forEach units _civilianGroup;
-deleteGroup _civilianGroup;
+} forEach units _civGroup;
+deleteGroup _civGroup;
 
-missionNameSpace setVariable [text _location, nil];
+//Change location variables.
+_location setVariable ["TWC_Insurgency_Locations_isActive", false];
+_location setVariable ["TWC_Insurgency_Locations_elderGroup", grpNull];
+_location setVariable ["TWC_Insurgency_Locations_civGroup", grpNull];
 
 DEBUG_LOG(text _location + " deactivated");

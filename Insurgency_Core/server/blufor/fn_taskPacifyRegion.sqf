@@ -3,7 +3,7 @@
 params ["_parentTask", "_taskNumber"];
 
 //Find some villages close to each other.
-private _center = (selectRandom TWC_Insurgency_Locations) select 0;
+private _center = selectRandom TWC_Insurgency_Locations;
 private _centerPos = locationPosition _center;
 private _locations = nearestLocations [_centerPos, ["NameCity","NameCityCapital","NameVillage","NameLocal"], 3000, _centerPos];
 
@@ -31,8 +31,8 @@ private _playerside = call TWC_Insurgency_BLUFOR_fnc_playerSide;
 		_done = true;
 		DEBUG_LOG("Checking" + str _locations);
 		{
-			_locationInfo = [_x] call TWC_Insurgency_Locations_fnc_getInfo;
-			(_locationInfo select 0) params ["_location", "_isStronghold", "_hasCache", "_allegiance"];
+			private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
+			_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
 			if (_allegiance < 70) then {
 				_done = false;
 				DEBUG_LOG(str _x + " not ready");

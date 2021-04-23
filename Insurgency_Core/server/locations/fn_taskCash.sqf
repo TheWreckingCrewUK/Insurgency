@@ -5,11 +5,10 @@ params ["_location"];
 private _locationPos = locationPosition _location;
 
 private _taskID = call TWC_Insurgency_Locations_fnc_taskID;
-missionNameSpace setVariable [text _location + "_task", _taskID];
+_location setVariable ["TWC_Insurgency_Locations_task", _taskID select 0];
 
 //Add action to give cash to elder now.
-private _locationGroups = (missionNameSpace getVariable [text _location, []]) select 0;
-_locationGroups params ["_elderGroup", "_civGroup"];
+private _elderGroup = _location getVariable ["TWC_Insurgency_Locations_elderGroup", grpNull];
 private _jipID = ["TWC_Insurgency_Actions_taskCash", [_elderGroup]] call CBA_fnc_globalEventJIP;
 [_jipID, leader _elderGroup] call CBA_fnc_removeGlobalEventJIP;
 
@@ -42,15 +41,15 @@ private _actionEventID = ["TWC_Insurgency_Actions_elderSpawn", {
 	[_jipID, _elder] call CBA_fnc_removeGlobalEventJIP;
 	
 	//Event and variable clean-up.
-	missionNameSpace setVariable [text _location + "_task", nil];
+	_location setVariable ["TWC_Insurgency_Locations_task", nil];
 	["TWC_Insurgency_Locations_taskDispute", _thisId] call CBA_fnc_removeEventHandler;
 	["TWC_Insurgency_Actions_elderSpawn", _actionEventID] call CBA_fnc_removeEventHandler;
 	
-	DEBUG_LOG("Task Dispute Complete");
+	DEBUG_LOG("Task Cash Complete");
 }, [_taskID select 0, _location, _actionEventID]] call CBA_fnc_addEventHandlerArgs;
 
 //Create the task.
 private _playerside = call TWC_Insurgency_BLUFOR_fnc_playerSide;
 [_playerside, _taskID, "cash", _locationPos, "CREATED", -1, false, "box", false] call BIS_fnc_taskCreate;
 
-DEBUG_LOG("Task Camp Created");
+DEBUG_LOG("Task Cash Created");

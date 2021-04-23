@@ -4,7 +4,7 @@ params ["_location"];
 
 //Get a new task ID.
 private _taskID = call TWC_Insurgency_Locations_fnc_taskID;
-missionNameSpace setVariable [text _location + "_task", _taskID];
+_location setVariable ["TWC_Insurgency_Locations_task", _taskID select 0];
 
 //Pick a random spot in town
 private _spawnPos = [300] call TWC_Insurgency_Locations_fnc_randomLocationASL;
@@ -18,7 +18,7 @@ private _group = [[0,0,0], _enemySide, [_warlordType]] call BIS_fnc_spawnGroup;
 //Set the task so we know what to complete
 private _warlord = leader _group;
 _warlord setPosASL _spawnPos;
-_warlord setVariable ["TWC_Insurgency_Locations_Task", _taskID];
+_warlord setVariable ["TWC_Insurgency_Locations_Task", _taskID select 0];
 _warlord setVariable ["TWC_Insurgency_Locations_Location", _location];
 
 //Create the task
@@ -31,15 +31,14 @@ _warlord addEventHandler ["Killed", {
 	
 	private _location = _warlord getVariable ["TWC_Insurgency_Locations_Location", nearestLocation [getPos _warlord, ""]];
 	
-	private _task = _warlord getVariable ["TWC_Insurgency_Locations_Task", []];
-	private _taskID = _task select 0;
+	private _taskID = _warlord getVariable ["TWC_Insurgency_Locations_Task", ""];
 	
 	[_taskID, "SUCCEEDED", false] call BIS_fnc_taskSetState;
 	
 	private _reward = [_taskID] call TWC_Insurgency_Locations_fnc_taskReward;
 	[_location, _reward] call TWC_Insurgency_Locations_fnc_modifyAllegiance;
 	
-	missionNameSpace setVariable [text _location + "_task", nil];
+	_location setVariable ["TWC_Insurgency_Locations_task", nil];
 	
 	DEBUG_LOG("Task HVT Complete");
 }];
@@ -47,12 +46,11 @@ _warlord addEventHandler ["Killed", {
 //Cancel the task if he is deleted
 _warlord addEventHandler ["Deleted", {
 	params ["_unit"];
-	private _task = _unit getVariable ["TWC_Insurgency_Locations_Task", []];
-	private _taskID = _task select 0;
+	private _taskID = _unit getVariable ["TWC_Insurgency_Locations_Task", ""];
 	
 	[_taskID, "CANCELED", false] call BIS_fnc_taskSetState;
 	
-	missionNameSpace setVariable [text _location + "_task", nil];
+	_location setVariable ["TWC_Insurgency_Locations_task", nil];
 	
 	DEBUG_LOG("Task HVT Canceled");
 }];

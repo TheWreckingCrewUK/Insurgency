@@ -2,7 +2,9 @@ class TWC_Insurgency_BLUFOR {
 	class BLUFOR {
 		file = "Insurgency_Core\server\blufor";
 		tag = "BLUFOR";
-		class init {};
+		class init {
+			postInit = 1;
+		};
 		class taskCreate			{};
 		class taskFail				{};
 		class taskSucceed			{};

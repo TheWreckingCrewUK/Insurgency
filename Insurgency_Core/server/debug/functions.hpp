@@ -5,6 +5,7 @@ class TWC_Insurgency_Debug {
 		//Init
 		class getAllegiance			{};
 		class makeBadLocations		{};
+		class makeLocations			{};
 		class markCachedUnits		{};
 		class markCaches			{};
 		class markCamps				{};
