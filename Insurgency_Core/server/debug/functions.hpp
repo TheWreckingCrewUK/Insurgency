@@ -3,9 +3,15 @@ class TWC_Insurgency_Debug {
 		file = "Insurgency_Core\server\debug";
 		tag = "Debug";
 		//Init
-		class getAllegiance			{};
+		class initHandlers {
+			postInit = 1;
+		};
+		//Mission Prep
 		class makeBadLocations		{};
 		class makeLocations			{};
+		
+		//Zeus
+		class getAllegiance			{};
 		class markCachedUnits		{};
 		class markCaches			{};
 		class markCamps				{};
