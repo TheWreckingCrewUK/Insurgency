@@ -4,6 +4,7 @@ class CfgRespawnInventory {
 		displayName = "Rifleman (6B3)";
 		icon = "";
 		role = "Rifleman";
+		rank = "PRIVATE";
 		uniformClass = "CUP_U_O_RUS_M88_MSV_rolled_up";
 		backpack = "CUP_B_AlicePack_Khaki";
 		linkedItems[] = {
@@ -107,6 +108,7 @@ class CfgRespawnInventory {
 	class Senior_Rifleman_6B3: Rifleman_6B3 {
 		displayName = "Senior Rifleman (6B3)";
 		role = "Senior_Rifleman";
+		rank = "CORPORAL";
 		weapons[] = {
 			"CUP_arifle_AK74_Early",
 			"CUP_launch_RPG18"
@@ -125,6 +127,7 @@ class CfgRespawnInventory {
 	class Squad_Commander_6B3: Rifleman_6B3 {
 		displayName = "Squad Commander";
 		role = "Squad_Commander";
+		rank = "SERGEANT";
 		linkedItems[] = {
 			"CUP_V_O_SLA_Flak_Vest02",
 			"CUP_H_RUS_SSH68_olive",
@@ -183,6 +186,7 @@ class CfgRespawnInventory {
 	class Helicopter_Pilot: Rifleman_6B3 {
 		displayName = "Helicopter Pilot";
 		role = "Helicopter_Pilot";
+		rank = "CAPTAIN";
 		heli = 1;
 		backpack = "";
 		linkedItems[] = {
@@ -206,6 +210,7 @@ class CfgRespawnInventory {
 	class Armour_Commander: Rifleman_6B3 {
 		displayName = "Armour Commander";
 		role = "Armour_Commander";
+		rank = "SERGEANT";
 		armour = 1;
 		backpack = "";
 		linkedItems[] = {
@@ -227,5 +232,6 @@ class CfgRespawnInventory {
 	class Armour_Crew: Armour_Commander {
 		displayName = "Armour Crew";
 		role = "Armour_Crew";
+		rank = "PRIVATE";
 	};
 };

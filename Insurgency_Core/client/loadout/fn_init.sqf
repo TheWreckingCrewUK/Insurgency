@@ -11,8 +11,13 @@ if (_type isNotEqualTo "") then {
 		private _config = configName _x;
 		private _role = getText (missionConfigFile >> "CfgRespawnInventory" >> _config >> "role");
 		private _name = getText (missionConfigFile >> "CfgRoles" >> _role >> "displayName");
+		
 		if (_name isEqualTo _type) then {
 			[player, _config] call BIS_fnc_addRespawnInventory;
+			
+			//Set rank according to config.
+			private _rank = getText (missionConfigFile >> "CfgRespawnInventory" >> _config >> "rank");
+			player setRank _rank;
 			
 			//Also set special roles if they are
 			private _isMedic = getNumber (missionConfigFile >> "CfgRespawnInventory" >> _config >> "medic");
