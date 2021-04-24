@@ -4,25 +4,10 @@ briefingName = NAME;
 
 #include "Insurgency_Core\includes\description.hpp"
 #include "Insurgency_Core\includes\loadouts\soviet_1984\Soviet_1984.hpp"
+#include "Insurgency_Core\includes\locations\Takistan\CfgLocations.hpp"
 
 class TWC_Insurgency {
 	//Locations
-	invalidTowns[] = {
-		"military base",
-		"Nagara-1 oilfield",
-		"Naygul valley",
-		"Lalezar",
-		"Bala pass",
-		"Loy Manara oilfield",
-		"airfield",
-		"Naran Darre pass",
-		"Darbang pass",
-		"Sar-e Sang pass",
-		"Sagram",
-		"Par-e Siah oilfield",
-		"mine",
-		"Nar"
-	};
 	strongholdCount = 3;
 	cacheCount = 5;
 	caches[] = {
@@ -71,93 +56,27 @@ class TWC_Insurgency {
 	
 	//BLUFOR
 	supplyBLUFOR = 100;
-	playerSide = 1;
-	pilot = "CUP_B_US_Pilot";
+	playerSide = 0;
+	pilot = "CUP_O_RU_Pilot_VDV";
 	patrolBaseNames[] = {
-		"Sherman",
-		"Sheridan",
-		"Grant",
-		"Frémont",
-		"McClellan",
-		"Du Pont",
-		"Hunt",
-		"Bragg",
-		"Polk",
-		"Stuart",
-		"Jackson",
-		"Lee"
-	};
-	blufor_lightVehicles[] = {
-		"CUP_B_HMMWV_Ambulance_USA",
-		"CUP_B_HMMWV_SOV_USA",
-		"CUP_B_HMMWV_SOV_M2_USA",
-		"CUP_B_HMMWV_M2_USA",
-		"CUP_B_HMMWV_Unarmed_USA",
-		"CUP_B_HMMWV_MK19_USA"
-	};
-	blufor_lightVehicles_cost[] = {
-		10,
-		20,
-		20,
-		15,
-		5,
-		15
-	};
-	blufor_helicopters[] = {
-		"CUP_B_UH60M_US",
-		"CUP_B_UH60M_FFV_US",
-		"CUP_B_UH60M_Unarmed_US",
-		"CUP_B_UH60M_Unarmed_FFV_US",
-		"CUP_B_UH60M_Unarmed_FFV_MEV_US",
-		"CUP_B_MH60L_DAP_4x_US",
-		"CUP_B_MH60L_DAP_2x_US",
-		"CUP_B_CH47F_USA",
-		"CUP_B_CH47F_VIV_USA",
-		"CUP_B_AH64_DL_USA"
-	};
-	blufor_helicopters_cost[] = {
-		40,
-		40,
-		20,
-		20,
-		20,
-		60,
-		60,
-		30,
-		30,
-		80
-	};
-	blufor_armour[] = {
-		"CUP_B_M1126_ICV_M2_Desert",
-		"CUP_B_M1126_ICV_MK19_Desert",
-		"CUP_B_M1128_MGS_Desert",
-		"CUP_B_M113_desert_USA",
-		"CUP_B_M2Bradley_USA_D",
-		"CUP_B_M1A1_DES_US_Army"
-	};
-	blufor_armour_cost[] = {
-		30,
-		30,
-		50,
-		20,
-		60,
-		80
-	};
-	blufor_planes[] = {
-		"CUP_B_A10_DYN_USA",
-		"CUP_B_C130J_USMC",
-		"CUP_B_C130J_Cargo_USMC"
-	};
-	blufor_planes_cost[] = {
-		80,
-		50,
-		50
+		"Anna",
+		"Boris",
+		"Vasily",
+		"Gregory",
+		"Dmitri",
+		"Yelena",
+		"Zhenya",
+		"Zinaida",
+		"Ivan",
+		"Konstantin",
+		"Leonid",
+		"Mikhail"
 	};
 	
 	//OPFOR
 	supplyOPFOR = 1200;
 	manpowerOPFOR = 300;
-	enemySide = 0;
+	enemySide = 1;
 	warlord = "CUP_O_TK_INS_Commander";
 	initIEDs = 60;
 	typeIEDs[] = {

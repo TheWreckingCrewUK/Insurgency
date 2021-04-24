@@ -1,131 +1,115 @@
 class CfgTransport {
 	class Cars {
-		class CUP_B_HMMWV_Ambulance_USA {
+		class CUP_O_UAZ_AMB_RU {
 			cost = 10;
-			variant = "";
+			variant = "Soviet_UAZ";
 		};
-		class CUP_B_HMMWV_SOV_USA {
-			cost = 20;
-			variant = "";
-		};
-		class CUP_B_HMMWV_SOV_M2_USA {
-			cost = 20;
-			variant = "";
-		};
-		class CUP_B_HMMWV_M2_USA {
-			cost = 15;
-			variant = "";
-		};
-		class CUP_B_HMMWV_Unarmed_USA {
+		class CUP_O_UAZ_Open_RU {
 			cost = 5;
-			variant = "";
+			variant = "Soviet_UAZ";
 		};
-		class CUP_B_HMMWV_MK19_USA {
+		class CUP_O_UAZ_MG_RU {
 			cost = 15;
-			variant = "";
+			variant = "Soviet_UAZ";
+		};
+		class CUP_O_UAZ_Unarmed_RU {
+			cost = 5;
+			variant = "Soviet_UAZ";
+		};
+		class CUP_O_UAZ_SPG9_RU {
+			cost = 15;
+			variant = "Soviet_UAZ";
 		};
 	};
 	
 	class Trucks {
-		class CUP_B_MTVR_USA {
+		class CUP_O_BTR60_Green_RU {
 			cost = 20;
 			variant = "";
 		};
-		class CUP_B_MTVR_Ammo_USA {
+		class CUP_O_Ural_RU {
+			cost = 20;
+			variant = "";
+		};
+		class CUP_O_Ural_Open_RU {
+			cost = 20;
+			variant = "";
+		};
+		class CUP_O_Ural_Reammo_RU {
 			cost = 30;
 			variant = "";
 		};
-		class CUP_B_MTVR_Refuel_USA {
+		class CUP_O_Ural_Refuel_RU {
 			cost = 30;
 			variant = "";
 		};
-		class CUP_B_MTVR_Repair_USA {
+		class CUP_O_Ural_Repair_RU {
 			cost = 30;
 			variant = "";
 		};
 	};
 	
 	class Helicopters {
-		class CUP_B_UH60M_US {
-			cost = 40;
-			variant = "";
-		};
-		class CUP_B_UH60M_FFV_US {
-			cost = 40;
-			variant = "";
-		};
-		class CUP_B_UH60M_Unarmed_US {
+		class CUP_O_Mi8_VIV_RU {
 			cost = 20;
-			variant = "";
+			variant = "Soviet_Mi8";
 		};
-		class CUP_B_UH60M_Unarmed_FFV_US {
+		class CUP_O_Mi8AMT_RU {
 			cost = 20;
-			variant = "";
+			variant = "Soviet_Mi8";
 		};
-		class CUP_B_UH60M_Unarmed_FFV_MEV_US {
-			cost = 20;
-			variant = "";
-		};
-		class CUP_B_MH60L_DAP_4x_US {
+		class CUP_O_Mi8_RU {
 			cost = 60;
-			variant = "";
+			variant = "Soviet_Mi8";
 		};
-		class CUP_B_MH60L_DAP_2x_US {
-			cost = 60;
-			variant = "";
+		class CUP_O_Mi8_medevac_RU {
+			cost = 20;
+			variant = "Soviet_Mi8_Medical";
 		};
-		class CUP_B_CH47F_USA {
+		class CUP_O_MI6T_RU {
 			cost = 30;
 			variant = "";
 		};
-		class CUP_B_CH47F_VIV_USA {
+		class CUP_O_MI6A_RU {
 			cost = 30;
 			variant = "";
 		};
-		class CUP_B_AH64_DL_USA {
+		class CUP_O_Mi24_P_Dynamic_RU {
 			cost = 80;
-			variant = "";
+			variant = "Soviet_Mi24";
 		};
 	};
 	
 	class Armour {
-		class CUP_B_M1126_ICV_M2_Desert {
+		class CUP_I_BMP1_TK_GUE {
+			cost = 40;
+			variant = "";
+		};
+		class CUP_O_BMP2_RU {
+			cost = 60;
+			variant = "Soviet_BMP2";
+		};
+		class CUP_O_BMP2_ZU_TKA {
 			cost = 30;
-			variant = "";
+			variant = "Soviet_BMP2";
 		};
-		class CUP_B_M1126_ICV_MK19_Desert {
-			cost = 30;
-			variant = "";
-		};
-		class CUP_B_M1128_MGS_Desert {
-			cost = 50;
-			variant = "";
-		};
-		class CUP_B_M113_desert_USA {
+		class CUP_O_MTLB_pk_Green_RU {
 			cost = 20;
 			variant = "";
 		};
-		class CUP_B_M2Bradley_USA_D {
-			cost = 60;
+		class CUP_I_BRDM2_TK_Gue {
+			cost = 20;
 			variant = "";
 		};
-		class CUP_B_M1A1_DES_US_Army {
-			cost = 80;
+		class CUP_I_T55_TK_GUE {
+			cost = 70;
 			variant = "";
 		};
 	};
 	
 	class Planes {
-		class CUP_B_A10_DYN_USA {
+		class CUP_O_Su25_Dyn_RU {
 			cost = 80;
-			variant = "";
-		};
-		class CUP_B_C130J_USMC {
-			cost = 50;
-			variant = "";
-		};
-		class CUP_B_C130J_Cargo_USMC {
-			cost = 50;
 			variant = "";
 		};
 	};
