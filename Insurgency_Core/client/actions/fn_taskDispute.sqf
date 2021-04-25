@@ -5,10 +5,12 @@ params ["_elder", "_player"];
 private _nearestLocation = (group _elder) getVariable ["TWC_Insurgency_Location", nearestLocation [_elder, ""]];
 
 private _id = ["TWC_Insurgency_Locations_taskDisputeResult", {
-	params ["_message"];
+	_this params ["_message"];
+	_thisArgs params ["_player"];
+	
 	_player setVariable ["TWC_Insurgency_Actions_taskDispute", _message];
 	DEBUG_LOG("Retrieved dispute task result");
-}] call CBA_fnc_addEventHandler;
+},[_player]] call CBA_fnc_addEventHandlerArgs;
 
 ["TWC_Insurgency_Locations_taskDispute", [_nearestLocation, _player, _elder]] call CBA_fnc_serverEvent;
 
