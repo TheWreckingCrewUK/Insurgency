@@ -1,5 +1,4 @@
 class CfgLocations {
-	//Names remain empty if it is already on the map!
 	class Rasman {
 		name = "Rasman";
 		type = "NameCityCapital";

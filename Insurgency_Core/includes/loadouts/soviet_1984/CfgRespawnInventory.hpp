@@ -12,11 +12,11 @@ class CfgRespawnInventory {
 			"CUP_H_RUS_SSH68_olive",
 			"ItemMap",
 			"ItemCompass",
-			"ItemWatch",
+			"ItemWatch"
 		};
 		items[] = {
 			MEDICAL_LOADOUT,
-			"ACE_EntrenchingTool",
+			"ACE_EntrenchingTool"
 		};
 		weapons[] = {
 			"CUP_arifle_AK74_Early"
@@ -34,7 +34,7 @@ class CfgRespawnInventory {
 			"CUP_H_RUS_SSH68_olive",
 			"ItemMap",
 			"ItemCompass",
-			"ItemWatch",
+			"ItemWatch"
 		};
 	};
 	class Autorifleman_6B3: Rifleman_6B3 {
@@ -55,7 +55,7 @@ class CfgRespawnInventory {
 			"CUP_H_RUS_SSH68_olive",
 			"ItemMap",
 			"ItemCompass",
-			"ItemWatch",
+			"ItemWatch"
 		};
 	};
 	class Grenadier_6B3: Rifleman_6B3 {
@@ -80,7 +80,7 @@ class CfgRespawnInventory {
 			"CUP_H_RUS_SSH68_olive",
 			"ItemMap",
 			"ItemCompass",
-			"ItemWatch",
+			"ItemWatch"
 		};
 	};
 	class Assistant_Grenadier_6B3: Rifleman_6B3 {
@@ -102,7 +102,7 @@ class CfgRespawnInventory {
 			"CUP_H_RUS_SSH68_olive",
 			"ItemMap",
 			"ItemCompass",
-			"ItemWatch",
+			"ItemWatch"
 		};
 	};
 	class Senior_Rifleman_6B3: Rifleman_6B3 {
@@ -121,7 +121,7 @@ class CfgRespawnInventory {
 			"CUP_H_RUS_SSH68_olive",
 			"ItemMap",
 			"ItemCompass",
-			"ItemWatch",
+			"ItemWatch"
 		};
 	};
 	class Squad_Commander_6B3: Rifleman_6B3 {
@@ -155,7 +155,7 @@ class CfgRespawnInventory {
 			"CUP_H_RUS_SSH68_olive",
 			"ItemMap",
 			"ItemCompass",
-			"ItemWatch",
+			"ItemWatch"
 		};
 	};
 	

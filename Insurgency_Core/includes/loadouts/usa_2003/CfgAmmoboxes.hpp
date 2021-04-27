@@ -4,7 +4,6 @@ class CfgAmmoboxes {
 	#include "..\generic_ammoboxes.hpp"
 	
 	class Squad_Supply {
-		
 		displayName = "Squad Resupply (5)";
 		type = "CUP_BOX_US_ARMY_Ammo_F";
 		size = 1;

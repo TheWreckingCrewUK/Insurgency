@@ -15,7 +15,7 @@ class CfgRespawnInventory {
 			"CUP_NVG_PVS14",
 			"ItemMap",
 			"ItemCompass",
-			"ItemWatch",
+			"ItemWatch"
 		};
 		items[] = {
 			MEDICAL_LOADOUT,

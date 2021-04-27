@@ -9,6 +9,7 @@ class TWC_Insurgency_Debug {
 		//Mission Prep
 		class makeBadLocations		{};
 		class makeLocations			{};
+		class makeLocationsConfig	{};
 		
 		//Zeus
 		class getAllegiance			{};

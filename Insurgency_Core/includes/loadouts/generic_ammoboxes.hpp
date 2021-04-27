@@ -87,3 +87,36 @@ class Vehicle_Ammo {
 		ADD(ToolKit, 1);
 	};
 };
+class 50cal {
+	displayName = ".50cal Ammo (5)";
+	type = "Box_NATO_Ammo_F";
+	size = 1;
+	cost = 5;
+	class Weapons {};
+	class Magazines {
+		ADD(UK3CB_BAF_127_100Rnd, 6);
+	};
+	class Items {};
+};
+class 40mm {
+	displayName = "40mm Ammo (5)";
+	type = "Box_NATO_Ammo_F";
+	size = 1;
+	cost = 5;
+	class Weapons {};
+	class Magazines {
+		ADD(UK3CB_BAF_32Rnd_40mm_G_Box, 6);
+	};
+	class Items {};
+};
+class 762mm {
+	displayName = "7.62mm Ammo (5)";
+	type = "Box_NATO_Ammo_F";
+	size = 1;
+	cost = 5;
+	class Weapons {};
+	class Magazines {
+		ADD(UK3CB_BAF_762_200Rnd_T, 6);
+	};
+	class Items {};
+};
