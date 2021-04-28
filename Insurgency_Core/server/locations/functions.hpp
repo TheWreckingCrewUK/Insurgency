@@ -23,7 +23,6 @@ class TWC_Insurgency_Locations {
 		class handleDeath			{};
 		class handleDestruction		{};
 		class randomLocationASL		{};
-		class isActive				{};
 		class nearestLocation		{};
 		
 		//Location Modification
