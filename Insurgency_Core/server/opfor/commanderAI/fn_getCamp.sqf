@@ -2,15 +2,17 @@
 
 params ["_location"];
 
-//Don't spawn camps near active locations.
-private _locationActivation = missionNameSpace getVariable [text _location, []];
-if (count _locationActivation > 0) exitWith {false};
+//Spawning near base is probably a bit cavalier.
+private _locationPos = locationPosition _location;
+private _basePos = getMarkerPos "base";
 
-//Don't spawn camps near locations OPFOR already has control over.
+if (_locationPos distance2d _basePos < 3000) exitWith {false};
+
+//Don't spawn camps near locations OPFOR already has control over or are currently active.
 private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
 _locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
 
-if (_allegiance < 30) exitWith {false};
+if (_allegiance < 30 || _isActive) exitWith {false};
 
 //Make sure we have enough supply for a camp.
 private _supply = TWC_Insurgency_supplyOPFOR;
