@@ -23,7 +23,7 @@ addMissionEventHandler ["HandleDisconnect", {
 
 private _playerSide = call TWC_Insurgency_BLUFOR_fnc_playerSide;
 private _friendlySide = call TWC_Insurgency_GREENFOR_fnc_friendlySide;
-private _enemySide = call TWC_Insurgency_OPFOR_enemySide;
+private _enemySide = call TWC_Insurgency_OPFOR_fnc_enemySide;
 
 //Players will be friendly to civs, GREENFOR, hostile to enemies.
 _playerSide setFriend [_friendlySide, 1];
