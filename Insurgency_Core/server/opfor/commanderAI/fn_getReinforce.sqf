@@ -21,8 +21,6 @@ _strongholdInfo params ["_stronghold", "_strongholdDistance"];
 
 private _baseDistance = _locationPos distance2d (getMarkerPos "BASE");
 
-private _isActive = [_location] call TWC_Insurgency_Locations_fnc_isActive;
-
 //For every km we increase the chance by 0.001
 private _weight = _weight + (_baseDistance - _strongholdDistance) / 1000000;
 
@@ -32,10 +30,9 @@ if (_isStronghold) then {
 if (_hasCache) then {
 	_weight = _weight + 0.005;
 };
-//TODO: Civilian Tasks
-/*if (_hasTask) then {
+if (_task isNotEqualTo "") then {
 	_weight = _weight + 0.002;
-};*/
+};
 if (_isActive) then {
 	_weight = _weight + 0.003;
 };
