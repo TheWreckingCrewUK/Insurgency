@@ -136,7 +136,8 @@ class CfgRespawnInventory {
 			"ItemWatch",
 		};
 		weapons[] = {
-			"CUP_arifle_AK74_GL_Early"
+			"CUP_arifle_AK74_GL_Early",
+			"Binocular"
 		};
 		magazines[] = {
 			MAG_13("CUP_30Rnd_545x39_AK_M"),
@@ -221,7 +222,8 @@ class CfgRespawnInventory {
 			"ItemWatch"
 		};
 		weapons[] = {
-			"CUP_arifle_AKS74U"
+			"CUP_arifle_AKS74U",
+			"Binocular"
 		};
 		magazines[] = {
 			MAG_5("CUP_30Rnd_545x39_AK_M"),
@@ -233,5 +235,8 @@ class CfgRespawnInventory {
 		displayName = "Armour Crew";
 		role = "Armour_Crew";
 		rank = "PRIVATE";
+		weapons[] = {
+			"CUP_arifle_AKS74U"
+		};
 	};
 };
