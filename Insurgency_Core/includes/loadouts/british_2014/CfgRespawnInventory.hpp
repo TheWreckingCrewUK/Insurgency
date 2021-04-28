@@ -187,6 +187,12 @@ class CfgRespawnInventory {
 			"ItemCompass",
 			"ItemWatch"
 		};
+		items[] = {
+			MEDICAL_LOADOUT,
+			"ACE_EntrenchingTool",
+			"ACRE_PRC117F",
+			"ACRE_PRC343"
+		};
 		weapons[] = {
 			"UK3CB_BAF_L85A2_RIS",
 			"ACE_Vector"

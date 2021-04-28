@@ -135,6 +135,12 @@ class CfgRespawnInventory {
 			"ItemCompass",
 			"ItemWatch",
 		};
+		items[] = {
+			MEDICAL_LOADOUT,
+			"ACE_MapTools",
+			"ACRE_PRC77",
+			"ACE_EntrenchingTool"
+		};
 		weapons[] = {
 			"CUP_arifle_AK74_GL_Early",
 			"Binocular"
