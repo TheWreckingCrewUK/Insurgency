@@ -16,7 +16,7 @@ private _weight = 1.005;
 
 private _locationPos = locationPosition _location;
 
-private _strongholdInfo = [_locationPos] call TWC_Insurgency_OPFOR_fnc_getClosestStronghold;
+private _strongholdInfo = [_locationPos, true] call TWC_Insurgency_OPFOR_fnc_getClosestStronghold;
 _strongholdInfo params ["_stronghold", "_strongholdDistance"];
 
 private _baseDistance = _locationPos distance2d (getMarkerPos "BASE");

@@ -7,8 +7,6 @@ private _size = size _location;
 private _minRadius = _size call BIS_fnc_arithmeticMean;
 _minRadius = _minRadius + 200;
 
-private _stronghold = [_locationPosition] call TWC_Insurgency_OPFOR_fnc_getClosestStronghold;
-
 private _campPos = [_locationPosition, _minRadius, 4000, 0, 0, 0.5, 0, [], [0,0,0]] call BIS_fnc_findSafePos;
 if (_campPos isEqualTo [0,0,0]) exitWith {DEBUG_LOG("No suitable position for camp at " + text _location);};
 
