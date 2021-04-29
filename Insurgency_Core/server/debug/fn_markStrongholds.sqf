@@ -1,3 +1,18 @@
+#include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Marks Strongholds on Map.
+*
+* Arguments:
+* NONE
+*
+* Return Value:
+* NONE
+*
+* Example:
+* call TWC_Insurgency_Debug_fnc_markStrongholds;
+*/
+
 private _strongholds = call TWC_Insurgency_Locations_fnc_getStrongholds;
 
 {

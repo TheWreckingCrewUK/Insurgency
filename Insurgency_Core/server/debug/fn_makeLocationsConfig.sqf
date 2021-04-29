@@ -1,3 +1,18 @@
+#include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Makes Locations from Config. Used to set-up CfgLocations.
+*
+* Arguments:
+* NONE
+*
+* Return Value:
+* NONE
+*
+* Example:
+* call TWC_Insurgency_Debug_fnc_makeLocationsConfig;
+*/
+
 _goodApples = [];
 
 private _allLocations = nearestLocations [[worldSize / 2, worldSize / 2, 0], ["NameLocal", "NameVillage", "NameCity", "NameCityCapital"], worldSize / sqrt(2)];

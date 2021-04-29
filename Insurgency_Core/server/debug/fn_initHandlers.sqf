@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Adds Handlers so server-side functions can be triggered from client.
+*
+* Arguments:
+* NONE
+*
+* Return Value:
+* NONE
+*
+* Example:
+* call TWC_Insurgency_Debug_fnc_initHandlers;
+*/
 
 if (!isServer) exitWith {DEBUG_LOG("Debug Init not executed on client.")};
 

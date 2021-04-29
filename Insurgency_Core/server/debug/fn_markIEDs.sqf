@@ -1,3 +1,18 @@
+#include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Marks IEDs on Map.
+*
+* Arguments:
+* NONE
+*
+* Return Value:
+* NONE
+*
+* Example:
+* call TWC_Insurgency_Debug_fnc_markIEDs;
+*/
+
 private _allMines = allMines;
 
 {

@@ -1,3 +1,18 @@
+#include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Marks Cached Units on Map.
+*
+* Arguments:
+* NONE
+*
+* Return Value:
+* NONE
+*
+* Example:
+* call TWC_Insurgency_Debug_fnc_markCachedUnits;
+*/
+
 private _cachedUnits = TWC_Insurgency_troopsOPFOR;
 
 {
