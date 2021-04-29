@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Checks whether the conditions for victory are met.
+*
+* Arguments:
+* NONE
+*
+* Return Value:
+* NONE
+*
+* Example:
+* call TWC_Insurgency_Save_fnc_checkVictory;
+*/
 
 _allLocations = TWC_Insurgency_Locations;
 

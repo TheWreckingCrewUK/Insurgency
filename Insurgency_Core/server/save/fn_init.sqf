@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Initializes the save loop and handles victory/defeat/relations.
+*
+* Arguments:
+* NONE
+*
+* Return Value:
+* NONE
+*
+* Example:
+* call TWC_Insurgency_Save_fnc_init;
+*/
 
 if (!isServer) exitWith {DEBUG_LOG("Save Init not executed on client.")};
 
