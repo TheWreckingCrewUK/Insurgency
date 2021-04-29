@@ -174,7 +174,7 @@ class CfgRespawnInventory {
 	};
 	class Section_Commander: Rifleman_AT {
 		displayName = "Section Commander";
-		role = "Squad_Leader";
+		role = "Section_Commander";
 		rank = "SERGEANT";
 		linkedItems[] = {
 			"UK3CB_BAF_V_Osprey_SL_B",

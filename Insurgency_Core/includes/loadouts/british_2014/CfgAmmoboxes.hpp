@@ -23,11 +23,11 @@ class CfgAmmoboxes {
 			
 			ADD(UK3CB_BAF_762_100Rnd_T, 5);
 			
-			ADD(UK3CB_BAF_1Rnd_HE_Grenade_Shell, 8),
-			ADD(1Rnd_Smoke_Grenade_shell, 4),
-			ADD(1Rnd_SmokeGreen_Grenade_shell, 2),
-			ADD(1Rnd_SmokeRed_Grenade_shell, 2),
-			ADD(1Rnd_SmokeBlue_Grenade_shell, 2),
+			ADD(UK3CB_BAF_1Rnd_HE_Grenade_Shell, 8);
+			ADD(1Rnd_Smoke_Grenade_shell, 4);
+			ADD(1Rnd_SmokeGreen_Grenade_shell, 2);
+			ADD(1Rnd_SmokeRed_Grenade_shell, 2);
+			ADD(1Rnd_SmokeBlue_Grenade_shell, 2);
 			
 			ADD(CUP_HandGrenade_L109A2_HE, 6);
 			ADD(SmokeShell, 6);
