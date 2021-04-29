@@ -7,7 +7,7 @@
 * 0: Change <NUMBER>
 *
 * Return Value:
-* NOTHING
+* NONE
 *
 * Example:
 * [-5] call TWC_Insurgency_BLUFOR_fnc_updateSupply;

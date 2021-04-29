@@ -7,7 +7,7 @@
 * 0: Task ID <STRING>
 *
 * Return Value:
-* NOTHING
+* NONE
 *
 * Example:
 * ["1"] call TWC_Insurgency_BLUFOR_fnc_taskSucceed;

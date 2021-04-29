@@ -8,7 +8,7 @@
 * 1: Task ID <STRING>
 *
 * Return Value:
-* NOTHING
+* NONE
 *
 * Example:
 * ["1", "bluforTasks"] call TWC_Insurgency_BLUFOR_fnc_taskRescuePilot;
