@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Cancels a BLUFOR Task.
+*
+* Arguments:
+* 0: Task ID <STRING>
+*
+* Return Value:
+* NOTHING
+*
+* Example:
+* ["1"] call TWC_Insurgency_BLUFOR_fnc_taskCanceled;
+*/
 
 params ["_taskNumber"];
 

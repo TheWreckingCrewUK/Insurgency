@@ -1,4 +1,19 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Deploys a Patrol Base.
+*
+* Arguments:
+* 0: Box <OBJECT>
+* 1: Generator <OBJECT>
+* 2: Table <OBJECT>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_vehicle] call TWC_Insurgency_BLUFOR_fnc_createPatrolBase;
+*/
 
 params ["_box", "_generator", "_table"];
 

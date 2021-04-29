@@ -1,4 +1,18 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Generates a Recover Vehicle Task.
+*
+* Arguments:
+* 0: Parent Task ID <STRING>
+* 1: Task ID <STRING>
+*
+* Return Value:
+* NOTHING
+*
+* Example:
+* ["1", "bluforTasks"] call TWC_Insurgency_BLUFOR_fnc_taskRecoverVehicle;
+*/
 
 params ["_parentTask", "_taskNumber"];
 

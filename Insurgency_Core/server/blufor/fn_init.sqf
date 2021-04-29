@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Initializes BLUFOR tasks, handlers and global variables on init.
+*
+* Arguments:
+* NONE
+*
+* Return Value:
+* NONE
+*
+* Example:
+* call TWC_Insurgency_BLUFOR_fnc_init;
+*/
 
 if (!isServer) exitWith {DEBUG_LOG("BLUFOR Init not executed on client.")};
 

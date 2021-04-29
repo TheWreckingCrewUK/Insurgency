@@ -1,4 +1,18 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Generates a Rescue Journalist Task.
+*
+* Arguments:
+* 0: Parent Task ID <STRING>
+* 1: Task ID <STRING>
+*
+* Return Value:
+* NOTHING
+*
+* Example:
+* ["1", "bluforTasks"] call TWC_Insurgency_BLUFOR_fnc_taskRescueJournalist;
+*/
 
 params ["_parentTask", "_taskNumber"];
 

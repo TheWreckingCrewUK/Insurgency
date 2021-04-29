@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Generates a new Task ID from an old one.
+*
+* Arguments:
+* 0: Previous Task ID <STRING>
+*
+* Return Value:
+* [Parent Task, New Task ID] <ARRAY>
+*
+* Example:
+* ["1"] call TWC_Insurgency_BLUFOR_fnc_taskID;
+*/
 
 params ["_oldID"];
 

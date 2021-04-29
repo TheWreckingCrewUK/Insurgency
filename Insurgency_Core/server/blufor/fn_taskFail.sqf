@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Fails an active task.
+*
+* Arguments:
+* 0: Task ID <STRING>
+*
+* Return Value:
+* NOTHING
+*
+* Example:
+* ["1"] call TWC_Insurgency_BLUFOR_fnc_taskFail;
+*/
 
 params ["_task"];
 

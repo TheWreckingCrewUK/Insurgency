@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Recovers a vehicle or person to base and succeeds any associated tasks with it.
+*
+* Arguments:
+* 0: Vehicle or Man <OBJECT>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_vehicle] call TWC_Insurgency_BLUFOR_fnc_goodRecovery;
+*/
 
 params ["_target"];
 

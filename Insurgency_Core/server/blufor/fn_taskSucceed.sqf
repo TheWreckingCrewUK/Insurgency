@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Succesfully completes a BLUFOR task, generating a new one.
+*
+* Arguments:
+* 0: Task ID <STRING>
+*
+* Return Value:
+* NOTHING
+*
+* Example:
+* ["1"] call TWC_Insurgency_BLUFOR_fnc_taskSucceed;
+*/
 
 params ["_taskNumber"];
 
