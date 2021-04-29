@@ -1,4 +1,20 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Handle cache destruction from event.
+*
+* Arguments:
+* 0: Cache <OBJECT>
+* 1: Killer <OBJECT>
+* 2: Instigator <OBJECT>
+* 3: Effects <BOOLEAN>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_cache, _killer, _instigator, _useEffects] call TWC_Insurgency_Locations_fnc_cacheDestroyed;
+*/
 
 params ["_cache", "_killer", "_instigator", "_useEffects"];
 

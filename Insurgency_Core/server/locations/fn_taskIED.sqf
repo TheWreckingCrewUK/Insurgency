@@ -1,4 +1,18 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Generates a HVT Task.
+*
+* Arguments:
+* 0: Location <LOCATION>
+* 1: IED <OBJECT>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_location, _IED] call TWC_Insurgency_Locations_fnc_taskIED;
+*/
 
 params ["_location", "_nearestIED"];
 

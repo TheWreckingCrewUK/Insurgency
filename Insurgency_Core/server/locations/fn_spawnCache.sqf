@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Spawns a cache in a location.
+*
+* Arguments:
+* 0: Location <LOCATION>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_radius] call TWC_Insurgency_Locations_fnc_spawnCache;
+*/
 
 params ["_location"];
 

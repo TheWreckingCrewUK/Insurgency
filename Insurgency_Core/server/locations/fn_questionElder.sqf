@@ -1,4 +1,18 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Checks what intel is available and selects a random nugget to give to the player with allegiance-dependent quality.
+*
+* Arguments:
+* 0: Player <OBJECT>
+* 1: Location <LOCATION>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_player, _location] call TWC_Insurgency_Locations_fnc_questionElder;
+*/
 
 params ["_player", "_location"];
 

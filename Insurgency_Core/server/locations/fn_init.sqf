@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Initialises all locations, creating their markers and variables.
+*
+* Arguments:
+* NONE
+*
+* Return Value:
+* NONE
+*
+* Example:
+* call TWC_Insurgency_Locations_fnc_init;
+*/
 
 if (!isServer) exitWith {DEBUG_LOG("Locations Init not executed on client.")};
 

@@ -1,4 +1,18 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Handles a client asking for a task.
+*
+* Arguments:
+* 0: Player <OBJECT>
+* 1: Elder Group <GROUP>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_player, _elderGroup] call TWC_Insurgency_Locations_fnc_getElderTask;
+*/
 
 params ["_player", "_elderGroup"];
 

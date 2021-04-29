@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Generates a Camp Task.
+*
+* Arguments:
+* 0: Location <LOCATION>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_location, _camp] call TWC_Insurgency_Locations_fnc_taskCamp;
+*/
 
 params ["_location", "_camp"];
 

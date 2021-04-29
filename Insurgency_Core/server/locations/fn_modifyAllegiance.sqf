@@ -1,4 +1,18 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Changes the allegiance and if necessary the marker of a location.
+*
+* Arguments:
+* 0: Location <LOCATION>
+* 1: Change <NUMBER>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_location, _change] call TWC_Insurgency_Locations_fnc_modifyAllegiance;
+*/
 
 params ["_location", "_change"];
 

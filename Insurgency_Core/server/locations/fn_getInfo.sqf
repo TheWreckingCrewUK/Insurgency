@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Returns all information about a location from the variables stored on it.
+*
+* Arguments:
+* 0: Location <LOCATION>
+*
+* Return Value:
+* [_isStronghold, _hasCache, _allegiance, _isActive, _elderGroup, _civGroup, _task] <ARRAY>
+*
+* Example:
+* [_location] call TWC_Insurgency_Locations_fnc_getInfo;
+*/
 
 params ["_location"];
 

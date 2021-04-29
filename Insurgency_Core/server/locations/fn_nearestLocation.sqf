@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Returns the nearest mission location.
+*
+* Arguments:
+* 0: Position <ARRAY>
+*
+* Return Value:
+* Location <LOCATION>
+*
+* Example:
+* [_pos] call TWC_Insurgency_Locations_fnc_nearestLocation;
+*/
 
 params ["_pos"];
 

@@ -1,4 +1,20 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Handles civilian death event.
+*
+* Arguments:
+* 0: Civilian <OBJECT>
+* 1: Killer <OBJECT>
+* 2: Instigator <OBJECT>
+* 3: Effects <BOOLEAN>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_civ, _killer, _instigator, _useEffect] call TWC_Insurgency_Locations_fnc_handleDeath;
+*/
 
 params ["_unit", "_killer", "_instigator", "_useEffects"];
 

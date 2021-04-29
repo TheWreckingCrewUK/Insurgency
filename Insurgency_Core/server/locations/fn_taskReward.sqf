@@ -1,4 +1,18 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Gets the reward for a task from config.
+*
+* Arguments:
+* 0: Task <STRING>
+*
+* Return Value:
+* Reward <NUMBER>
+*
+* Example:
+* ["1"] call TWC_Insurgency_Locations_fnc_taskReward;
+*/
+
 
 params ["_task"];
 

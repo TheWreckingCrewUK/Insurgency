@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Returns all caches.
+*
+* Arguments:
+* NONE
+*
+* Return Value:
+* Caches <ARRAY>
+*
+* Example:
+* call TWC_Insurgency_Locations_fnc_getCaches;
+*/
 
 private _allLocations = TWC_Insurgency_Locations;
 

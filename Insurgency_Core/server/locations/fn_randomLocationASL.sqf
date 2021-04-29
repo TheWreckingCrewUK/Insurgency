@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Returns a random position ASL in a random location.
+*
+* Arguments:
+* 0: Radius <NUMBER>
+*
+* Return Value:
+* Position <ARRAY>
+*
+* Example:
+* [_radius] call TWC_Insurgency_Locations_fnc_randomLocationASL;
+*/
 
 params ["_radius"];
 
