@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Gives OPFOR Supply/Manpower based on holdings in a loop.
+*
+* Arguments:
+* NONE
+*
+* Return Value:
+* NONE
+*
+* Example:
+* call TWC_Insurgency_OPFOR_fnc_resourceLoop;
+*/
 
 _allLocations = TWC_Insurgency_Locations;
 

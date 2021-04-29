@@ -1,4 +1,19 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Get closest Stronghold.
+*
+* Arguments:
+* 0: Position <ARRAY>
+* 1: Return Actives <BOOLEAN> (Optional)
+*
+* Return Value:
+* Stronghold <LOCATION>
+* Stronghold Distance <NUMBER>
+*
+* Example:
+* [_pos, true] call TWC_Insurgency_OPFOR_fnc_getClosestStronghold;
+*/
 
 params ["_pos", ["_returnActive", false]];
 

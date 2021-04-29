@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Initialize IEDs on map from mission settings.
+*
+* Arguments:
+* NONE
+*
+* Return Value:
+* NONE
+*
+* Example:
+* call TWC_Insurgency_OPFOR_fnc_initIEDs;
+*/
 
 //The mission sets what and how many IEDs can spawn.
 private _initIEDs = getNumber (missionConfigFile >> "TWC_Insurgency" >> "initIEDs");

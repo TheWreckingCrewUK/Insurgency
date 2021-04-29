@@ -1,6 +1,20 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Makes a unit put an IED at a given position.
+*
+* Arguments:
+* 0: Bomber group <GROUP>
+* 1: IED Position <ARRAY>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_group, _pos] call TWC_Insurgency_OPFOR_fnc_plantIED;
+*/
 
-params ["_group", "_pos", "_target"];
+params ["_group", "_pos"];
 
 private _bomber = leader _group;
 

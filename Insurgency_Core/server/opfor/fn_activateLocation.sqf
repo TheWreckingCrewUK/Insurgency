@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Spawns units from cache and activates tactical FSM.
+*
+* Arguments:
+* 0: Location <LOCATION>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_location] call TWC_Insurgency_OPFOR_fnc_activateLocation;
+*/
 
 params ["_location"];
 

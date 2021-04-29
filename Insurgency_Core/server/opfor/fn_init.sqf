@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Initialise OPFOR global variables and handlers, begin resource loop.
+*
+* Arguments:
+* NONE
+*
+* Return Value:
+* NONE
+*
+* Example:
+* call TWC_Insurgency_OPFOR_fnc_init;
+*/
 
 if (!isServer) exitWith {DEBUG_LOG("OPFOR Init not executed on client.")};
 

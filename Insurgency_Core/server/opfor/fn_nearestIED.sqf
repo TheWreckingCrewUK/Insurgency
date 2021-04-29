@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Gets the nearest IED.
+*
+* Arguments:
+* 0: Position <ARRAY>
+*
+* Return Value:
+* IED <OBJECT>
+*
+* Example:
+* [_pos] call TWC_Insurgency_OPFOR_fnc_nearestIED;
+*/
 
 params ["_pos"];
 

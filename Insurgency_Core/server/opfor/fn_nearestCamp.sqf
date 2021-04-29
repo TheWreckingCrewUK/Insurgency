@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Gets the nearest Camp.
+*
+* Arguments:
+* 0: Position <ARRAY>
+*
+* Return Value:
+* Camp <MARKER>
+*
+* Example:
+* [_pos] call TWC_Insurgency_OPFOR_fnc_nearestCamp;
+*/
 
 params ["_pos"];
 

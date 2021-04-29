@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Initialise cached units/statics at stronghold and deduct the necessary supplies/manpower.
+*
+* Arguments:
+* NONE
+*
+* Return Value:
+* NONE
+*
+* Example:
+* call TWC_Insurgency_OPFOR_fnc_initStrongholds;
+*/
 
 //Get strongholds from the locations array
 private _strongholds = call TWC_Insurgency_Locations_fnc_getStrongholds;

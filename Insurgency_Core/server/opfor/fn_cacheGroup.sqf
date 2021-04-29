@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Caches a group.
+*
+* Arguments:
+* 0: Enemy Group <GROUP>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_group] call TWC_Insurgency_OPFOR_fnc_cacheGroup;
+*/
 
 params ["_group"];
 

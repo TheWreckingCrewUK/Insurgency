@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Caches all units and completes tactical FSM in a Stronghold.
+*
+* Arguments:
+* 0: Stronghold <LOCATION>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_location] call TWC_Insurgency_OPFOR_fnc_deactivateStronghold;
+*/
 
 params ["_location"];
 

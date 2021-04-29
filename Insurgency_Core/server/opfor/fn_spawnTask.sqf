@@ -1,4 +1,17 @@
 #include "..\..\includes\script_component.hpp"
+/*
+* Author: [TWC] Rik
+* Spawns OPFOR Units at a task.
+*
+* Arguments:
+* 0: Position <ARRAY>
+*
+* Return Value:
+* NONE
+*
+* Example:
+* [_pos] call TWC_Insurgency_OPFOR_fnc_spawnTask;
+*/
 
 params ["_pos"];
 
