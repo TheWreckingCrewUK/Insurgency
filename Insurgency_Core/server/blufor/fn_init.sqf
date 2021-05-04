@@ -50,4 +50,12 @@ addMissionEventHandler ["EntityRespawned", {
 	["TWC_Insurgency_Actions_getSupply", TWC_Insurgency_supplyBLUFOR, _entity] call CBA_fnc_targetEvent;
 }];
 
+//Deduct supply in case of player death.
+addMissionEventHandler ["EntityKilled", {
+	params ["_unit", "_killer", "_instigator", "_useEffects"];
+	if (isPlayer _unit) then {
+		[-1] call TWC_Insurgency_BLUFOR_fnc_updateSupply;
+	};
+}];
+
 DEBUG_LOG("BLUFOR Init Complete");
