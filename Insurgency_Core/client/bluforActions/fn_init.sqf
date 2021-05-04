@@ -1,66 +1,27 @@
 #include "..\..\includes\script_component.hpp"
 
-if (isDedicated) exitWith {DEBUG_LOG("Actions do not need to be called on server.")};
+if (isDedicated) exitWith {DEBUG_LOG("BLUFOR Client Actions do not need to be called on server.")};
 
 //Action to check BLUFOR Supply.
 private _action = [
 	"TWC_Insurgency_Actions_getSupply",
 	"Check Supply",
 	"",
-	{_this call TWC_Insurgency_Actions_fnc_getSupply},
+	{_this call TWC_Insurgency_bluforActions_fnc_getSupply},
 	{true}
 ] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-//Civilian/town interactions created upon init, added when towns are spawned in.
-TWC_Insurgency_Actions_getElder = [
-	"TWC_Insurgency_Actions_getElder",
-	"Find Elder",
-	"",
-	{_this call TWC_Insurgency_Actions_fnc_getElder},
-	{alive _target}
-] call ace_interact_menu_fnc_createAction;
-
-TWC_Insurgency_Actions_questionElder = [
-	"TWC_Insurgency_Actions_questionElder",
-	"Question Elder",
-	"",
-	{_this call TWC_Insurgency_Actions_fnc_questionElder},
-	{alive _target}
-] call ace_interact_menu_fnc_createAction;
-
-TWC_Insurgency_Actions_getElderTask = [
-	"TWC_Insurgency_Actions_getElderTask",
-	"Offer Help",
-	"",
-	{_this call TWC_Insurgency_Actions_fnc_getElderTask},
-	{alive _target}
-] call ace_interact_menu_fnc_createAction;
-
-TWC_Insurgency_Actions_taskDispute = [
-	"TWC_Insurgency_Actions_taskDispute",
-	"Resolve Dispute",
-	"",
-	{_this call TWC_Insurgency_Actions_fnc_taskDispute},
-	{alive _target}
-] call ace_interact_menu_fnc_createAction;
-
-TWC_Insurgency_Actions_taskCash = [
-	"TWC_Insurgency_Actions_taskCash",
-	"Give Cash",
-	"",
-	{_this call TWC_Insurgency_Actions_fnc_taskCash},
-	{alive _target && "CUP_item_Money" in (items _player)}
-] call ace_interact_menu_fnc_createAction;
-
+//Action to recover objects to base.
 TWC_Insurgency_Actions_recover = [
 	"TWC_Insurgency_Actions_recover",
 	"Hand over to Base",
 	"",
-	{_this call TWC_Insurgency_Actions_fnc_recover},
+	{_this call TWC_Insurgency_bluforActions_fnc_recover},
 	{alive _target && (_target distance getMarkerPos "BASE") < 100}
 ] call ace_interact_menu_fnc_createAction;
 
+//Action to delete boxes and vehicles in base.
 TWC_Insurgency_Actions_delete = [
 	"TWC_Insurgency_Actions_delete",
 	"Return to Base",
@@ -128,8 +89,8 @@ private _vehicles = "true" configClasses (missionConfigFile >> "CfgTransport" >>
 		"TWC_Insurgency_Actions_spawnVehicle_" + _vehicle,
 		getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName"),
 		"",
-		{_this call TWC_Insurgency_Actions_fnc_spawnVehicle},
-		{_this call TWC_Insurgency_Actions_fnc_canSpawnVehicle},
+		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
+		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
 		{},
 		[_vehicle, "Cars"]
 	] call ace_interact_menu_fnc_createAction;
@@ -143,8 +104,8 @@ private _trucks = "true" configClasses (missionConfigFile >> "CfgTransport" >> "
 		"TWC_Insurgency_Actions_spawnTruck_" + _vehicle,
 		getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName"),
 		"",
-		{_this call TWC_Insurgency_Actions_fnc_spawnVehicle},
-		{_this call TWC_Insurgency_Actions_fnc_canSpawnVehicle},
+		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
+		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
 		{},
 		[_vehicle, "Trucks"]
 	] call ace_interact_menu_fnc_createAction;
@@ -160,8 +121,8 @@ if (player getVariable ["TWC_Insurgency_isHeli", false]) then {
 			"TWC_Insurgency_Actions_spawnVehicle_" + _helicopter,
 			getText (configFile >> "CfgVehicles" >> _helicopter >> "displayName"),
 			"",
-			{_this call TWC_Insurgency_Actions_fnc_spawnVehicle},
-			{_this call TWC_Insurgency_Actions_fnc_canSpawnVehicle},
+			{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
+			{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
 			{},
 			[_helicopter, "Helicopters"]
 		] call ace_interact_menu_fnc_createAction;
@@ -178,8 +139,8 @@ if (player getVariable ["TWC_Insurgency_isArmour", false]) then {
 			"TWC_Insurgency_Actions_spawnVehicle_" + _armour,
 			getText (configFile >> "CfgVehicles" >> _armour >> "displayName"),
 			"",
-			{_this call TWC_Insurgency_Actions_fnc_spawnVehicle},
-			{_this call TWC_Insurgency_Actions_fnc_canSpawnVehicle},
+			{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
+			{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
 			{},
 			[_armour, "Armour"]
 		] call ace_interact_menu_fnc_createAction;
@@ -196,8 +157,8 @@ if (player getVariable ["TWC_Insurgency_isPlane", false]) then {
 			"TWC_Insurgency_Actions_spawnVehicle_" + _plane,
 			getText (configFile >> "CfgVehicles" >> _plane >> "displayName"),
 			"",
-			{_this call TWC_Insurgency_Actions_fnc_spawnVehicle},
-			{_this call TWC_Insurgency_Actions_fnc_canSpawnVehicle},
+			{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
+			{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
 			{},
 			[_plane, "Planes"]
 		] call ace_interact_menu_fnc_createAction;
@@ -213,8 +174,8 @@ private _boxes = "true" configClasses (missionConfigFile >> "CfgAmmoboxes");
 		"TWC_Insurgency_Actions_spawnAmmo_" + _box,
 		getText (missionConfigFile >> "CfgAmmoboxes" >> _box >> "displayName"),
 		"",
-		{_this call TWC_Insurgency_Actions_fnc_spawnAmmo},
-		{_this call TWC_Insurgency_Actions_fnc_canSpawnAmmo},
+		{_this call TWC_Insurgency_bluforActions_fnc_spawnAmmo},
+		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnAmmo},
 		{},
 		_box
 	] call ace_interact_menu_fnc_createAction;
@@ -226,8 +187,8 @@ private _action = [
 	"TWC_Insurgency_Actions_spawnPatrolBase",
 	"Patrol Base Gear (100)",
 	"",
-	{_this call TWC_Insurgency_Actions_fnc_spawnPatrolBase},
-	{_this call TWC_Insurgency_Actions_fnc_canSpawnPatrolBase},
+	{_this call TWC_Insurgency_bluforActions_fnc_spawnPatrolBase},
+	{_this call TWC_Insurgency_bluforActions_fnc_canSpawnPatrolBase},
 	{}
 ] call ace_interact_menu_fnc_createAction;
 [TWC_Insurgency_SpawnSign2, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
@@ -236,8 +197,8 @@ TWC_Insurgency_Actions_createPatrolBase = [
 	"TWC_Insurgency_Actions_createPatrolBase",
 	"Create Patrol Base",
 	"",
-	{_this call TWC_Insurgency_Actions_fnc_createPatrolBase},
-	{_this call TWC_Insurgency_Actions_fnc_canCreatePatrolBase},
+	{_this call TWC_Insurgency_bluforActions_fnc_createPatrolBase},
+	{_this call TWC_Insurgency_bluforActions_fnc_canCreatePatrolBase},
 	{}
 ] call ace_interact_menu_fnc_createAction;
 
@@ -246,9 +207,7 @@ TWC_Insurgency_Actions_giveCrate = [
 	"TWC_Insurgency_Actions_giveCrate",
 	"Give Crate",
 	"",
-	{_this call TWC_Insurgency_Actions_fnc_giveCrate},
-	{_this call TWC_Insurgency_Actions_fnc_canGiveCrate},
+	{_this call TWC_Insurgency_bluforActions_fnc_giveCrate},
+	{_this call TWC_Insurgency_bluforActions_fnc_canGiveCrate},
 	{}
 ] call ace_interact_menu_fnc_createAction;
-
-DEBUG_LOG("Actions Init Complete");

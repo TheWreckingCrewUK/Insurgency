@@ -1,35 +1,13 @@
-class TWC_Insurgency_Actions {
-	class actions {
-		file = "Insurgency_Core\client\actions";
-		tag = "Actions";
+class TWC_Insurgency_bluforActions {
+	class bluforActions {
+		file = "Insurgency_Core\client\bluforActions";
+		tag = "bluforActions";
 		class init {
 			postInit = 1;
 		};
 		class initHandlers {
 			preInit = 1;
 		};
-		
-		//Town/Civs
-		class addCiv				{};
-		class addElder				{};
-		class getElder				{};
-		class getElderTask			{};
-		class questionElder			{};
-		
-		//Aid Task
-		class addGiveCrate			{};
-		class canGiveCrate			{};
-		class giveCrate				{};
-		
-		//Dispute Task
-		class addTaskDispute		{};
-		class taskDispute			{};
-		class removeTaskDispute		{};
-		
-		//Cash Task
-		class addTaskCash			{};
-		class taskCash				{};
-		class removeTaskCash		{};
 		
 		//Recovery of prisoners/vehicles
 		class addRecover			{};
