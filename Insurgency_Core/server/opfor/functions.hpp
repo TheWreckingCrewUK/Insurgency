@@ -6,6 +6,9 @@ class TWC_Insurgency_OPFOR {
 		class init {
 			postInit = 1;
 		};
+		class initHandlers {
+			preInit = 1;
+		};
 		class initIEDs					{};
 		class initStrongholds			{};
 		class resourceLoop				{};

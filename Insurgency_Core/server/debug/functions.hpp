@@ -12,12 +12,12 @@ class TWC_Insurgency_Debug {
 		class makeLocationsConfig	{};
 		
 		//Zeus
-		class getAllegiance			{};
 		class markCachedUnits		{};
 		class markCaches			{};
 		class markCamps				{};
 		class markIEDs				{};
 		class markStrongholds		{};
+		class sendInfo				{};
 		class unmarkCachedUnits		{};
 		class unmarkIEDs			{};
 	};

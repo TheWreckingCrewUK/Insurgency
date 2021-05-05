@@ -5,5 +5,8 @@ class TWC_Insurgency_DebugActions {
 		class init {
 			postInit = 1;
 		};
+		class initHandlers {
+			preInit = 1;
+		};
 	};
 };

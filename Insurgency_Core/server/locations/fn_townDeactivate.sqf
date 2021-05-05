@@ -24,6 +24,8 @@ if (_isStronghold) exitWith {
 	["TWC_Insurgency_OPFOR_deactivateStronghold", [_location]] call CBA_fnc_serverEvent;
 };
 
+["TWC_Insurgency_OPFOR_deactivateLocation", [_location]] call CBA_fnc_serverEvent;
+
 //Clean-up units.
 {
 	deleteVehicle _x;

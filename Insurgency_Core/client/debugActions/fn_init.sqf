@@ -8,6 +8,7 @@ private _actions = [
 	["TWC_Insurgency_Debug_markCamps", "Mark Camps"],
 	["TWC_Insurgency_Debug_markIEDs", "Mark IEDs"],
 	["TWC_Insurgency_Debug_markStrongholds", "Mark Strongholds"],
+	["TWC_Insurgency_Debug_sendInfo", "Send Info"],
 	["TWC_Insurgency_Debug_unmarkCachedUnits", "Unmark Cached Units"],
 	["TWC_Insurgency_Debug_unmarkIEDs", "Unmark IEDs"]
 ];
@@ -28,7 +29,7 @@ private _action = [
 		_type,
 		_name,
 		"",
-		{[_this select 2, []] call CBA_fnc_serverEvent},
+		{[_this select 2, [player]] call CBA_fnc_serverEvent},
 		{true},
 		{},
 		_type

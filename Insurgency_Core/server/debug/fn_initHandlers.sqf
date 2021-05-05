@@ -36,6 +36,10 @@ if (!isServer) exitWith {DEBUG_LOG("Debug Init not executed on client.")};
 	_this call TWC_Insurgency_Debug_fnc_markStrongholds;
 }] call CBA_fnc_addEventHandler;
 
+["TWC_Insurgency_Debug_sendInfo", {
+	_this call TWC_Insurgency_Debug_fnc_sendInfo;
+}] call CBA_fnc_addEventHandler;
+
 ["TWC_Insurgency_Debug_unmarkCachedUnits", {
 	_this call TWC_Insurgency_Debug_fnc_unmarkCachedUnits;
 }] call CBA_fnc_addEventHandler;

@@ -41,8 +41,9 @@ private _spawnedGroups = [];
 private _fsm = [_spawnedGroups, _stronghold] execFSM "Insurgency_Core\server\OPFOR\tacticalAI\tacticalAI.fsm";
 
 //Storing when the stronghold was activated and what enemies were activated with it
-_location setVariable ["TWC_Insurgency_Locations_time", CBA_missionTime];
-_location setVariable ["TWC_Insurgency_Locations_fsm", _fsm];
-_location setVariable ["TWC_Insurgency_Locations_groups", _spawnedGroups];
+_stronghold setVariable ["TWC_Insurgency_Locations_isActive", true];
+_stronghold setVariable ["TWC_Insurgency_Locations_time", CBA_missionTime];
+_stronghold setVariable ["TWC_Insurgency_Locations_fsm", _fsm];
+_stronghold setVariable ["TWC_Insurgency_Locations_groups", _spawnedGroups];
 
 DEBUG_LOG("Activated Stronghold " + text _stronghold);
