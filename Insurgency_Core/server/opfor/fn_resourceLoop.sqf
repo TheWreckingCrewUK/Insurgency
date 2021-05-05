@@ -18,7 +18,7 @@ _allLocations = TWC_Insurgency_Locations;
 private _manpower = 0;
 {
 	private _locationInfo = _x call TWC_Insurgency_Locations_fnc_getInfo;
-	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
+	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task", "_time", "_fsm", "_groups"];
 	
 	if (_hasCache) then {
 		[50] call TWC_Insurgency_OPFOR_updateSupply;

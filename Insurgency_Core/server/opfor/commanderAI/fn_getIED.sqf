@@ -3,7 +3,7 @@
 params ["_location"];
 
 private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
-_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
+_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task", "_time", "_fsm", "_groups"];
 
 if (_allegiance < 30 && _allegiance > 70) exitWith {false};
 

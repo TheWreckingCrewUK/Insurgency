@@ -10,7 +10,7 @@ if (_locationPos distance2d _basePos < 3000) exitWith {false};
 
 //Don't spawn camps near locations OPFOR already has control over or are currently active.
 private _locationInfo = [_location] call TWC_Insurgency_Locations_fnc_getInfo;
-_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
+_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task", "_time", "_fsm", "_groups"];
 
 if (_allegiance < 30 || _isActive) exitWith {false};
 

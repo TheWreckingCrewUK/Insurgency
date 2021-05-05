@@ -22,5 +22,8 @@ private _isActive = _location getVariable ["TWC_Insurgency_Locations_isActive", 
 private _elderGroup = _location getVariable ["TWC_Insurgency_Locations_elderGroup", grpNull];
 private _civGroup = _location getVariable ["TWC_Insurgency_Locations_civGroup", grpNull];
 private _task = _location getVariable ["TWC_Insurgency_Locations_task", ""];
+private _time = _location getVariable ["TWC_Insurgency_Locations_time", -600];
+private _fsm = _location getVariable ["TWC_Insurgency_Locations_fsm", -1];
+private _groups = _location getVariable ["TWC_Insurgency_Locations_groups", []];
 
-[_isStronghold, _hasCache, _allegiance, _isActive, _elderGroup, _civGroup, _task]
+[_isStronghold, _hasCache, _allegiance, _isActive, _elderGroup, _civGroup, _task, _time, _fsm, _groups]

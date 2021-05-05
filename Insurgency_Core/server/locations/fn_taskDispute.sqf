@@ -22,7 +22,7 @@ private _locationPosition = locationPosition _location;
 private _possibleLocations = [];
 {
 	private _locationInfo = [_x] call TWC_Insurgency_Locations_fnc_getInfo;
-	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
+	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task", "_time", "_fsm", "_groups"];
 	
 	private _testPos = locationPosition _x;
 	private _closeToLocation = _locationPosition distance2d _testPos < 5000;

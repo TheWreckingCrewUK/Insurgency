@@ -21,7 +21,7 @@ private _allLocations = TWC_Insurgency_Locations;
 private _possibleLocations = [];
 {
 	_locationInfo = [_x] call TWC_Insurgency_Locations_fnc_getInfo;
-	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
+	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task", "_time", "_fsm", "_groups"];
 	if (_allegiance < 70) then {_possibleLocations pushBack _x};
 } forEach _allLocations;
 private _location = selectRandom _possibleLocations;

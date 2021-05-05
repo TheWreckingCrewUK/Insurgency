@@ -15,6 +15,8 @@
 
 if (!isServer) exitWith {DEBUG_LOG("Save Init not executed on client.")};
 
+enableSaving [true, true];
+
 //A loop to save the game in case of crashing.
 [{call TWC_Insurgency_Save_fnc_save}, [], 300] call CBA_fnc_waitAndExecute;
 

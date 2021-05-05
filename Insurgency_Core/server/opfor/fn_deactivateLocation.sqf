@@ -15,14 +15,8 @@
 
 params ["_location"];
 
-private _locationDetails = missionNameSpace getVariable [text _location + "_opfor", []];
-
-if (count _locationDetails isEqualTo 0) exitWith {DEBUG_LOG(text _location + " is already inactive")};
-
-(_locationDetails select 0) params ["_enemyGroups", "_fsm"];
-private _activationTime = _locationDetails select 1;
-
-if (CBA_missionTime < _activationTime + 30) exitWith {DEBUG_LOG(text _location + " told to be active < 30 seconds ago")};
+private _fsm = _location getVariable ["TWC_Insurgency_Locations_fsm", -1];
+private _enemyGroups = _location getVariable ["TWC_Insurgency_Locations_groups", []];
 
 _fsm setFSMVariable ["_doComplete", true];
 
@@ -32,6 +26,7 @@ if (count _enemyGroups > 0) then {
 	} forEach _enemyGroups;
 };
 
-missionNameSpace setVariable [text _location, nil];
+_location setVariable ["TWC_Insurgency_Locations_fsm", -1];
+_location setVariable ["TWC_Insurgency_Locations_groups", []];
 
 DEBUG_LOG(text _location + " deactivated");
