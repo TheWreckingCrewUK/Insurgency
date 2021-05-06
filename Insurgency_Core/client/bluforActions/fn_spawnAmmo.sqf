@@ -59,7 +59,7 @@ private _code = getText (missionConfigFile >> "CfgAmmoboxes" >> _type >> "script
 _code = compile _code;
 [_box] call _code;
 
-private _cost = [_type] call TWC_Insurgency_Actions_fnc_getAmmoCost;
+private _cost = [_type] call TWC_Insurgency_bluforActions_fnc_getAmmoCost;
 
 ["TWC_Insurgency_BLUFOR_updateSupply", [-1 * _cost]] call CBA_fnc_serverEvent;
 
