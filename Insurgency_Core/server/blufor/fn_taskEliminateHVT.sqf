@@ -44,6 +44,7 @@ _warlord addEventHandler ["Killed", {
 //Cancel the task if he is deleted
 _warlord addEventHandler ["Deleted", {
 	params ["_unit"];
+	if (damage _unit isEqualTo 1) exitWith {DEBUG_LOG("Warlord task already complete, no cancel necessary.")};
 	private _task = _unit getVariable ["TWC_Insurgency_BLUFOR_Task", ""];
 	[_task] call TWC_Insurgency_BLUFOR_fnc_taskCanceled;
 }];
