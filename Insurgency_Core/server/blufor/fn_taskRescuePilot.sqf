@@ -59,6 +59,7 @@ _pilot addEventHandler ["Killed", {
 //Cancel the task if he is deleted
 _pilot addEventHandler ["Deleted", {
 	params ["_unit"];
+	if (damage _unit isEqualTo 1) exitWith {DEBUG_LOG("Pilot task already failed, no cancel necessary.")};
 	_task = _unit getVariable ["TWC_Insurgency_BLUFOR_Task", ""];
 	[_task] call TWC_Insurgency_BLUFOR_fnc_taskCanceled;
 }];
