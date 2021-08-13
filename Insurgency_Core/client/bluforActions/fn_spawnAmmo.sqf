@@ -18,7 +18,7 @@ clearItemCargoGlobal _box;
 clearBackpackCargoGlobal _box;
 
 [_box, _boxSize] call ace_cargo_fnc_setSize;
-[_box, true] call ace_dragging_fnc_setDraggable;
+[_box, true,[0,1.5,0]] call ace_dragging_fnc_setDraggable;
 [_box, true] call ace_dragging_fnc_setCarryable;
 
 private _jipID = ["TWC_Insurgency_Actions_addDragging", [_box]] call CBA_fnc_globalEventJIP;
