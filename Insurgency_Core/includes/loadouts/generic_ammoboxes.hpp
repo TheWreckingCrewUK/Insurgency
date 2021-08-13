@@ -45,7 +45,6 @@ class Humanitarian_Aid {
 	size = 5;
 	cost = 5;
 	script = "_this call TWC_Insurgency_Actions_fnc_addGiveCrate";
-	ace_dragging_dragPosition[] = { 0, 2, 0 };
 	class Weapons {};
 	class Magazines {};
 	class Items {
