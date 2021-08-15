@@ -25,7 +25,6 @@ private _possibleLocations = [];
 	if (_allegiance < 70) then {_possibleLocations pushBack _x};
 } forEach _allLocations;
 private _location = selectRandom _possibleLocations;
-private _location = locationNull;
 
 //Want to spawn him in a building, hidden and away from prying eyes
 private _spawnPos = [];

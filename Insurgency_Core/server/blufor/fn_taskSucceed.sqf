@@ -27,9 +27,9 @@ private _taskType = configName (_tasksList select 0);
 private _reward = getNumber (missionConfigFile >> "CfgTaskDescriptions" >> _taskType >> "reward");
 [_reward] call TWC_Insurgency_BLUFOR_fnc_updateSupply;
 
-private _newID = [_taskNumber] call TWC_Insurgency_BLUFOR_fnc_taskID;
 [{
-	_this call TWC_Insurgency_BLUFOR_fnc_taskCreate;
-}, _newID, 5] call CBA_fnc_waitAndExecute;
+	private _newID = [_this] call TWC_Insurgency_BLUFOR_fnc_taskID;
+	_newID call TWC_Insurgency_BLUFOR_fnc_taskCreate;
+}, _taskNumber, 5] call CBA_fnc_waitAndExecute;
 
 DEBUG_LOG("BLUFOR Task Succeeded");
