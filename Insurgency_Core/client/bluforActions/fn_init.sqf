@@ -56,7 +56,7 @@ private _action = [
 	"Spawn Helicopter",
 	"",
 	{true},
-	{},
+	{_player getVariable ["TWC_Insurgency_isHeli", false]},
 	{}
 ] call ace_interact_menu_fnc_createAction;
 [TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
@@ -66,7 +66,7 @@ private _action = [
 	"Spawn Armour",
 	"",
 	{true},
-	{},
+	{_player getVariable ["TWC_Insurgency_isArmour", false]},
 	{}
 ] call ace_interact_menu_fnc_createAction;
 [TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
@@ -76,7 +76,7 @@ private _action = [
 	"Spawn Plane",
 	"",
 	{true},
-	{},
+	{_player getVariable ["TWC_Insurgency_isPlane", false]},
 	{}
 ] call ace_interact_menu_fnc_createAction;
 [TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
@@ -112,59 +112,53 @@ private _trucks = "true" configClasses (missionConfigFile >> "CfgTransport" >> "
 	[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnTrucks"], _action] call ace_interact_menu_fnc_addActionToObject;
 } forEach _trucks;
 
-//Only add helicopters spawns for heli pilots.
-if (player getVariable ["TWC_Insurgency_isHeli", false]) then {
-	private _helicopters = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Helicopters");
-	{
-		private _helicopter = configName _x;
-		private _action = [
-			"TWC_Insurgency_Actions_spawnVehicle_" + _helicopter,
-			getText (configFile >> "CfgVehicles" >> _helicopter >> "displayName"),
-			"",
-			{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
-			{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
-			{},
-			[_helicopter, "Helicopters"]
-		] call ace_interact_menu_fnc_createAction;
-		[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnHeli"], _action] call ace_interact_menu_fnc_addActionToObject;
-	} forEach _helicopters;
-};
+//Add helicopter spawn actions, but only heli crew will see it
+private _helicopters = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Helicopters");
+{
+	private _helicopter = configName _x;
+	private _action = [
+		"TWC_Insurgency_Actions_spawnVehicle_" + _helicopter,
+		getText (configFile >> "CfgVehicles" >> _helicopter >> "displayName"),
+		"",
+		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
+		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
+		{},
+		[_helicopter, "Helicopters"]
+	] call ace_interact_menu_fnc_createAction;
+	[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnHeli"], _action] call ace_interact_menu_fnc_addActionToObject;
+} forEach _helicopters;
 
-//Only add armour spawns for armour crew.
-if (player getVariable ["TWC_Insurgency_isArmour", false]) then {
-	private _armours = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Armour");
-	{
-		private _armour = configName _x;
-		private _action = [
-			"TWC_Insurgency_Actions_spawnVehicle_" + _armour,
-			getText (configFile >> "CfgVehicles" >> _armour >> "displayName"),
-			"",
-			{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
-			{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
-			{},
-			[_armour, "Armour"]
-		] call ace_interact_menu_fnc_createAction;
-		[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnArmour"], _action] call ace_interact_menu_fnc_addActionToObject;
-	} forEach _armours;
-};
+//Add armour spawn actions, but only armour crew will see it
+private _armours = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Armour");
+{
+	private _armour = configName _x;
+	private _action = [
+		"TWC_Insurgency_Actions_spawnVehicle_" + _armour,
+		getText (configFile >> "CfgVehicles" >> _armour >> "displayName"),
+		"",
+		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
+		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
+		{},
+		[_armour, "Armour"]
+	] call ace_interact_menu_fnc_createAction;
+	[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnArmour"], _action] call ace_interact_menu_fnc_addActionToObject;
+} forEach _armours;
 
-//Only add jet spawns for jet pilots.
-if (player getVariable ["TWC_Insurgency_isPlane", false]) then {
-	private _jets = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Planes");
-	{
-		private _plane = configName _x;
-		private _action = [
-			"TWC_Insurgency_Actions_spawnVehicle_" + _plane,
-			getText (configFile >> "CfgVehicles" >> _plane >> "displayName"),
-			"",
-			{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
-			{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
-			{},
-			[_plane, "Planes"]
-		] call ace_interact_menu_fnc_createAction;
-		[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnPlane"], _action] call ace_interact_menu_fnc_addActionToObject;
-	} forEach _armours;
-};
+//Add jet spawn actions, but only jet pilots will see it
+private _jets = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Planes");
+{
+	private _plane = configName _x;
+	private _action = [
+		"TWC_Insurgency_Actions_spawnVehicle_" + _plane,
+		getText (configFile >> "CfgVehicles" >> _plane >> "displayName"),
+		"",
+		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
+		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
+		{},
+		[_plane, "Planes"]
+	] call ace_interact_menu_fnc_createAction;
+	[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnPlane"], _action] call ace_interact_menu_fnc_addActionToObject;
+} forEach _armours;
 
 //Create actions for box spawning.
 private _boxes = "true" configClasses (missionConfigFile >> "CfgAmmoboxes");
