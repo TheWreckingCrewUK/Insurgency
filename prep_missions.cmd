@@ -13,7 +13,7 @@ for /d %%i in (*) do (
 			IF /I "%%i" == ".github" (
 				echo Skipping .github...
 			) else (
-				makePbo -NPM %%i
+				makePbo -P -X="none" %%i
 				echo makePboing %%i
 			)
 		)
