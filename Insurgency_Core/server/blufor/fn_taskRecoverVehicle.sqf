@@ -54,7 +54,7 @@ _vehicle addEventHandler ["Killed", {
 _vehicle addEventHandler ["Deleted", {
 	params ["_vehicle"];
 	_task = _vehicle getVariable ["TWC_Insurgency_BLUFOR_Task", ""];
-	[_task] call TWC_Insurgency_BLUFOR_fnc_taskCanceled;
+	[_task] call TWC_Insurgency_BLUFOR_fnc_taskCancelled;
 }];
 
 private _jipID = ["TWC_Insurgency_Actions_recover", _vehicle] call CBA_fnc_globalEventJIP;

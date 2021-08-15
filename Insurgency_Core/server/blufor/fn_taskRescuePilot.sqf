@@ -61,7 +61,7 @@ _pilot addEventHandler ["Deleted", {
 	params ["_unit"];
 	if (damage _unit isEqualTo 1) exitWith {DEBUG_LOG("Pilot task already failed, no cancel necessary.")};
 	_task = _unit getVariable ["TWC_Insurgency_BLUFOR_Task", ""];
-	[_task] call TWC_Insurgency_BLUFOR_fnc_taskCanceled;
+	[_task] call TWC_Insurgency_BLUFOR_fnc_taskCancelled;
 }];
 
 //Add the recovery action on clients

@@ -10,7 +10,7 @@
 * NONE
 *
 * Example:
-* ["1"] call TWC_Insurgency_BLUFOR_fnc_taskCanceled;
+* ["1"] call TWC_Insurgency_BLUFOR_fnc_taskCancelled;
 */
 
 params ["_taskNumber"];

@@ -59,7 +59,7 @@ _press addEventHandler ["Killed", {
 _press addEventHandler ["Deleted", {
 	params ["_unit"];
 	_task = _unit getVariable ["TWC_Insurgency_BLUFOR_Task", ""];
-	[_task] call TWC_Insurgency_BLUFOR_fnc_taskCanceled;
+	[_task] call TWC_Insurgency_BLUFOR_fnc_taskCancelled;
 }];
 
 //Add the recovery action on clients

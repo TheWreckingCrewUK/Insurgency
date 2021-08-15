@@ -8,7 +8,7 @@ class TWC_Insurgency_BLUFOR {
 		class taskCreate			{};
 		class taskFail				{};
 		class taskSucceed			{};
-		class taskCanceled			{};
+		class taskCancelled			{};
 		class taskID				{};
 		class updateSupply			{};
 		class goodRecovery			{};

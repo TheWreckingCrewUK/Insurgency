@@ -46,7 +46,7 @@ _warlord addEventHandler ["Deleted", {
 	params ["_unit"];
 	if (damage _unit isEqualTo 1) exitWith {DEBUG_LOG("Warlord task already complete, no cancel necessary.")};
 	private _task = _unit getVariable ["TWC_Insurgency_BLUFOR_Task", ""];
-	[_task] call TWC_Insurgency_BLUFOR_fnc_taskCanceled;
+	[_task] call TWC_Insurgency_BLUFOR_fnc_taskCancelled;
 }];
 
 //Allow him to be recovered if players drag him bag to base in cuffs
