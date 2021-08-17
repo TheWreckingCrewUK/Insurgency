@@ -19,6 +19,10 @@ if (isDedicated) exitWith {DEBUG_LOG("Location Client Handlers do not need to be
 	_this call TWC_Insurgency_locationActions_fnc_addTaskCash;
 }] call CBA_fnc_addEventHandler;
 
+["TWC_Insurgency_Actions_taskAid", {
+	_this call TWC_Insurgency_locationActions_fnc_addGiveCrate;
+}] call CBA_fnc_addEventHandler;
+
 //Remove Action Handlers
 ["TWC_Insurgency_Actions_taskDisputeRemove", {
 	_this call TWC_Insurgency_locationActions_fnc_removeTaskDispute;

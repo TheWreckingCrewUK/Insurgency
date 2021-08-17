@@ -44,7 +44,7 @@ class Humanitarian_Aid {
 	type = "CargoNet_01_box_F";
 	size = 5;
 	cost = 5;
-	script = "_this call TWC_Insurgency_Actions_fnc_addGiveCrate";
+	script = "private _id = ['TWC_Insurgency_Actions_taskAid', _this] call CBA_fnc_globalEventJIP; [_id, _this] call CBA_fnc_removeGlobalEventJIP;";
 	class Weapons {};
 	class Magazines {};
 	class Items {
