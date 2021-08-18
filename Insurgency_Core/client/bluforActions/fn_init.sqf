@@ -195,13 +195,3 @@ TWC_Insurgency_Actions_createPatrolBase = [
 	{_this call TWC_Insurgency_bluforActions_fnc_canCreatePatrolBase},
 	{}
 ] call ace_interact_menu_fnc_createAction;
-
-//Create action to give a crate to towns.
-TWC_Insurgency_Actions_giveCrate = [
-	"TWC_Insurgency_Actions_giveCrate",
-	"Give Crate",
-	"",
-	{_this call TWC_Insurgency_bluforActions_fnc_giveCrate},
-	{_this call TWC_Insurgency_bluforActions_fnc_canGiveCrate},
-	{}
-] call ace_interact_menu_fnc_createAction;
