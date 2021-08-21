@@ -17,8 +17,10 @@ clearMagazineCargoGlobal _box;
 clearItemCargoGlobal _box;
 clearBackpackCargoGlobal _box;
 
+private _boxPosition = getArray (configFile >> "CfgVehicles" >> _boxType >> "ace_dragging_dragPosition");
+
 [_box, _boxSize] call ace_cargo_fnc_setSize;
-[_box, true] call ace_dragging_fnc_setDraggable;
+[_box, true, _boxPosition] call ace_dragging_fnc_setDraggable;
 [_box, true] call ace_dragging_fnc_setCarryable;
 
 private _jipID = ["TWC_Insurgency_Actions_addDragging", [_box]] call CBA_fnc_globalEventJIP;
