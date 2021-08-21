@@ -25,11 +25,11 @@ if (!isServer) exitWith {DEBUG_LOG("OPFOR Handlers not executed on client.")};
 }] call CBA_fnc_addEventHandler;
 
 ["TWC_Insurgency_OPFOR_activateLocation", {
-	_this call TWC_Insurgency_OPFOR_fnc_activateLocation;
+	_this spawn TWC_Insurgency_OPFOR_fnc_activateLocation;
 }] call CBA_fnc_addEventHandler;
 
 ["TWC_Insurgency_OPFOR_deactivateLocation", {
-	_this call TWC_Insurgency_OPFOR_fnc_deactivateLocation;
+	_this spawn TWC_Insurgency_OPFOR_fnc_deactivateLocation;
 }] call CBA_fnc_addEventHandler;
 
 //Eventhandler to deploy troops at tasks.

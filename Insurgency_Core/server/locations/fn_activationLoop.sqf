@@ -15,7 +15,18 @@
 
 params ["_location"];
 
-private _nearPlayer = [_location, 1200] call CBA_fnc_nearPlayer;
+//Edited CBA_fnc_nearPlayer, players in a helicopter going > 80kph are excluded from spawning anything.
+private _position = _location call CBA_fnc_getPos;
+private _nearPlayer = false;
+
+{
+	private _isClose = _position distance _x < 1200;
+	private _inHeli = vehicle _x isKindOf "Helicopter";
+	private _isFast = speed (vehicle _x) > 80;
+	if (_isClose && (!_inHeli || !_isFast)) exitWith {
+		_nearPlayer = true;
+	};
+} forEach ([] call CBA_fnc_players);
 
 private _isActive = _location getVariable ["TWC_Insurgency_Locations_isActive", false];
 
