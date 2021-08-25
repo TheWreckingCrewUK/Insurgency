@@ -1,6 +1,7 @@
 class Medical_Supply {
 	displayName = "Medical Resupply (5)";
 	type = "ACE_medicalSupplyCrate";
+	subcategory = "TWC_Insurgency_Actions_spawnSectionAmmo";
 	size = 1;
 	cost = 5;
 	class Weapons {};
@@ -27,6 +28,7 @@ class Medical_Supply {
 class EOD {
 	displayName = "EOD Equipment (2)";
 	type = "Box_NATO_Equip_F";
+	subcategory = "TWC_Insurgency_Actions_spawnSectionAmmo";
 	size = 1;
 	cost = 2;
 	class Weapons {
@@ -42,6 +44,7 @@ class EOD {
 class Humanitarian_Aid {
 	displayName = "Humanitarian Aid (5)";
 	type = "CargoNet_01_box_F";
+	subcategory = "TWC_Insurgency_Actions_spawnTaskItems";
 	size = 5;
 	cost = 5;
 	script = "private _id = ['TWC_Insurgency_Actions_taskAid', _this] call CBA_fnc_globalEventJIP; [_id, _this select 0] call CBA_fnc_removeGlobalEventJIP;";
@@ -56,6 +59,7 @@ class Humanitarian_Aid {
 class Money {
 	displayName = "Cash (5)";
 	type = "Box_NATO_Equip_F";
+	subcategory = "TWC_Insurgency_Actions_spawnTaskItems";
 	size = 1;
 	cost = 5;
 	class Weapons {};
@@ -69,6 +73,7 @@ class Money {
 class Wheel {
 	displayName = "Spare Wheel (1)";
 	type = "ACE_Wheel";
+	subcategory = "TWC_Insurgency_Actions_spawnVehicleAmmo";
 	size = 1;
 	cost = 1;
 	class Weapons {};
@@ -78,6 +83,7 @@ class Wheel {
 class Vehicle_Ammo {
 	displayName = "Vehicle Ammo (5)";
 	type = "CUP_BOX_US_ARMY_WpsSpecial_F";
+	subcategory = "TWC_Insurgency_Actions_spawnVehicleAmmo";
 	size = 3;
 	cost = 5;
 	vehicleSupply = 100;
@@ -90,6 +96,7 @@ class Vehicle_Ammo {
 class 50cal {
 	displayName = ".50cal Ammo (5)";
 	type = "Box_NATO_Ammo_F";
+	subcategory = "TWC_Insurgency_Actions_spawnVehicleAmmo";
 	size = 1;
 	cost = 5;
 	class Weapons {};
@@ -101,6 +108,7 @@ class 50cal {
 class 40mm {
 	displayName = "40mm Ammo (5)";
 	type = "Box_NATO_Ammo_F";
+	subcategory = "TWC_Insurgency_Actions_spawnVehicleAmmo";
 	size = 1;
 	cost = 5;
 	class Weapons {};
@@ -112,6 +120,7 @@ class 40mm {
 class 762mm {
 	displayName = "7.62mm Ammo (5)";
 	type = "Box_NATO_Ammo_F";
+	subcategory = "TWC_Insurgency_Actions_spawnVehicleAmmo";
 	size = 1;
 	cost = 5;
 	class Weapons {};

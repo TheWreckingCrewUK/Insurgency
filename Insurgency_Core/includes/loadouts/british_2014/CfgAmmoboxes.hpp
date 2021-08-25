@@ -6,6 +6,7 @@ class CfgAmmoboxes {
 	class Section_Resupply {
 		displayName = "Section Resupply (5)";
 		type = "Box_NATO_Ammo_F";
+		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;
 		cost = 5;
 		class Weapons {};
@@ -46,6 +47,7 @@ class CfgAmmoboxes {
 	class NLAW_Resupply {
 		displayName = "NLAW Resupply (10)";
 		type = "Box_NATO_WpsLaunch_F";
+		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;
 		cost = 10;
 		class Weapons {
@@ -57,6 +59,7 @@ class CfgAmmoboxes {
 	class M72_Resupply {
 		displayName = "M72 Resupply (5)";
 		type = "Box_NATO_WpsLaunch_F";
+		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;
 		cost = 5;
 		class Weapons {

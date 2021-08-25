@@ -8,6 +8,7 @@ class TWC_Insurgency_bluforActions {
 		class initHandlers {
 			preInit = 1;
 		};
+		class initBoxActions		{};
 		
 		//Recovery of prisoners/vehicles
 		class addRecover			{};

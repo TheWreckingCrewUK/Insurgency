@@ -6,6 +6,7 @@ class CfgAmmoboxes {
 	class Squad_Supply {
 		displayName = "Squad Resupply (5)";
 		type = "CUP_BOX_RU_Ammo_F";
+		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;
 		cost = 5;
 		class Weapons {};
@@ -31,6 +32,7 @@ class CfgAmmoboxes {
 	class RPG7_Resupply {
 		displayName = "RPG-7 Resupply (10)";
 		type = "CUP_BOX_RU_Ammo_F";
+		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;
 		cost = 10;
 		class Weapons {};
@@ -43,6 +45,7 @@ class CfgAmmoboxes {
 	class RPG18_Resupply {
 		displayName = "RPG-18 Resupply (5)";
 		type = "CUP_BOX_RU_WpsLaunch_F";
+		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;
 		cost = 5;
 		class Weapons {

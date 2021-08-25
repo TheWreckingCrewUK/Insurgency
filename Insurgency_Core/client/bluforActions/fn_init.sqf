@@ -236,20 +236,7 @@ private _jets = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Pl
 } forEach _armours;
 
 //Create actions for box spawning.
-private _boxes = "true" configClasses (missionConfigFile >> "CfgAmmoboxes");
-{
-	private _box = configName _x;
-	private _action = [
-		"TWC_Insurgency_Actions_spawnAmmo_" + _box,
-		getText (missionConfigFile >> "CfgAmmoboxes" >> _box >> "displayName"),
-		"",
-		{_this call TWC_Insurgency_bluforActions_fnc_spawnAmmo},
-		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnAmmo},
-		{},
-		_box
-	] call ace_interact_menu_fnc_createAction;
-	[TWC_Insurgency_SpawnSign2, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
-} forEach _boxes;
+call TWC_Insurgency_bluforActions_fnc_initBoxActions;
 
 //Create actions for patrol base objects.
 private _action = [
