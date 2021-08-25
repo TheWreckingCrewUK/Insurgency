@@ -10,9 +10,9 @@ if (_allegiance > 70) exitWith {false};
 private _supply = TWC_Insurgency_supplyOPFOR;
 private _manpower = TWC_Insurgency_manpowerOPFOR;
 
-if (_supply < 10 || _manpower < 10) exitWith {false};
+if (_supply < 30 || _manpower < 30) exitWith {false};
 
-private _weight = 1.005;
+private _weight = 1.001;
 
 private _locationPos = locationPosition _location;
 
