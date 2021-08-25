@@ -10,7 +10,7 @@ private _locationPos = locationPosition _location;
 private _section = getArray (missionConfigFile >> "TWC_Insurgency" >> "opfor_section");
 private _side = call TWC_Insurgency_OPFOR_fnc_enemySide;
 
-for ("_i" from 0 to 3) do {
+for "_i" from 1 to 3 do {
 	if (_isActive) then {
 		private _strongholdInfo = [_locationPos] call TWC_Insurgency_OPFOR_fnc_getClosestStronghold;
 		_strongholdInfo params ["_stronghold", "_strongholdDistance"];

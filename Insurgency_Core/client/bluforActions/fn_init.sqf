@@ -32,8 +32,28 @@ TWC_Insurgency_Actions_delete = [
 
 //Create category actions to group vehicle actions under.
 private _action = [
-	"TWC_Insurgency_Actions_spawnVehicle",
-	"Spawn Light Vehicle",
+	"TWC_Insurgency_Actions_spawnVehicleUnarmed",
+	"Spawn Light Vehicle (Unarmed)",
+	"",
+	{true},
+	{},
+	{}
+] call ace_interact_menu_fnc_createAction;
+[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+private _action = [
+	"TWC_Insurgency_Actions_spawnVehicleArmed",
+	"Spawn Light Vehicle (Armed)",
+	"",
+	{true},
+	{},
+	{}
+] call ace_interact_menu_fnc_createAction;
+[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+private _action = [
+	"TWC_Insurgency_Actions_spawnMRAP",
+	"Spawn MRAP",
 	"",
 	{true},
 	{},
@@ -52,8 +72,18 @@ private _action = [
 [TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 private _action = [
-	"TWC_Insurgency_Actions_spawnHeli",
-	"Spawn Helicopter",
+	"TWC_Insurgency_Actions_spawnHeliTransport",
+	"Spawn Transport Helicopter",
+	"",
+	{true},
+	{_player getVariable ["TWC_Insurgency_isHeli", false]},
+	{}
+] call ace_interact_menu_fnc_createAction;
+[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+private _action = [
+	"TWC_Insurgency_Actions_spawnHeliAttack",
+	"Spawn Attack Helicopter",
 	"",
 	{true},
 	{_player getVariable ["TWC_Insurgency_isHeli", false]},
@@ -82,7 +112,7 @@ private _action = [
 [TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 //Create subactions for vehicle spawning, everyone can spawn light vehicles and trucks.
-private _vehicles = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Cars");
+private _carsUnarmed = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Cars_Unarmed");
 {
 	private _vehicle = configName _x;
 	private _action = [
@@ -92,10 +122,40 @@ private _vehicles = "true" configClasses (missionConfigFile >> "CfgTransport" >>
 		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
 		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
 		{},
-		[_vehicle, "Cars"]
+		[_vehicle, "Cars_Unarmed"]
 	] call ace_interact_menu_fnc_createAction;
-	[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnVehicle"], _action] call ace_interact_menu_fnc_addActionToObject;
-} forEach _vehicles;
+	[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnVehicleUnarmed"], _action] call ace_interact_menu_fnc_addActionToObject;
+} forEach _carsUnarmed;
+
+private _carsArmed = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Cars_Armed");
+{
+	private _vehicle = configName _x;
+	private _action = [
+		"TWC_Insurgency_Actions_spawnVehicle_" + _vehicle,
+		getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName"),
+		"",
+		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
+		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
+		{},
+		[_vehicle, "Cars_Armed"]
+	] call ace_interact_menu_fnc_createAction;
+	[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnVehicleArmed"], _action] call ace_interact_menu_fnc_addActionToObject;
+} forEach _carsArmed;
+
+private _MRAP = "true" configClasses (missionConfigFile >> "CfgTransport" >> "MRAP");
+{
+	private _vehicle = configName _x;
+	private _action = [
+		"TWC_Insurgency_Actions_spawnVehicle_" + _vehicle,
+		getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName"),
+		"",
+		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
+		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
+		{},
+		[_vehicle, "MRAP"]
+	] call ace_interact_menu_fnc_createAction;
+	[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnMRAP"], _action] call ace_interact_menu_fnc_addActionToObject;
+} forEach _MRAP;
 
 private _trucks = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Trucks");
 {
@@ -113,7 +173,7 @@ private _trucks = "true" configClasses (missionConfigFile >> "CfgTransport" >> "
 } forEach _trucks;
 
 //Add helicopter spawn actions, but only heli crew will see it
-private _helicopters = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Helicopters");
+private _helicoptersTransport = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Helicopters_Transport");
 {
 	private _helicopter = configName _x;
 	private _action = [
@@ -123,10 +183,25 @@ private _helicopters = "true" configClasses (missionConfigFile >> "CfgTransport"
 		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
 		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
 		{},
-		[_helicopter, "Helicopters"]
+		[_helicopter, "Helicopters_Transport"]
 	] call ace_interact_menu_fnc_createAction;
-	[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnHeli"], _action] call ace_interact_menu_fnc_addActionToObject;
-} forEach _helicopters;
+	[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnHeliTransport"], _action] call ace_interact_menu_fnc_addActionToObject;
+} forEach _helicoptersTransport;
+
+private _helicoptersAttack = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Helicopters_Transport");
+{
+	private _helicopter = configName _x;
+	private _action = [
+		"TWC_Insurgency_Actions_spawnVehicle_" + _helicopter,
+		getText (configFile >> "CfgVehicles" >> _helicopter >> "displayName"),
+		"",
+		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
+		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
+		{},
+		[_helicopter, "Helicopters_Attack"]
+	] call ace_interact_menu_fnc_createAction;
+	[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnHeliAttack"], _action] call ace_interact_menu_fnc_addActionToObject;
+} forEach _helicoptersAttack;
 
 //Add armour spawn actions, but only armour crew will see it
 private _armours = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Armour");

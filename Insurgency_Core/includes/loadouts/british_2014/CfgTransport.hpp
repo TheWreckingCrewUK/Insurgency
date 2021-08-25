@@ -1,19 +1,7 @@
 class CfgTransport {
-	class Cars {
+	class Cars_Unarmed {
 		class UK3CB_BAF_LandRover_Amb_Sand_A {
 			cost = 10;
-			variant = "";
-		};
-		class UK3CB_BAF_LandRover_WMIK_GMG_Sand_A {
-			cost = 20;
-			variant = "";
-		};
-		class UK3CB_BAF_LandRover_WMIK_HMG_Sand_A {
-			cost = 20;
-			variant = "";
-		};
-		class UK3CB_BAF_LandRover_WMIK_GPMG_Sand_A {
-			cost = 20;
 			variant = "";
 		};
 		class UK3CB_BAF_LandRover_Hard_Sand_A {
@@ -28,6 +16,21 @@ class CfgTransport {
 			cost = 10;
 			variant = "";
 		};
+	};
+	
+	class Cars_Armed {
+		class UK3CB_BAF_LandRover_WMIK_GMG_Sand_A {
+			cost = 20;
+			variant = "";
+		};
+		class UK3CB_BAF_LandRover_WMIK_HMG_Sand_A {
+			cost = 20;
+			variant = "";
+		};
+		class UK3CB_BAF_LandRover_WMIK_GPMG_Sand_A {
+			cost = 20;
+			variant = "";
+		};
 		class UK3CB_BAF_Jackal2_L134A1_D {
 			cost = 25;
 			variant = "";
@@ -36,6 +39,17 @@ class CfgTransport {
 			cost = 25;
 			variant = "";
 		};
+		class UK3CB_BAF_Coyote_Passenger_L134A1_D {
+			cost = 25;
+			variant = "";
+		};
+		class UK3CB_BAF_Coyote_Passenger_L111A1_D {
+			cost = 25;
+			variant = "";
+		};
+	};
+	
+	class MRAP {
 		class UK3CB_BAF_Husky_Passenger_GMG_Sand {
 			cost = 25;
 			variant = "";
@@ -63,14 +77,6 @@ class CfgTransport {
 	};
 	
 	class Trucks {
-		class UK3CB_BAF_Coyote_Passenger_L134A1_D {
-			cost = 25;
-			variant = "";
-		};
-		class UK3CB_BAF_Coyote_Passenger_L111A1_D {
-			cost = 25;
-			variant = "";
-		};
 		class UK3CB_BAF_MAN_HX58_Transport_Sand {
 			cost = 20;
 			variant = "";
@@ -113,7 +119,7 @@ class CfgTransport {
 		};
 	};
 	
-	class Helicopters {
+	class Helicopters_Transport {
 		class UK3CB_BAF_Wildcat_AH1_TRN_8A {
 			cost = 20;
 			variant = "";
@@ -122,20 +128,23 @@ class CfgTransport {
 			cost = 30;
 			variant = "";
 		};
-		class UK3CB_BAF_Wildcat_AH1_HEL_8A {
-			cost = 60;
-			variant = "";
-		};
-		class UK3CB_BAF_Wildcat_AH1_CAS_8A {
-			cost = 60;
-			variant = "";
-		};
 		class CUP_B_CH47F_GB {
 			cost = 30;
 			variant = "";
 		};
 		class CUP_B_CH47F_VIV_GB {
 			cost = 30;
+			variant = "";
+		};
+	};
+	
+	class Helicopters_Attack {
+		class UK3CB_BAF_Wildcat_AH1_HEL_8A {
+			cost = 60;
+			variant = "";
+		};
+		class UK3CB_BAF_Wildcat_AH1_CAS_8A {
+			cost = 60;
 			variant = "";
 		};
 		class UK3CB_BAF_Apache_AH1_DynamicLoadoutUnlimited {

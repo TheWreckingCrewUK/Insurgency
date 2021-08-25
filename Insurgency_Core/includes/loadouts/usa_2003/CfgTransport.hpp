@@ -1,9 +1,16 @@
 class CfgTransport {
-	class Cars {
+	class Cars_Unarmed {
 		class CUP_B_HMMWV_Ambulance_USA {
 			cost = 10;
 			variant = "";
 		};
+		class CUP_B_HMMWV_Unarmed_USA {
+			cost = 5;
+			variant = "";
+		};
+	};
+	
+	class Cars_Armed {
 		class CUP_B_HMMWV_SOV_USA {
 			cost = 20;
 			variant = "";
@@ -14,10 +21,6 @@ class CfgTransport {
 		};
 		class CUP_B_HMMWV_M2_USA {
 			cost = 15;
-			variant = "";
-		};
-		class CUP_B_HMMWV_Unarmed_USA {
-			cost = 5;
 			variant = "";
 		};
 		class CUP_B_HMMWV_MK19_USA {
@@ -45,7 +48,7 @@ class CfgTransport {
 		};
 	};
 	
-	class Helicopters {
+	class Helicopters_Transport {
 		class CUP_B_UH60M_US {
 			cost = 40;
 			variant = "";
@@ -66,20 +69,24 @@ class CfgTransport {
 			cost = 20;
 			variant = "";
 		};
-		class CUP_B_MH60L_DAP_4x_US {
-			cost = 60;
-			variant = "";
-		};
-		class CUP_B_MH60L_DAP_2x_US {
-			cost = 60;
-			variant = "";
-		};
 		class CUP_B_CH47F_USA {
 			cost = 30;
 			variant = "";
 		};
 		class CUP_B_CH47F_VIV_USA {
 			cost = 30;
+			variant = "";
+		};
+
+	};
+	
+	class Helicopters_Attack {
+		class CUP_B_MH60L_DAP_4x_US {
+			cost = 60;
+			variant = "";
+		};
+		class CUP_B_MH60L_DAP_2x_US {
+			cost = 60;
 			variant = "";
 		};
 		class CUP_B_AH64_DL_USA {
