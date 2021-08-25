@@ -4,7 +4,7 @@ class CfgAmmoboxes {
 	#include "..\generic_ammoboxes.hpp"
 	
 	class Squad_Supply {
-		displayName = "Squad Resupply (5)";
+		displayName = "Squad Resupply";
 		type = "CUP_BOX_US_ARMY_Ammo_F";
 		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;
@@ -30,7 +30,7 @@ class CfgAmmoboxes {
 		};
 	};
 	class M136_Resupply {
-		displayName = "M136 Resupply (10)";
+		displayName = "M136 Resupply";
 		type = "CUP_BOX_US_ARMY_WpsLaunch_F";
 		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;
@@ -42,7 +42,7 @@ class CfgAmmoboxes {
 		class Items {};
 	};
 	class M72_Resupply {
-		displayName = "M72 Resupply (5)";
+		displayName = "M72 Resupply";
 		type = "CUP_BOX_US_ARMY_WpsLaunch_F";
 		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;

@@ -4,7 +4,7 @@ class CfgAmmoboxes {
 	#include "..\generic_ammoboxes.hpp"
 	
 	class Squad_Supply {
-		displayName = "Squad Resupply (5)";
+		displayName = "Squad Resupply";
 		type = "CUP_BOX_RU_Ammo_F";
 		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;
@@ -30,7 +30,7 @@ class CfgAmmoboxes {
 		};
 	};
 	class RPG7_Resupply {
-		displayName = "RPG-7 Resupply (10)";
+		displayName = "RPG-7 Resupply";
 		type = "CUP_BOX_RU_Ammo_F";
 		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;
@@ -43,7 +43,7 @@ class CfgAmmoboxes {
 		class Items {};
 	};
 	class RPG18_Resupply {
-		displayName = "RPG-18 Resupply (5)";
+		displayName = "RPG-18 Resupply";
 		type = "CUP_BOX_RU_WpsLaunch_F";
 		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;

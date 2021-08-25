@@ -1,5 +1,5 @@
 class Medical_Supply {
-	displayName = "Medical Resupply (5)";
+	displayName = "Medical Resupply";
 	type = "ACE_medicalSupplyCrate";
 	subcategory = "TWC_Insurgency_Actions_spawnSectionAmmo";
 	size = 1;
@@ -26,7 +26,7 @@ class Medical_Supply {
 };
 
 class EOD {
-	displayName = "EOD Equipment (2)";
+	displayName = "EOD Equipment";
 	type = "Box_NATO_Equip_F";
 	subcategory = "TWC_Insurgency_Actions_spawnSectionAmmo";
 	size = 1;
@@ -42,7 +42,7 @@ class EOD {
 
 //Tasks
 class Humanitarian_Aid {
-	displayName = "Humanitarian Aid (5)";
+	displayName = "Humanitarian Aid";
 	type = "CargoNet_01_box_F";
 	subcategory = "TWC_Insurgency_Actions_spawnTaskItems";
 	size = 5;
@@ -57,7 +57,7 @@ class Humanitarian_Aid {
 	};
 };
 class Money {
-	displayName = "Cash (5)";
+	displayName = "Cash";
 	type = "Box_NATO_Equip_F";
 	subcategory = "TWC_Insurgency_Actions_spawnTaskItems";
 	size = 1;
@@ -71,7 +71,7 @@ class Money {
 
 //Vehicles
 class Wheel {
-	displayName = "Spare Wheel (1)";
+	displayName = "Spare Wheel";
 	type = "ACE_Wheel";
 	subcategory = "TWC_Insurgency_Actions_spawnVehicleAmmo";
 	size = 1;
@@ -81,7 +81,7 @@ class Wheel {
 	class Items {};
 };
 class Vehicle_Ammo {
-	displayName = "Vehicle Ammo (5)";
+	displayName = "Vehicle Ammo";
 	type = "CUP_BOX_US_ARMY_WpsSpecial_F";
 	subcategory = "TWC_Insurgency_Actions_spawnVehicleAmmo";
 	size = 3;
@@ -94,7 +94,7 @@ class Vehicle_Ammo {
 	};
 };
 class 50cal {
-	displayName = ".50cal Ammo (5)";
+	displayName = ".50cal Ammo";
 	type = "Box_NATO_Ammo_F";
 	subcategory = "TWC_Insurgency_Actions_spawnVehicleAmmo";
 	size = 1;
@@ -106,7 +106,7 @@ class 50cal {
 	class Items {};
 };
 class 40mm {
-	displayName = "40mm Ammo (5)";
+	displayName = "40mm Ammo";
 	type = "Box_NATO_Ammo_F";
 	subcategory = "TWC_Insurgency_Actions_spawnVehicleAmmo";
 	size = 1;
@@ -118,7 +118,7 @@ class 40mm {
 	class Items {};
 };
 class 762mm {
-	displayName = "7.62mm Ammo (5)";
+	displayName = "7.62mm Ammo";
 	type = "Box_NATO_Ammo_F";
 	subcategory = "TWC_Insurgency_Actions_spawnVehicleAmmo";
 	size = 1;

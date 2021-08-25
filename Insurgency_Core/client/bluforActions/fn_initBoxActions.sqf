@@ -35,10 +35,12 @@ private _action = [
 private _boxes = "true" configClasses (missionConfigFile >> "CfgAmmoboxes");
 {
 	private _box = configName _x;
+	private _name = getText (missionConfigFile >> "CfgAmmoboxes" >> _box >> "displayName");
+	private _cost = str getNumber (missionConfigFile >> "CfgAmmoboxes" >> _box >> "cost");
 	private _subcategory = getText (missionConfigFile >> "CfgAmmoboxes" >> _box >> "subcategory");
 	private _action = [
 		"TWC_Insurgency_Actions_spawnAmmo_" + _box,
-		getText (missionConfigFile >> "CfgAmmoboxes" >> _box >> "displayName"),
+		_name + " (" + _cost + ")",
 		"",
 		{_this call TWC_Insurgency_bluforActions_fnc_spawnAmmo},
 		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnAmmo},

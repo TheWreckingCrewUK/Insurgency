@@ -4,7 +4,7 @@ class CfgAmmoboxes {
 	#include "..\generic_ammoboxes.hpp"
 	
 	class Section_Resupply {
-		displayName = "Section Resupply (5)";
+		displayName = "Section Resupply";
 		type = "Box_NATO_Ammo_F";
 		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;
@@ -45,7 +45,7 @@ class CfgAmmoboxes {
 		};
 	};
 	class NLAW_Resupply {
-		displayName = "NLAW Resupply (10)";
+		displayName = "NLAW Resupply";
 		type = "Box_NATO_WpsLaunch_F";
 		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;
@@ -57,7 +57,7 @@ class CfgAmmoboxes {
 		class Items {};
 	};
 	class M72_Resupply {
-		displayName = "M72 Resupply (5)";
+		displayName = "M72 Resupply";
 		type = "Box_NATO_WpsLaunch_F";
 		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;

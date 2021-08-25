@@ -115,9 +115,11 @@ private _action = [
 private _carsUnarmed = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Cars_Unarmed");
 {
 	private _vehicle = configName _x;
+	private _name = getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName");
+	private _cost = str getNumber (missionConfigFile >> "CfgTransport" >> "Cars_Unarmed" >> _vehicle >> "cost");
 	private _action = [
 		"TWC_Insurgency_Actions_spawnVehicle_" + _vehicle,
-		getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName"),
+		_name + " (" + _cost + ")",
 		"",
 		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
 		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
@@ -130,9 +132,11 @@ private _carsUnarmed = "true" configClasses (missionConfigFile >> "CfgTransport"
 private _carsArmed = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Cars_Armed");
 {
 	private _vehicle = configName _x;
+	private _name = getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName");
+	private _cost = str getNumber (missionConfigFile >> "CfgTransport" >> "Cars_Armed" >> _vehicle >> "cost");
 	private _action = [
 		"TWC_Insurgency_Actions_spawnVehicle_" + _vehicle,
-		getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName"),
+		_name + " (" + _cost + ")",
 		"",
 		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
 		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
@@ -145,9 +149,11 @@ private _carsArmed = "true" configClasses (missionConfigFile >> "CfgTransport" >
 private _MRAP = "true" configClasses (missionConfigFile >> "CfgTransport" >> "MRAP");
 {
 	private _vehicle = configName _x;
+	private _name = getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName");
+	private _cost = str getNumber (missionConfigFile >> "CfgTransport" >> "MRAP" >> _vehicle >> "cost");
 	private _action = [
 		"TWC_Insurgency_Actions_spawnVehicle_" + _vehicle,
-		getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName"),
+		_name + " (" + _cost + ")",
 		"",
 		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
 		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
@@ -160,9 +166,11 @@ private _MRAP = "true" configClasses (missionConfigFile >> "CfgTransport" >> "MR
 private _trucks = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Trucks");
 {
 	private _vehicle = configName _x;
+	private _name = getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName");
+	private _cost = str getNumber (missionConfigFile >> "CfgTransport" >> "Trucks" >> _vehicle >> "cost");
 	private _action = [
 		"TWC_Insurgency_Actions_spawnTruck_" + _vehicle,
-		getText (configFile >> "CfgVehicles" >> _vehicle >> "displayName"),
+		_name + " (" + _cost + ")",
 		"",
 		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
 		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
@@ -176,9 +184,11 @@ private _trucks = "true" configClasses (missionConfigFile >> "CfgTransport" >> "
 private _helicoptersTransport = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Helicopters_Transport");
 {
 	private _helicopter = configName _x;
+	private _name = getText (configFile >> "CfgVehicles" >> _helicopter >> "displayName");
+	private _cost = str getNumber (missionConfigFile >> "CfgTransport" >> "Helicopters_Transport" >> _helicopter >> "cost");
 	private _action = [
 		"TWC_Insurgency_Actions_spawnVehicle_" + _helicopter,
-		getText (configFile >> "CfgVehicles" >> _helicopter >> "displayName"),
+		_name + " (" + _cost + ")",
 		"",
 		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
 		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
@@ -188,12 +198,14 @@ private _helicoptersTransport = "true" configClasses (missionConfigFile >> "CfgT
 	[TWC_Insurgency_SpawnSign1, 0, ["ACE_MainActions", "TWC_Insurgency_Actions_spawnHeliTransport"], _action] call ace_interact_menu_fnc_addActionToObject;
 } forEach _helicoptersTransport;
 
-private _helicoptersAttack = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Helicopters_Transport");
+private _helicoptersAttack = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Helicopters_Attack");
 {
 	private _helicopter = configName _x;
+	private _name = getText (configFile >> "CfgVehicles" >> _helicopter >> "displayName");
+	private _cost = str getNumber (missionConfigFile >> "CfgTransport" >> "Helicopters_Attack" >> _helicopter >> "cost");
 	private _action = [
 		"TWC_Insurgency_Actions_spawnVehicle_" + _helicopter,
-		getText (configFile >> "CfgVehicles" >> _helicopter >> "displayName"),
+		_name + " (" + _cost + ")",
 		"",
 		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
 		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
@@ -207,9 +219,11 @@ private _helicoptersAttack = "true" configClasses (missionConfigFile >> "CfgTran
 private _armours = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Armour");
 {
 	private _armour = configName _x;
+	private _name = getText (configFile >> "CfgVehicles" >> _armour >> "displayName");
+	private _cost = str getNumber (missionConfigFile >> "CfgTransport" >> "Armour" >> _armour >> "cost");
 	private _action = [
 		"TWC_Insurgency_Actions_spawnVehicle_" + _armour,
-		getText (configFile >> "CfgVehicles" >> _armour >> "displayName"),
+		_name + " (" + _cost + ")",
 		"",
 		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
 		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
@@ -223,9 +237,11 @@ private _armours = "true" configClasses (missionConfigFile >> "CfgTransport" >> 
 private _jets = "true" configClasses (missionConfigFile >> "CfgTransport" >> "Planes");
 {
 	private _plane = configName _x;
+	private _name = getText (configFile >> "CfgVehicles" >> _plane >> "displayName");
+	private _cost = str getNumber (missionConfigFile >> "CfgTransport" >> "Planes" >> _plane >> "cost");
 	private _action = [
 		"TWC_Insurgency_Actions_spawnVehicle_" + _plane,
-		getText (configFile >> "CfgVehicles" >> _plane >> "displayName"),
+		_name + " (" + _cost + ")",
 		"",
 		{_this call TWC_Insurgency_bluforActions_fnc_spawnVehicle},
 		{_this call TWC_Insurgency_bluforActions_fnc_canSpawnVehicle},
