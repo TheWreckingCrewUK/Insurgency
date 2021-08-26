@@ -15,7 +15,7 @@
 
 params ["_location"];
 
-_allLocations = TWC_Insurgency_Locations;
+private _allLocations = TWC_Insurgency_Locations;
 
 private _locationPosition = locationPosition _location;
 
@@ -25,7 +25,7 @@ private _possibleLocations = [];
 	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task", "_time", "_fsm", "_groups"];
 	
 	private _testPos = locationPosition _x;
-	private _closeToLocation = _locationPosition distance2d _testPos < 5000;
+	private _closeToLocation = _locationPosition distance2d _testPos < 3000;
 	private _notTaskLocation = _location isNotEqualTo _x;
 	if (_closeToLocation && _notTaskLocation && !_hasCache) then {_possibleLocations pushBack _x};
 } forEach _allLocations;

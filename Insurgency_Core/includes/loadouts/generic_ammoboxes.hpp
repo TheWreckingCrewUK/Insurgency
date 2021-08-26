@@ -1,7 +1,7 @@
 class Medical_Supply {
 	displayName = "Medical Resupply";
 	type = "ACE_medicalSupplyCrate";
-	subcategory = "TWC_Insurgency_Actions_spawnSectionAmmo";
+	subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 	size = 1;
 	cost = 5;
 	class Weapons {};
@@ -28,7 +28,7 @@ class Medical_Supply {
 class EOD {
 	displayName = "EOD Equipment";
 	type = "Box_NATO_Equip_F";
-	subcategory = "TWC_Insurgency_Actions_spawnSectionAmmo";
+	subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 	size = 1;
 	cost = 2;
 	class Weapons {

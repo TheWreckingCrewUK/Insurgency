@@ -19,8 +19,29 @@ params ["_location"];
 private _taskID = call TWC_Insurgency_Locations_fnc_taskID;
 _location setVariable ["TWC_Insurgency_Locations_task", _taskID select 0];
 
-//Pick a random spot in town
-private _spawnPos = [300] call TWC_Insurgency_Locations_fnc_randomLocationASL;
+//Pick a nearby town
+private _allLocations = TWC_Insurgency_Locations;
+private _locationPosition = locationPosition _location;
+
+private _possibleLocations = [];
+{
+	private _locationInfo = [_x] call TWC_Insurgency_Locations_fnc_getInfo;
+	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task", "_time", "_fsm", "_groups"];
+	
+	private _testPos = locationPosition _x;
+	private _closeToLocation = _locationPosition distance2d _testPos < 3000;
+	private _notTaskLocation = _location isNotEqualTo _x;
+	if (_closeToLocation && _notTaskLocation && !_hasCache && !_isActive) then {_possibleLocations pushBack _x};
+} forEach _allLocations;
+
+private _spawnPos = if (count _possibleLocations > 0) then {
+	private _taskLocation = selectRandom _possibleLocations;
+	[[_taskLocation]] call BIS_fnc_randomPos;
+} else {
+	private _taskLocation = selectRandom _allLocations;
+	[[_taskLocation]] call BIS_fnc_randomPos;
+};
+
 
 //Fetch spawn information from settings
 private _warlordType = getText (missionConfigFile >> "TWC_Insurgency" >> "warlord");
@@ -30,7 +51,7 @@ private _group = [[0,0,0], _enemySide, [_warlordType]] call BIS_fnc_spawnGroup;
 
 //Set the task so we know what to complete
 private _warlord = leader _group;
-_warlord setPosASL _spawnPos;
+_warlord setPos _spawnPos;
 _warlord setVariable ["TWC_Insurgency_Locations_Task", _taskID select 0];
 _warlord setVariable ["TWC_Insurgency_Locations_Location", _location];
 
