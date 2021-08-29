@@ -17,9 +17,9 @@ params ["_taskNumber"];
 
 [_taskNumber, "SUCCEEDED", false] call BIS_fnc_taskSetState;
 
-private _taskTitle = (_taskNumber call BIS_fnc_taskDescription) select 1;
+private _taskTitle = ((_taskNumber call BIS_fnc_taskDescription) select 1) select 0;
 private _tasksList = "getNumber (_x >> 'blufor') == 1" configClasses (missionConfigFile >> "CfgTaskDescriptions");
-_tasksList select {
+_tasksList = _tasksList select {
 	getText (_x >> "title") isEqualTo _taskTitle;
 };
 private _taskType = configName (_tasksList select 0);
