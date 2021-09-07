@@ -24,32 +24,37 @@ class CfgRespawnInventory {
 		};
 		weapons[] = {
 			"UK3CB_BAF_L85A2_RIS",
+			"UK3CB_BAF_L131A1",
 			"launch_NLAW_F"
 		};
 		magazines[] = {
 			MAG_8("UK3CB_BAF_556_30Rnd"),
 			MAG_5("UK3CB_BAF_556_30Rnd_T"),
+			MAG_2("UK3CB_BAF_9_17Rnd"),
 			MAG_2("CUP_HandGrenade_L109A2_HE"),
 			MAG_2("SmokeShell")
 		};
 	};
 	class Pointman: Rifleman_AT {
 		displayName = "Pointman";
+		backpack = "UK3CB_BAF_B_Bergen_MTP_PointMan_L_A";
 		items[] = {
 			MEDICAL_LOADOUT,
 			"ACE_EntrenchingTool",
 			"ACRE_PRC343",
+			"CUP_sgun_M1014_vfg",
 			"UK3CB_BAF_Eotech"
 		};
 		weapons[] = {
 			"UK3CB_BAF_L85A2_RIS",
-			"CUP_sgun_M1014_vfg",
+			"UK3CB_BAF_L131A1",
 			"CUP_launch_M72A6"
 		};
 		magazines[] = {
 			MAG_13("UK3CB_BAF_556_30Rnd"),
 			MAG_8("CUP_8Rnd_B_Beneli_74Slug"),
 			MAG_8("CUP_8Rnd_B_Beneli_74Pellets"),
+			MAG_2("UK3CB_BAF_9_17Rnd"),
 			MAG_2("CUP_HandGrenade_L109A2_HE"),
 			MAG_2("SmokeShell")
 		};
@@ -69,6 +74,7 @@ class CfgRespawnInventory {
 		};
 		weapons[] = {
 			"UK3CB_BAF_L85A2_UGL",
+			"UK3CB_BAF_L131A1",
 			"CUP_launch_M72A6",
 			"ACE_Vector"
 		};
@@ -79,6 +85,7 @@ class CfgRespawnInventory {
 			MAG_2("1Rnd_SmokeGreen_Grenade_shell"),
 			MAG_2("1Rnd_SmokeRed_Grenade_shell"),
 			MAG_2("1Rnd_SmokeBlue_Grenade_shell"),
+			MAG_2("UK3CB_BAF_9_17Rnd"),
 			MAG_2("CUP_HandGrenade_L109A2_HE"),
 			MAG_2("SmokeShell")
 		};
@@ -97,10 +104,12 @@ class CfgRespawnInventory {
 			"ItemWatch"
 		};
 		weapons[] = {
-			"UK3CB_BAF_L110A2RIS"
+			"UK3CB_BAF_L110A2RIS",
+			"UK3CB_BAF_L131A1"
 		};
 		magazines[] = {
 			MAG_6("UK3CB_BAF_556_200Rnd_T"),
+			MAG_2("UK3CB_BAF_9_17Rnd"),
 			MAG_2("SmokeShell")
 		};
 	};
@@ -116,10 +125,12 @@ class CfgRespawnInventory {
 			"ItemWatch"
 		};
 		weapons[] = {
-			"UK3CB_BAF_L7A2"
+			"UK3CB_BAF_L7A2",
+			"UK3CB_BAF_L131A1"
 		};
 		magazines[] = {
 			MAG_3("UK3CB_BAF_762_100Rnd_T"),
+			MAG_2("UK3CB_BAF_9_17Rnd"),
 			MAG_2("SmokeShell")
 		};
 	};
@@ -139,6 +150,7 @@ class CfgRespawnInventory {
 		};
 		weapons[] = {
 			"UK3CB_BAF_L129A1_Grippod",
+			"UK3CB_BAF_L131A1",
 			"launch_NLAW_F",
 			"ACE_Vector"
 		};
@@ -146,6 +158,7 @@ class CfgRespawnInventory {
 			MAG_6("UK3CB_BAF_762_L42A1_20Rnd"),
 			MAG_4("UK3CB_BAF_762_L42A1_20Rnd_T"),
 			MAG_2("UK3CB_BAF_762_100Rnd_T"),
+			MAG_2("UK3CB_BAF_9_17Rnd"),
 			MAG_2("SmokeShell")
 		};
 	};
@@ -153,6 +166,7 @@ class CfgRespawnInventory {
 		displayName = "Marksman (LAW)";
 		weapons[] = {
 			"UK3CB_BAF_L129A1_Grippod",
+			"UK3CB_BAF_L131A1",
 			"CUP_launch_M72A6",
 			"ACE_Vector"
 		};
@@ -161,14 +175,17 @@ class CfgRespawnInventory {
 		displayName = "2iC";
 		role = "2iC";
 		rank = "CORPORAL";
+		backpack = "UK3CB_BAF_B_Bergen_MTP_Rifleman_L_D";
 		weapons[] = {
 			"UK3CB_BAF_L85A2_RIS",
+			"UK3CB_BAF_L131A1",
 			"ACE_Vector"
 		};
 		magazines[] = {
 			MAG_13("UK3CB_BAF_556_30Rnd"),
 			MAG_2("UK3CB_BAF_762_100Rnd_T"),
 			MAG_2("CUP_HandGrenade_L109A2_HE"),
+			MAG_2("UK3CB_BAF_9_17Rnd"),
 			MAG_2("SmokeShell")
 		};
 	};
@@ -176,6 +193,7 @@ class CfgRespawnInventory {
 		displayName = "Section Commander";
 		role = "Section_Commander";
 		rank = "SERGEANT";
+		backpack = "UK3CB_BAF_B_Bergen_MTP_SL_L_A";
 		linkedItems[] = {
 			"UK3CB_BAF_V_Osprey_SL_B",
 			"UK3CB_BAF_H_Mk7_Scrim_F",
@@ -195,6 +213,7 @@ class CfgRespawnInventory {
 		};
 		weapons[] = {
 			"UK3CB_BAF_L85A2_RIS",
+			"UK3CB_BAF_L131A1",
 			"ACE_Vector"
 		};
 	};
@@ -203,8 +222,10 @@ class CfgRespawnInventory {
 		displayName = "Medic";
 		role = "Medic";
 		medic = 1;
+		backpack = "UK3CB_BAF_B_Bergen_MTP_Medic_L_A";
 		weapons[] = {
-			"UK3CB_BAF_L85A2_RIS"
+			"UK3CB_BAF_L85A2_RIS",
+			"UK3CB_BAF_L131A1"
 		};
 		items[] = {
 			MEDICAL_LOADOUT,
@@ -221,7 +242,7 @@ class CfgRespawnInventory {
 			"ACE_personalAidKit",
 			"TWC_Item_Medical_SutureKit_25",
 			"ACE_EntrenchingTool",
-			"items"
+			"ACRE_PRC343"
 		};
 	};
 	
@@ -268,10 +289,12 @@ class CfgRespawnInventory {
 		};
 		weapons[] = {
 			"UK3CB_BAF_L22A2",
+			"UK3CB_BAF_L131A1",
 			"ACE_Vector"
 		};
 		magazines[] = {
 			MAG_5("UK3CB_BAF_556_30Rnd"),
+			MAG_2("UK3CB_BAF_9_17Rnd"),
 			MAG_2("SmokeShell"),
 			MAG_2("SmokeShellGreen")
 		};
@@ -281,7 +304,8 @@ class CfgRespawnInventory {
 		role = "Armour_Crew";
 		rank = "PRIVATE";
 		weapons[] = {
-			"UK3CB_BAF_L22A2"
+			"UK3CB_BAF_L22A2",
+			"UK3CB_BAF_L131A1"
 		};
 		linkedItems[] = {
 			"UK3CB_BAF_V_Osprey",

@@ -2,6 +2,16 @@
 
 if (isDedicated) exitWith {DEBUG_LOG("Loadouts do not need to be called on server.")};
 
+//Set faction rank depending on playerside
+private _ranks = getArray (missionConfigFile >> "TWC_Insurgency_playerRanks");
+private _faction = switch (getNumber (missionConfigFile >> "TWC_Insurgency" >> "playerSide")) do {
+	case 0: {"NATO_F"};
+	case 1: {"OPF_F"};
+	case 2: {"IND_F"};
+	default {};
+};
+[_faction, _ranks] call ace_nametags_fnc_setFactionRankIcons;
+
 //Adds the loadouts for the players to select.
 private _type = roleDescription player;
 if (_type isNotEqualTo "") then {
