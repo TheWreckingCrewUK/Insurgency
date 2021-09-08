@@ -14,7 +14,7 @@ private _manpower = TWC_Insurgency_manpowerOPFOR;
 
 if (_supply < 4 || _manpower < 1) exitWith {false};
 
-private _weight = 1.0005;
+private _weight = 1.0003;
 
 if (random _weight < 1) exitWith {false};
 

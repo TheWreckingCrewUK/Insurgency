@@ -12,7 +12,7 @@ private _manpower = TWC_Insurgency_manpowerOPFOR;
 
 if (_supply < 30 || _manpower < 30) exitWith {false};
 
-private _weight = 1.001;
+private _weight = 1.0007;
 
 private _locationPos = locationPosition _location;
 
@@ -21,20 +21,20 @@ _strongholdInfo params ["_stronghold", "_strongholdDistance"];
 
 private _baseDistance = _locationPos distance2d (getMarkerPos "BASE");
 
-//For every km we increase the chance by 0.001
-private _weight = _weight + (_baseDistance - _strongholdDistance) / 1000000;
+//For every km we increase the chance by 0.0005
+private _weight = _weight + (_baseDistance - _strongholdDistance) / 2000000;
 
 if (_isStronghold) then {
-	_weight = _weight + 0.005;
+	_weight = _weight + 0.003;
 };
 if (_hasCache) then {
-	_weight = _weight + 0.005;
+	_weight = _weight + 0.003;
 };
 if (_task isNotEqualTo "") then {
 	_weight = _weight + 0.002;
 };
 if (_isActive) then {
-	_weight = _weight + 0.003;
+	_weight = _weight + 0.002;
 };
 
 if (random _weight < 1) exitWith {false};

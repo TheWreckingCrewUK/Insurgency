@@ -24,10 +24,10 @@ private _manpower = 0;
 		[50] call TWC_Insurgency_OPFOR_updateSupply;
 	};
 	private _menToAdd = switch (type _location) do {
-		case "NameCityCapital": {20};
-		case "NameCity": {15};
-		case "NameVillage": {10};
-		case "NameLocal": {5};
+		case "NameCityCapital": {10};
+		case "NameCity": {8};
+		case "NameVillage": {3};
+		case "NameLocal": {1};
 		default {0};
 	};
 	_menToAdd = _menToAdd * (1 - _allegiance / 100);
