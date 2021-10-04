@@ -28,3 +28,5 @@ if (isDedicated) exitWith {DEBUG_LOG("BLUFOR Client Handlers do not need to be c
 	[_box, true] call ace_dragging_fnc_setDraggable;
 	[_box, true] call ace_dragging_fnc_setCarryable;
 }] call CBA_fnc_addEventHandler;
+
+DEBUG_LOG("BLUFOR Client Handlers Initialised.");
