@@ -25,5 +25,7 @@ private _strongholdCount = count _strongholds;
 private _cacheCount = count _caches;
 
 if ((_strongholdCount isEqualTo 0) && (_cacheCount isEqualTo 0) && (_supply isEqualTo 0) && (_manpower isEqualTo 0)) then {
+	profileNamespace setVariable ["TWC_Insurgency_SaveInfo", nil];
+	saveProfileNamespace;
 	"Victory" call BIS_fnc_endMissionServer;
 };
