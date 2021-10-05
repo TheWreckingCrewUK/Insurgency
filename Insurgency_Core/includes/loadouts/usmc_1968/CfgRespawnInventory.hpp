@@ -258,6 +258,54 @@ class CfgRespawnInventory {
 	};
 	
 	//Jet Team
+	class FAC_M16: Rifleman {
+		displayName = "Forward Air Controller (M16)";
+		role = "FAC";
+		rank = "CAPTAIN";
+		uniformClass = "vn_b_uniform_macv_04_01";
+		backpack = "vn_b_pack_trp_04_02_m16_pl";
+		linkedItems[] = {
+			"vn_b_uniform_macv_05_01",
+			"vn_b_helmet_m1_09_01",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch"
+		};
+		weapons[] = {
+			"vn_m16",
+			"vn_m19_binocs_grey"
+		};
+		magazines[] = {
+			MAG_9("vn_m16_20_t_mag"),
+			MAG_4("vn_m18_white_mag"),
+			MAG_4("vn_m18_purple_mag"),
+			MAG_4("vn_m18_red_mag"),
+			MAG_4("vn_m18_yellow_mag"),
+			MAG_4("vn_m18_green_mag")
+		};
+	};
+	class FAC_M79: FAC_M16 {
+		displayName = "Forward Air Controller (M79)";
+		weapons[] = {
+			"vn_m79",
+			"vn_m1911",
+			"vn_m19_binocs_grey"
+		};
+		magazines[] = {
+			MAG_6("vn_40mm_m381_he_mag"),
+			MAG_4("vn_40mm_m682_smoke_r_mag"),
+			MAG_4("vn_40mm_m680_smoke_w_mag"),
+			MAG_4("vn_40mm_m715_smoke_g_mag"),
+			MAG_4("vn_40mm_m716_smoke_y_mag"),
+			MAG_4("vn_40mm_m717_smoke_p_mag"),
+			MAG_5("vn_m1911_mag"),
+			MAG_2("vn_m18_white_mag"),
+			MAG_2("vn_m18_purple_mag"),
+			MAG_2("vn_m18_red_mag"),
+			MAG_2("vn_m18_yellow_mag"),
+			MAG_2("vn_m18_green_mag")
+		};
+	};
 	class Jet_Pilot: Helicopter_Pilot {
 		displayName = "Jet Pilot";
 		role = "Jet_Pilot";
