@@ -72,8 +72,9 @@ private _elder = leader _elderGroup;
 private _size = switch (type _location) do {
 	case "NameCityCapital": {24};
 	case "NameCity": {16};
-	case "NameVillage": {8};
+	case "Namevillage": {8};
 	case "NameLocal": {6};
+	default {0};
 };
 
 private _civilianGroup = createGroup civilian;
@@ -93,7 +94,9 @@ for "_i" from 1 to _size do {
 };
 _civilianGroup setSpeedMode "LIMITED";
 
-[_civilianGroup, _location] execFSM "Insurgency_Core\server\locations\civBehaviour.fsm";
+if (count (units _civilianGroup) > 0) then {
+	[_civilianGroup, _location] execFSM "Insurgency_Core\server\locations\civBehaviour.fsm";
+};
 
 //Also store the location on the elders/civs for use.
 _civilianGroup setVariable ["TWC_Insurgency_Location", _location];
