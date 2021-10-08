@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=395;
+		nextID=414;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1;
+		nextID=2;
 	};
 	class Camera
 	{
-		pos[]={9703.7852,340.21689,6633.4204};
-		dir[]={-0.62985826,-0.59405291,-0.50037956};
-		up[]={-0.46513805,0.80442601,-0.36952057};
-		aside[]={-0.62203312,1.4901161e-008,0.78299093};
+		pos[]={9552.0254,244.07021,6542.2676};
+		dir[]={0.6329757,-0.50741076,-0.58479661};
+		up[]={0.37271491,0.86169422,-0.34434497};
+		aside[]={-0.67863977,3.608875e-009,-0.73454964};
 	};
 };
 binarizationWanted=0;
@@ -34,13 +34,14 @@ addons[]=
 	"A3_Modules_F_Curator_Curator",
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Structures_F_Civ_InfoBoards",
-	"A3_Characters_F"
+	"A3_Characters_F",
+	"wheeled_f_vietnam_c"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=5;
+		items=6;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -76,6 +77,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item5
+		{
+			className="wheeled_f_vietnam_c";
+			name="wheeled_f_vietnam_c";
+			author="Savage Game Design";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=14262401;
@@ -109,7 +117,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=9;
+		items=26;
 		class Item0
 		{
 			dataType="Marker";
@@ -2602,6 +2610,275 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item9
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9564.3516,233.62366,6523.522};
+				angles[]={0.0026520467,6.2824464,6.2778587};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=397;
+			type="vn_b_wheeled_m151_mg_04";
+		};
+		class Item10
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9560.7441,233.62955,6523.3555};
+				angles[]={-0,6.2824464,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=398;
+			type="vn_b_wheeled_m151_mg_04";
+		};
+		class Item11
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9556.5557,233.66879,6523.1245};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=399;
+			type="vn_b_wheeled_m151_mg_02";
+		};
+		class Item12
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9552.3721,233.66879,6522.7515};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=400;
+			type="vn_b_wheeled_m151_mg_02";
+		};
+		class Item13
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9591.0117,233.64488,6546.5254};
+				angles[]={6.2805333,3.4989204,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=401;
+			type="vn_b_wheeled_m54_01";
+		};
+		class Item14
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9586.876,233.6642,6551.8984};
+				angles[]={6.2805333,3.4989204,6.2805333};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=402;
+			type="vn_b_wheeled_m54_01";
+		};
+		class Item15
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9602.3389,233.62749,6575.0142};
+				angles[]={-0,0.20926078,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=403;
+			type="vn_b_wheeled_m54_ammo";
+		};
+		class Item16
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9607.6016,233.50674,6573.9995};
+				angles[]={-0,0.17770427,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=404;
+			type="vn_b_wheeled_m54_fuel";
+		};
+		class Item17
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9612.4883,233.43578,6572.499};
+				angles[]={-0,0.1608223,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=405;
+			type="vn_b_wheeled_m54_repair";
+		};
+		class Item18
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9548.9082,233.11224,6537.3232};
+				angles[]={-0,2.9162912,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=406;
+			type="vn_b_wheeled_m151_01";
+		};
+		class Item19
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9552.5273,233.11224,6538.1938};
+				angles[]={-0,2.9162912,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=407;
+			type="vn_b_wheeled_m151_01";
+		};
+		class Item20
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9555.9658,233.11224,6539.1709};
+				angles[]={-0,2.9162912,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=408;
+			type="vn_b_wheeled_m151_01";
+		};
+		class Item21
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9559.585,233.11235,6540.0415};
+				angles[]={6.2805109,2.9162912,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=409;
+			type="vn_b_wheeled_m151_01";
+		};
+		class Item22
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9563.375,233.14215,6551.2119};
+				angles[]={6.2805333,1.811327,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=410;
+			type="vn_b_wheeled_m151_02";
+		};
+		class Item23
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9562.5547,233.13205,6547.4209};
+				angles[]={6.2805333,1.811327,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=411;
+			type="vn_b_wheeled_m151_02";
+		};
+		class Item24
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9561.5361,233.12279,6543.9458};
+				angles[]={6.2805333,1.811327,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=412;
+			type="vn_b_wheeled_m151_02";
+		};
+		class Item25
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9548.1162,233.66885,6522.0278};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=413;
+			type="vn_b_wheeled_m151_mg_02";
 		};
 	};
 };

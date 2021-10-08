@@ -167,6 +167,12 @@ class CfgRespawnInventory {
 			"ItemCompass",
 			"ItemWatch"
 		};
+		items[] = {
+			MEDICAL_LOADOUT,
+			"ACE_MapTools",
+			"ACRE_PRC77",
+			"ACE_EntrenchingTool"
+		};
 		weapons[] = {
 			"vn_m16",
 			"vn_m19_binocs_grey",
@@ -270,6 +276,12 @@ class CfgRespawnInventory {
 			"ItemMap",
 			"ItemCompass",
 			"ItemWatch"
+		};
+		items[] = {
+			MEDICAL_LOADOUT,
+			"ACE_MapTools",
+			"ACRE_PRC77",
+			"ACE_EntrenchingTool"
 		};
 		weapons[] = {
 			"vn_m16",
