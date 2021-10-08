@@ -65,6 +65,10 @@ class CfgTransport {
 	};
 	
 	class Helicopters_Transport {
+		class vn_b_air_oh6a_01 {
+			cost = 20;
+			variant = "";
+		};
 		class vn_b_air_uh1c_07_04 {
 			cost = 40;
 			variant = "";
