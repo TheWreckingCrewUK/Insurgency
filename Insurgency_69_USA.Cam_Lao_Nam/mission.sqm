@@ -203,7 +203,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						description="Squad Lead@Alpha Squad";
+						description="Squad Leader@Alpha Squad";
 						isPlayable=1;
 					};
 					id=8;
@@ -263,7 +263,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Team Lead@Alpha Squad";
+						description="Team Leader@Alpha Squad";
 						isPlayable=1;
 					};
 					id=10;
@@ -503,7 +503,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Team Lead@Alpha Squad";
+						description="Team Leader@Alpha Squad";
 						isPlayable=1;
 					};
 					id=18;
@@ -780,7 +780,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						description="Squad Lead@Bravo Squad";
+						description="Squad Leader@Bravo Squad";
 						isPlayable=1;
 					};
 					id=26;
@@ -840,7 +840,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Team Lead@Bravo Squad";
+						description="Team Leader@Bravo Squad";
 						isPlayable=1;
 					};
 					id=27;
@@ -1081,7 +1081,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						description="Team Lead@Bravo Squad";
+						description="Team Leader@Bravo Squad";
 						isPlayable=1;
 					};
 					id=31;
