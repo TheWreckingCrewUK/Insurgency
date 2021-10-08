@@ -15,6 +15,8 @@
 
 if (!isServer) exitWith {DEBUG_LOG("BLUFOR Init not executed on client.")};
 
+TWC_Insurgency_playerInit = false;
+
 TWC_Insurgency_supplyBLUFOR = getNumber (missionConfigFile >> "TWC_Insurgency" >> "supplyBLUFOR");
 
 TWC_Insurgency_PatrolBases = [];
@@ -22,11 +24,20 @@ TWC_Insurgency_PatrolBases = [];
 private _playerside = call TWC_Insurgency_BLUFOR_fnc_playerSide;
 [_playerside, "bluforTasks", "bluforTasks", objNull, "CREATED", -1, false, "whiteboard", false] call BIS_fnc_taskCreate;
 
-for "_i" from 1 to 3 do {
-	[{
-		["bluforTasks", str _this] call TWC_Insurgency_BLUFOR_fnc_taskCreate;
-	}, _i, 2] call CBA_fnc_waitAndExecute;
-};
+//Do not execute task creation until a player has been initialised, because at mission creation the players are not JIP and therefore won't receive events from the mission creation when they're not objects themselves, I think.
+[{TWC_Insurgency_playerInit}, {
+	for "_i" from 1 to 3 do {
+		["bluforTasks", str _i] spawn TWC_Insurgency_BLUFOR_fnc_taskCreate;
+	};
+}] call CBA_fnc_waitUntilAndExecute;
+
+["TWC_Insurgency_playerInit", {
+	params ["_player"];
+	
+	TWC_Insurgency_playerInit = true;
+	
+	_player setVariable ["TWC_Insurgency_spawnCount", 0];
+}] call CBA_fnc_addEventHandler;
 
 ["TWC_Insurgency_BLUFOR_playerDeath", {
 	[-10] call TWC_Insurgency_BLUFOR_fnc_updateSupply;
@@ -54,7 +65,12 @@ addMissionEventHandler ["EntityRespawned", {
 addMissionEventHandler ["EntityKilled", {
 	params ["_unit", "_killer", "_instigator", "_useEffects"];
 	if (isPlayer _unit) then {
-		[-1] call TWC_Insurgency_BLUFOR_fnc_updateSupply;
+		private _spawnCount = _player getVariable ["TWC_Insurgency_spawnCount", 0];
+		_player setVariable ["TWC_Insurgency_spawnCount", _spawnCount + 1];
+		
+		if (_spawnCount > 1) then {
+			[-1] call TWC_Insurgency_BLUFOR_fnc_updateSupply;
+		};
 	};
 }];
 

@@ -15,18 +15,23 @@
 
 if (!isServer) exitWith {DEBUG_LOG("Save Init not executed on client.")};
 
-private _oldLocations = profileNamespace getVariable ["TWC_Insurgency_SaveInfo", []];
+private _saveInfo = profileNamespace getVariable ["TWC_Insurgency_SaveInfo", []];
 
-if (count _oldLocations > 0) then {
+if (count _saveInfo > 0) then {
 	[{
-		hint str _this;
+		_this params ["_supplyBLUFOR", "_supplyOPFOR", "_manpowerOPFOR", "_troopsOPFOR", "_oldLocations"];
+		
+		TWC_Insurgency_supplyBLUFOR = _supplyBLUFOR;
+		TWC_Insurgency_supplyOPFOR = _supplyOPFOR;
+		TWC_Insurgency_manpowerOPFOR = _manpowerOPFOR;
+		
 		{
 			_x params ["_location", "_oldAllegiance"];
 			
 			private _newAllegiance = _location getVariable ["TWC_Insurgency_Locations_allegiance", 0];
 			[_location, _oldAllegiance - _newAllegiance] call TWC_Insurgency_Locations_fnc_modifyAllegiance;
-		} forEach _this;
-	}, _oldLocations, 5] call CBA_fnc_waitAndExecute;
+		} forEach _oldLocations;
+	}, _saveInfo, 5] call CBA_fnc_waitAndExecute;
 };
 
 //A loop to save the game in case of crashing.

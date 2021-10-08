@@ -19,7 +19,7 @@ private _allegiances = [];
 	_allegiances pushBack [_x, _allegiance];
 } forEach TWC_Insurgency_Locations;
 
-profileNamespace setVariable ["TWC_Insurgency_SaveInfo", _allegiances];
+profileNamespace setVariable ["TWC_Insurgency_SaveInfo", [TWC_Insurgency_supplyBLUFOR, TWC_Insurgency_supplyOPFOR, TWC_Insurgency_manpowerOPFOR, TWC_Insurgency_troopsOPFOR, _allegiances]];
 saveProfileNamespace;
 
 [{call TWC_Insurgency_Save_fnc_save}, [], 300] call CBA_fnc_waitAndExecute;

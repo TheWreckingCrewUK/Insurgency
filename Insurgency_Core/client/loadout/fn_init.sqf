@@ -68,3 +68,6 @@ player createDiaryRecord ["Insurgency", ["Supply", "Ammunition and vehicles are 
 player createDiaryRecord ["Insurgency", ["Local Forces", "Local forces need to be established, trained, and supplied in order to provide security to the region in the long term. While they are not capable of direct action against the insurgents, they are good enough to set up checkpoints and defenses at towns or bases."]];
 player createDiaryRecord ["Insurgency", ["Patrol Bases", "Patrol Bases can be established wherever you want. These function as forward reinforcement points, but are juicy targets for the insurgent forces."]];
 player createDiaryRecord ["Insurgency", ["Victory", "Victory is achieved by pacifying the local populace, building a good security force, and destroying the insurgent ability to fight."]];
+
+//Tell the server that the (first) player has been initialised, this is useful for server side handling of things that can only be handled when there is a player object.
+["TWC_Insurgency_playerInit", [player]] call CBA_fnc_serverEvent;
