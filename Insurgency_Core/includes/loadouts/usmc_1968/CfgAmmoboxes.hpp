@@ -5,7 +5,7 @@ class CfgAmmoboxes {
 	
 	class Squad_Supply {
 		displayName = "Squad Resupply";
-		type = "Land_vn_us_ammo";
+		type = "vn_b_ammobox_02";
 		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;
 		cost = 5;
@@ -44,7 +44,7 @@ class CfgAmmoboxes {
 	};
 	class M72_Resupply {
 		displayName = "M72 Resupply";
-		type = "Land_vn_us_launchers";
+		type = "vn_b_ammobox_03";
 		subcategory = "TWC_Insurgency_Actions_spawnInfantryAmmo";
 		size = 1;
 		cost = 5;
