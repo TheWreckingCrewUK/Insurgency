@@ -15,7 +15,7 @@
 
 if (!isServer) exitWith {DEBUG_LOG("Save Init not executed on client.")};
 
-private _saveInfo = profileNamespace getVariable ["TWC_Insurgency_SaveInfo", []];
+private _saveInfo = profileNamespace getVariable [missionName, []];
 
 if (count _saveInfo > 0) then {
 	[{
