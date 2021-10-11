@@ -24,6 +24,7 @@ if (count _saveInfo > 0) then {
 		TWC_Insurgency_supplyBLUFOR = _supplyBLUFOR;
 		TWC_Insurgency_supplyOPFOR = _supplyOPFOR;
 		TWC_Insurgency_manpowerOPFOR = _manpowerOPFOR;
+		TWC_Insurgency_troopsOPFOR = _troopsOPFOR;
 		
 		{
 			_x params ["_location", "_oldAllegiance"];

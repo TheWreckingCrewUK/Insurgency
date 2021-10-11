@@ -32,3 +32,5 @@ TWC_Insurgency_troopsOPFOR pushBack [_pos, _types];
 } forEach units _group;
 
 deleteGroup _group;
+
+["TWC_Insurgency_Save_save", []] call CBA_fnc_serverEvent;
