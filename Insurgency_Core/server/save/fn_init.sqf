@@ -30,7 +30,7 @@ if (count _saveInfo > 0) then {
 			_x params ["_location", "_oldAllegiance"];
 			
 			private _newAllegiance = _location getVariable ["TWC_Insurgency_Locations_allegiance", 0];
-			[_location, _oldAllegiance - _newAllegiance] call TWC_Insurgency_Locations_fnc_modifyAllegiance;
+			[_location, _oldAllegiance - _newAllegiance, true] call TWC_Insurgency_Locations_fnc_modifyAllegiance;
 		} forEach _oldLocations;
 	}, _saveInfo, 5] call CBA_fnc_waitAndExecute;
 };

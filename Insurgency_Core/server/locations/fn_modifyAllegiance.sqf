@@ -14,7 +14,7 @@
 * [_location, _change] call TWC_Insurgency_Locations_fnc_modifyAllegiance;
 */
 
-params ["_location", "_change"];
+params ["_location", "_change", ["_init", false]];
 
 private _allegiance = _location getVariable ["TWC_Insurgency_Locations_allegiance", 0];
 _allegiance = ((_allegiance + _change) min 100) max 0;
@@ -35,6 +35,8 @@ if (_allegiance < 30) then {
 	};
 };
 
-["TWC_Insurgency_Save_save", []] call CBA_fnc_serverEvent;
+if !(_init) then {
+	["TWC_Insurgency_Save_save", []] call CBA_fnc_serverEvent;
+};
 
 DEBUG_LOG("Modified Allegiance in location" + text _location + " by " + str _change);
