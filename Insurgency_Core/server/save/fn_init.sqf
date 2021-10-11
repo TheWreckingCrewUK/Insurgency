@@ -34,8 +34,10 @@ if (count _saveInfo > 0) then {
 	}, _saveInfo, 5] call CBA_fnc_waitAndExecute;
 };
 
-//A loop to save the game in case of crashing.
-[{call TWC_Insurgency_Save_fnc_save}, [], 300] call CBA_fnc_waitAndExecute;
+//Handle saving
+["TWC_Insurgency_Save_save", {
+	[] spawn TWC_Insurgency_Save_fnc_save;
+}] call CBA_fnc_addEventHandler;
 
 //Saves when someones disconnects, and if no more players, it shuts down the mission.
 addMissionEventHandler ["HandleDisconnect", {

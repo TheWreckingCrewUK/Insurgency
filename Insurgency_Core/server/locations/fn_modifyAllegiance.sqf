@@ -35,4 +35,6 @@ if (_allegiance < 30) then {
 	};
 };
 
+["TWC_Insurgency_Save_save", []] call CBA_fnc_serverEvent;
+
 DEBUG_LOG("Modified Allegiance in location" + text _location + " by " + str _change);

@@ -22,6 +22,4 @@ private _allegiances = [];
 profileNamespace setVariable [missionName, [TWC_Insurgency_supplyBLUFOR, TWC_Insurgency_supplyOPFOR, TWC_Insurgency_manpowerOPFOR, TWC_Insurgency_troopsOPFOR, _allegiances]];
 saveProfileNamespace;
 
-[{call TWC_Insurgency_Save_fnc_save}, [], 300] call CBA_fnc_waitAndExecute;
-
 DEBUG_LOG("Mission Saved");

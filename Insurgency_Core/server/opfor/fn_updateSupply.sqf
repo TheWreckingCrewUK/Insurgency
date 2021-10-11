@@ -17,4 +17,6 @@ params ["_change"];
 
 TWC_Insurgency_supplyOPFOR = (TWC_Insurgency_supplyOPFOR + _change) max 0;
 
+["TWC_Insurgency_Save_save", []] call CBA_fnc_serverEvent;
+
 ["TWC_Insurgency_Save_checkVictory", []] call CBA_fnc_serverEvent;
