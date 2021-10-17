@@ -45,7 +45,7 @@ private _centerPos = locationPosition _nearestCenter;
 private _elderPos = if (_centerPos in _location) then {
 	_centerPos
 } else {
-	private _randPos = [[_location], [nearestLocation [getMarkerPos "BASE", ""]]] call BIS_fnc_randomPos;
+	private _randPos = [[[_locationPos, 100]], [nearestLocation [getMarkerPos "BASE", ""]]] call BIS_fnc_randomPos;
 	private _posArray = selectBestPlaces [_randPos, 200, "houses", 1, 1];
 	(_posArray select 0) select 0
 };
@@ -69,10 +69,11 @@ private _elder = leader _elderGroup;
 } forEach units _elderGroup;
 
 //Spawn in ambient civilians.
+hint (type _location);
 private _size = switch (type _location) do {
 	case "NameCityCapital": {24};
 	case "NameCity": {16};
-	case "Namevillage": {8};
+	case "NameVillage": {8};
 	case "NameLocal": {6};
 	default {0};
 };
