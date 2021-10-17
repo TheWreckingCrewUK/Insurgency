@@ -55,6 +55,8 @@ private _actionEventID = ["TWC_Insurgency_Actions_elderSpawn", {
 	params ["_taskLocation", "_player", "_elder"];
 	_thisArgs params ["_taskID", "_location", "_actionEventID"];
 	
+	if (_taskLocation isNotEqualTo _location) exitWith {};
+	
 	private _locationInfo = [_taskLocation] call TWC_Insurgency_Locations_fnc_getInfo;
 	_locationInfo params ["_isStronghold", "_hasCache", "_allegiance", "_isActive", "_elderGroup", "_civGroup", "_task"];
 	
