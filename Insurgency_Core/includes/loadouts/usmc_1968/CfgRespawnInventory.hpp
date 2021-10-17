@@ -78,7 +78,7 @@ class CfgRespawnInventory {
 		displayName = "Machinegunner";
 		role = "Machinegunner";
 		uniformClass = "vn_b_uniform_macv_05_01";
-		backpack = "n_b_pack_lw_02_m60_pl";
+		backpack = "vn_b_pack_lw_02_m60_pl";
 		linkedItems[] = {
 			"vn_b_vest_usarmy_06",
 			"vn_b_helmet_m1_08_01",
