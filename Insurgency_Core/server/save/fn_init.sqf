@@ -19,12 +19,11 @@ private _saveInfo = profileNamespace getVariable [missionName, []];
 
 if (count _saveInfo > 0) then {
 	[{
-		_this params ["_supplyBLUFOR", "_supplyOPFOR", "_manpowerOPFOR", "_troopsOPFOR", "_oldLocations"];
+		_this params ["_supplyBLUFOR", "_supplyOPFOR", "_manpowerOPFOR", "_oldLocations"];
 		
 		TWC_Insurgency_supplyBLUFOR = _supplyBLUFOR;
 		TWC_Insurgency_supplyOPFOR = _supplyOPFOR;
 		TWC_Insurgency_manpowerOPFOR = _manpowerOPFOR;
-		TWC_Insurgency_troopsOPFOR = _troopsOPFOR;
 		
 		{
 			_x params ["_location", "_oldAllegiance"];

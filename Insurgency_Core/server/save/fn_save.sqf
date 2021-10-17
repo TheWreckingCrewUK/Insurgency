@@ -19,7 +19,7 @@ private _allegiances = [];
 	_allegiances pushBack [_x, _allegiance];
 } forEach TWC_Insurgency_Locations;
 
-profileNamespace setVariable [missionName, [TWC_Insurgency_supplyBLUFOR, TWC_Insurgency_supplyOPFOR, TWC_Insurgency_manpowerOPFOR, TWC_Insurgency_troopsOPFOR, _allegiances]];
+profileNamespace setVariable [missionName, [TWC_Insurgency_supplyBLUFOR, TWC_Insurgency_supplyOPFOR, TWC_Insurgency_manpowerOPFOR, _allegiances]];
 saveProfileNamespace;
 
 DEBUG_LOG("Mission Saved");
